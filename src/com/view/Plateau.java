@@ -30,19 +30,15 @@ public class Plateau extends JPanel {
         System.out.println(largeurPlat +" "+ longueurPlat);
 
         super.paintComponent(g);
+            //joueur 1 - coin haut gauche
         g.drawImage(plateauPrincipal,0,0,largeurPlat,longueurPlat,this);
+            //joueur 2 - coin haut droit
+        g.drawImage(plateauPrincipal,largeurPlat*2,0,largeurPlat,longueurPlat,this);
+            //joueur 3 - coin bas gauche
+        g.drawImage(plateauPrincipal,0,longueurPlat*2,largeurPlat,longueurPlat,this);
+            //joueur 4 - coin gauche
+        g.drawImage(plateauPrincipal,largeurPlat*2,longueurPlat*2,largeurPlat,longueurPlat,this);
 
-        g.setColor(Color.blue);
-        g.fillRect(largeurPlat,0,largeurPlat,longueurPlat);
-
-        g.setColor(Color.red);
-        g.fillRect(largeurPlat*2,longueurPlat,largeurPlat,longueurPlat);
-
-        g.setColor(Color.green);
-        g.fillRect(largeurPlat,longueurPlat*2,largeurPlat,longueurPlat);
-
-        g.setColor(Color.yellow);
-        g.fillRect(1,longueurPlat,largeurPlat,longueurPlat);
     }
 
 }
