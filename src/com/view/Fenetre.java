@@ -11,7 +11,7 @@ public class Fenetre  extends  JFrame{
 
     public Fenetre(){
         ///Taille ecran
-        Dimension tailleEcran = new Dimension((int)getToolkit().getScreenSize().getWidth(), (int)getToolkit().getScreenSize().getHeight() - 35);
+        Dimension tailleEcran = new Dimension((int)getToolkit().getScreenSize().getWidth(), (int)getToolkit().getScreenSize().getHeight()-35);
         int hauteur = (int)tailleEcran.getHeight()-35;
         int largeur = (int)tailleEcran.getWidth();
 
@@ -32,7 +32,7 @@ public class Fenetre  extends  JFrame{
 
     }
 
-    public static void main(String args[]){
+    public static void main(String [] args){
         new Fenetre();
     }
 
