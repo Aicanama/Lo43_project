@@ -25,15 +25,6 @@ public class Fenetre  extends  JFrame{
         //this.setLocationRelativeTo(null); //position centre ecran
 
         ///Content pane
-        //this.setContentPane(plateau);
-        //scroll
-
-        //scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        //scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        //JPanel contentPane = new JPanel();
-        //contentPane.setPreferredSize(tailleEcran);
-        //contentPane.add(scroll);
-        //plateau.add(plateauIndividuel);
         this.setContentPane(plateau);
 
         this.pack();
