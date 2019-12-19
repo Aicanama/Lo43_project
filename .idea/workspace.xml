@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b736fce-80e8-474d-80ab-31c775f0cb03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/view/Fenetre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/view/Fenetre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/view/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/view/Plateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/view/Fenetre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/Fenetre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/view/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/Plateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/view/PlateauIndividuel.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +97,19 @@
       <option name="presentableId" value="Default" />
       <updated>1576067789960</updated>
     </task>
+    <task id="LOCAL-00001" summary="&quot;try chemin relatif&quot;">
+      <created>1576753780840</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576753780840</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;try chemin relatif&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;try chemin relatif&quot;" />
   </component>
   <component name="WindowStateProjectService">
     <state x="360" y="0" width="575" height="680" key="#ScrollDemo" timestamp="1576147875926">
@@ -130,30 +136,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="399" y="211" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1576068392424" />
-    <state x="282" y="0" key="CommitChangelistDialog2" timestamp="1576752255652">
+    <state x="282" y="0" key="CommitChangelistDialog2" timestamp="1576753778511">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="282" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1576752255652" />
+    <state x="282" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1576753778511" />
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1576143381727">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1576143381727" />
-    <state width="595" height="163" key="GridCell.Tab.0.bottom" timestamp="1576753635108">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1576753784326">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="595" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1576753635108" />
-    <state width="595" height="163" key="GridCell.Tab.0.center" timestamp="1576753635108">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1576753784326" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1576753784322">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="595" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1576753635108" />
-    <state width="595" height="163" key="GridCell.Tab.0.left" timestamp="1576753635108">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1576753784322" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1576753784322">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="595" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1576753635108" />
-    <state width="595" height="163" key="GridCell.Tab.0.right" timestamp="1576753635108">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1576753784322" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1576753784322">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="595" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1576753635108" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1576753784322" />
     <state width="595" height="203" key="GridCell.Tab.1.bottom" timestamp="1576752713420">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
