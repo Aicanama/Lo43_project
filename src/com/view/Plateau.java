@@ -54,9 +54,6 @@ public class Plateau extends JPanel {
         this.add(labelGold2);
         this.add(labelGold3);
         this.add(labelGold4);
-        /*JLabel labelGold2 = new JLabel("VIE");
-        labelGold2.setHorizontalAlignment(SwingConstants.RIGHT);
-        add(labelGold2);*/
     }
     public void paintComponent(Graphics g) {
         largeurPlat = getWidth()/3;
@@ -69,7 +66,6 @@ public class Plateau extends JPanel {
         /* g.drawImage(): une image, les coordonnées du coin supérieur gauche, les dimensions (l'image d'origine pourra être dilatée ou réduite en fonction de ces indications)
          * et un objet d'une classe implémentant l'interface java.awt.image.ImageObserver
          */
-
 
             //joueur 1 - coin haut gauche
         g.drawImage(plateauJoueur,0,0,largeurPlat,longueurPlat,this);

@@ -1,3 +1,5 @@
+package com.model;
+
 /* Types de ressource :
  - brique = cerveau = 0
  - pierre = ordi = 1

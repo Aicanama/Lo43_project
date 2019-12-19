@@ -1,3 +1,5 @@
+package com.model;
+
 public class Plateau {
 
     protected char image;
