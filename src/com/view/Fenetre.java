@@ -6,6 +6,7 @@ import  java.awt.*;
 public class Fenetre  extends  JFrame{
 
     private Plateau plateau = new Plateau();
+    private static final long serialVersionUID = 1L; //--> qu'est ce que c'est ??
 
     public Fenetre(){
         ///Taille ecran
