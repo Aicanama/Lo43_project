@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b736fce-80e8-474d-80ab-31c775f0cb03" name="Default Changelist" comment="" />
+    <list default="true" id="7b736fce-80e8-474d-80ab-31c775f0cb03" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/META-INF/projet_form.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/view/Fenetre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/view/Fenetre.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/view/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/view/Plateau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/view/Fenetre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/Fenetre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/view/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/Plateau.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +38,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -39,7 +51,7 @@
       <recent name="C:\Users\inesm\Documents\Utbm\LO43\projet_form\src\com\model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Fenetre">
     <configuration name="Fenetre" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk-13.0.1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -141,7 +153,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -191,22 +205,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1576763479537" />
-    <state width="1237" height="203" key="GridCell.Tab.0.bottom" timestamp="1576773089878">
+    <state width="1237" height="89" key="GridCell.Tab.0.bottom" timestamp="1577108871509">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="203" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1576773089878" />
-    <state width="1237" height="203" key="GridCell.Tab.0.center" timestamp="1576773089878">
+    <state width="1237" height="89" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1577108871509" />
+    <state width="1237" height="89" key="GridCell.Tab.0.center" timestamp="1577108871508">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="203" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1576773089878" />
-    <state width="1237" height="203" key="GridCell.Tab.0.left" timestamp="1576773089878">
+    <state width="1237" height="89" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1577108871508" />
+    <state width="1237" height="89" key="GridCell.Tab.0.left" timestamp="1577108871508">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="203" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1576773089878" />
-    <state width="1237" height="203" key="GridCell.Tab.0.right" timestamp="1576773089878">
+    <state width="1237" height="89" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1577108871508" />
+    <state width="1237" height="89" key="GridCell.Tab.0.right" timestamp="1577108871508">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="203" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1576773089878" />
+    <state width="1237" height="89" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1577108871508" />
     <state width="1237" height="203" key="GridCell.Tab.1.bottom" timestamp="1576773089878">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

@@ -1,5 +1,5 @@
 package com.view;
-
+import com.model.*;
 
 import java.awt.*;
 import java.io.IOException;
@@ -14,14 +14,20 @@ import java.util.Collection;
 import java.util.ArrayList;
 
 public class Plateau extends JPanel{
-    //conteneur = content pane
 
+    //affichage
     private static final long serialVersionUID = 1L; //--> qu'est ce que c'est ??
     private Image plateauJoueur;
     private  ImageIcon gold , carte;
     private int largeurPlat;
     private int longueurPlat;
 
+
+    //constructeur @leo
+    protected char image;
+    protected int ressource;
+    protected String imageRessource;
+    protected int nbrRessource;
 
     public Plateau(){
     	
@@ -52,8 +58,7 @@ public class Plateau extends JPanel{
     
     	
     ///Definition LabelGold et icon
-    	
-    	
+
     	JLabel labelGold1 = new JLabel("111 "); //mettre espace a la fin !! car sinon trop collé
         JLabel labelGold2 = new JLabel("22 ");
         JLabel labelGold3 = new JLabel("333 ");
@@ -101,7 +106,7 @@ public class Plateau extends JPanel{
         	}
         } */
         
-        //position canvas (vertical uniquement voir boucle pour horizontal
+        //position canvas (vertical uniquement voir boucle pour horizontal)
         
         labelGold1.setVerticalAlignment(SwingConstants.TOP);
         labelGold2.setVerticalAlignment(SwingConstants.TOP);
@@ -110,18 +115,25 @@ public class Plateau extends JPanel{
         
         Esp1.setVerticalAlignment(SwingConstants.TOP);
         Esp1.setHorizontalAlignment(SwingConstants.CENTER);
-        
-       
-        
-        
-     ///Definition Label Carte
-        
+
+        Esp2.setVerticalAlignment(SwingConstants.TOP);
+        Esp2.setHorizontalAlignment(SwingConstants.CENTER);
+
+
+
+
+
+        ///Definition Label Carte
+
+        //carte du haut (4) = espace 1
+
+        //Border espace
         Border borderLabelForCarte = BorderFactory.createLineBorder(Color.GREEN , 5);
-        Esp1.setLayout(new GridLayout(1,4,60,0));
+        Esp1.setLayout(new GridLayout(1,4,0,0));
         Esp1.setBorder(borderLabelForCarte);
-        
-       
-        JLabel Carte1 = new JLabel();
+
+        //Création carte
+        JButton Carte1 = new JButton("this card");
         Carte1.setIcon(carte);
         Carte1.setVerticalAlignment(SwingConstants.BOTTOM);
         JLabel Carte2 = new JLabel();
@@ -133,17 +145,39 @@ public class Plateau extends JPanel{
         JLabel Carte4 = new JLabel();
         Carte4.setVerticalAlignment(SwingConstants.BOTTOM);
         Carte4.setIcon(carte);
-        
-      
+
+        //set on Esp1
         Esp1.add(Carte1);
         Esp1.add(Carte2);
         Esp1.add(Carte3);
         Esp1.add(Carte4);
-       
+
+        //carte du bas (3) = espace 2
+
+        //Border espace
+        Esp2.setLayout(new GridLayout(1,4,0,0));
+        Esp2.setBorder(borderLabelForCarte);
+
+        //Création carte
+        JLabel Carte5 = new JLabel();
+        Carte5.setIcon(carte);
+        Carte5.setVerticalAlignment(SwingConstants.BOTTOM);
+        JLabel Carte6 = new JLabel();
+        Carte6.setVerticalAlignment(SwingConstants.BOTTOM);
+        Carte6.setIcon(carte);
+        JLabel Carte7 = new JLabel();
+        Carte7.setVerticalAlignment(SwingConstants.BOTTOM);
+        Carte7.setIcon(carte);
+
+        //set on Esp2
+        Esp2.add(Carte5);
+        Esp2.add(Carte6);
+        Esp2.add(Carte7);
         
-        
-        
-        
+
+
+
+
 
    ///mise en place Plateau
         for (JLabel label : myLabelsGold) {
@@ -164,6 +198,14 @@ public class Plateau extends JPanel{
         add(button);
         */
     }
+
+    public Plateau(char n_image, int n_ressource, String n_imageRessource) {
+        this.image=n_image;
+        this.imageRessource=n_imageRessource;
+        this.ressource=n_ressource;
+        this.nbrRessource=0;
+    }
+
     public void paintComponent(Graphics g) {
         
     	largeurPlat = getWidth()/3;
@@ -190,18 +232,6 @@ public class Plateau extends JPanel{
 
             //joueur 4 - coin gauche
         g.drawImage(plateauJoueur,largeurPlat*2,longueurPlat*2,largeurPlat,longueurPlat,this);
-
-      //CARTES
-         //4 en haut et 3 en bas
-       /* g.drawImage(carte,	largeurPlat+10,						longueurPlat+10,	largeurCarte,longueurCarte,this); 
-        g.drawImage(carte,	largeurPlat+10*2+largeurCarte,		longueurPlat+10,	largeurCarte,longueurCarte,this);
-        g.drawImage(carte,	largeurPlat+15*2+largeurCarte*2,	longueurPlat+10,	largeurCarte,longueurCarte,this);
-        g.drawImage(carte,	largeurPlat+15*3+largeurCarte*3,	longueurPlat+10,	largeurCarte,longueurCarte,this);
-       
-        g.drawImage(carte,	largeurPlat+10+largeurCarte,		longueurPlat+10+longueurCarte+10,	largeurCarte,longueurCarte,this);
-        g.drawImage(carte,	largeurPlat+10*2+largeurCarte*2,	longueurPlat+10+longueurCarte+10,	largeurCarte,longueurCarte,this);
-        g.drawImage(carte,	largeurPlat+15*2+largeurCarte*3,	longueurPlat+10+longueurCarte+10,	largeurCarte,longueurCarte,this);
-*/
     }
    
     
