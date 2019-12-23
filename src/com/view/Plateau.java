@@ -123,7 +123,7 @@ public class Plateau extends JPanel{
 
 
 
-        ///Definition Label Carte
+        ///Definition Label Carte + button
 
         //carte du haut (4) = espace 1
 
@@ -132,19 +132,37 @@ public class Plateau extends JPanel{
         Esp1.setLayout(new GridLayout(1,4,0,0));
         Esp1.setBorder(borderLabelForCarte);
 
-        //Création carte
-        JButton Carte1 = new JButton("this card");
-        Carte1.setIcon(carte);
-        Carte1.setVerticalAlignment(SwingConstants.BOTTOM);
+        //Création carte haut
+            //obligé de creer a chaque fois l'espace ...
+        JLabel EspCarte1 = new JLabel("Esp carte1"); //espace mis a chaque fois au dessus des cartes button
+        JLabel EspCarte2 = new JLabel("Esp carte2");
+        JLabel EspCarte3 = new JLabel("Esp carte3");
+        JLabel EspCarte4 = new JLabel("Esp carte4");
+
+
+        JLabel Carte1 = new JLabel();
+        Carte1.setLayout(new GridLayout(2,1,0,0)); //mise en place de la répartition dans la case d'une carte
+        JButton BtnC1 = new JButton(carte); //icone est mise sur le bouton
+        Carte1.add(EspCarte1);
+        Carte1.add(BtnC1);
+
         JLabel Carte2 = new JLabel();
-        Carte2.setVerticalAlignment(SwingConstants.BOTTOM);
-        Carte2.setIcon(carte);
+        Carte2.setLayout(new GridLayout(2,1,0,0));
+        JButton BtnC2 = new JButton(carte);
+        Carte2.add(EspCarte2);
+        Carte2.add(BtnC2);
+
         JLabel Carte3 = new JLabel();
-        Carte3.setVerticalAlignment(SwingConstants.BOTTOM);
-        Carte3.setIcon(carte);
+        Carte3.setLayout(new GridLayout(2,1,0,0));
+        JButton BtnC3 = new JButton(carte);
+        Carte3.add(EspCarte3);
+        Carte3.add(BtnC3);
+
         JLabel Carte4 = new JLabel();
-        Carte4.setVerticalAlignment(SwingConstants.BOTTOM);
-        Carte4.setIcon(carte);
+        Carte4.setLayout(new GridLayout(2,1,0,0));
+        JButton BtnC4 = new JButton(carte);
+        Carte4.add(EspCarte4);
+        Carte4.add(BtnC4);
 
         //set on Esp1
         Esp1.add(Carte1);
@@ -158,16 +176,22 @@ public class Plateau extends JPanel{
         Esp2.setLayout(new GridLayout(1,4,0,0));
         Esp2.setBorder(borderLabelForCarte);
 
-        //Création carte
+        //Création carte Bas
+
         JLabel Carte5 = new JLabel();
-        Carte5.setIcon(carte);
-        Carte5.setVerticalAlignment(SwingConstants.BOTTOM);
+        Carte5.setLayout(new GridLayout(2,1,0,0)); //mise en place de la répartition dans la case d'une carte
+        JButton BtnC5 = new JButton(carte); //icone est mise sur le bouton
+        Carte5.add(BtnC5);
+
         JLabel Carte6 = new JLabel();
-        Carte6.setVerticalAlignment(SwingConstants.BOTTOM);
-        Carte6.setIcon(carte);
+        Carte6.setLayout(new GridLayout(2,1,0,0)); //mise en place de la répartition dans la case d'une carte
+        JButton BtnC6 = new JButton(carte); //icone est mise sur le bouton
+        Carte6.add(BtnC6);
+
         JLabel Carte7 = new JLabel();
-        Carte7.setVerticalAlignment(SwingConstants.BOTTOM);
-        Carte7.setIcon(carte);
+        Carte7.setLayout(new GridLayout(2,1,0,0)); //mise en place de la répartition dans la case d'une carte
+        JButton BtnC7 = new JButton(carte); //icone est mise sur le bouton
+        Carte7.add(BtnC7);
 
         //set on Esp2
         Esp2.add(Carte5);
