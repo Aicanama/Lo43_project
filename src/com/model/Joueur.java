@@ -1,5 +1,6 @@
 package com.model;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 import static jdk.nashorn.internal.objects.NativeMap.size;
@@ -21,7 +22,7 @@ public class Joueur {
 
     public Joueur(int n_id, Plateau n_plateau, SousListe n_sousListe) {
         this.id=n_id;
-        this.plateau=n_plateau;
+        this.plateau = n_plateau;
         this.sousListe=n_sousListe;
         this.gold=3;
         this.PV=0;
@@ -35,12 +36,15 @@ public class Joueur {
     }
 
     public void showSousListe() {
+        System.out.println("Joueur :: show sous liste du joueur id  :"+ this.id);
+        for(int i=0;i<this.sousListe.cartes.size();i++)
+        {
+            System.out.println(this.sousListe.cartes.get(i).costGold);
+        }
 
     }
 
-    public void hideSousListe() {
-
-    }
+    public SousListe getSousListe() { return this.sousListe; }
 
     public int parcourir(ArrayList<Integer> checkList, ArrayList<CarteRessource> listeRessourceAC) {    //changer type des listeRessource
         int costp=0, j, i=0;

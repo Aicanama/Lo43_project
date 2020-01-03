@@ -35,6 +35,8 @@ public class Plateau extends JPanel{
     private JLabel ico1, ico2, ico3, ico4, esp1, esp2, esp3, esp4, esp5, esp6, esp8, esp11, esp13, esp14, esp15, esp16, esp17, esp18;
     int i;
 
+    protected SousListe cardsToPrint;
+
 
 
     //constructeur @leo
@@ -528,11 +530,12 @@ public class Plateau extends JPanel{
         */
     }
 
-    public Plateau(char n_image, int n_ressource, String n_imageRessource) {
-        this.image=n_image;
-        this.imageRessource=n_imageRessource;
-        this.ressource=n_ressource;
-        this.nbrRessource=0;
+    public void recupCarteSousListeJoueur( ArrayList<Joueur> listJoueur, int idJoueur){
+        cardsToPrint = listJoueur.get(idJoueur).getSousListe();
+    }
+
+    public ImageIcon afficheCarteOnButton() {
+        return cardsToPrint.getClass().
     }
 
     public void actionPerformed(ActionEvent e, int joueur) {
