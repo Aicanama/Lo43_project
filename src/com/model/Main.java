@@ -9,12 +9,32 @@ package com.model;
  - tissu = moodle = 5
  - verre = puzzle = 6*/
 
+import com.view.Fenetre;
+
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Moteur moteur = new Moteur(1);
         Age age = new Age(1);
-        moteur.shuffle(age.cartes);
-        SousListe sliste = new SousListe(age.cartes, 0);
-        System.out.println("test");
+        moteur.age1Ini(age.cartes); //création du tas de l'âge
+        //moteur.shuffle(age.cartes);
+
+        //creation accès cartes d'un joueur
+        SousListe ssListeJoueur1 = new SousListe(age.cartes,0); //sous liste joueur
+        ArrayList<Joueur> listJoueur = new ArrayList<Joueur>();
+
+        listJoueur.add( new Joueur(0,null,ssListeJoueur1));
+        listJoueur.get(0).showSousListe();
+        listJoueur.get(0).sousListe.cartes.get(10);
+        System.out.println(" Main :: arraylist Joueur : " + listJoueur.get(0).sousListe.cartes.get(2).costGold );
+
+        /* meme facon d'arriver aux cartes du joueur 0 avoir la 2ème carte
+        listJoueur.get(0).sousListe.cartes.get(2).costGold
+        = age.cartes.get(2).costGold
+        = ssListeJoueur1.cartes.get(2).costGold
+        */
+        Fenetre view = new Fenetre();
+
     }
 }

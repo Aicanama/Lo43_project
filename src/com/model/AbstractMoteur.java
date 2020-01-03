@@ -11,7 +11,6 @@ public abstract class AbstractMoteur implements Observable{
 
     private ArrayList<Observer> listObserver = new ArrayList<Observer>();
 
-    protected int ageActuel; //commence à l'age 1
     protected ArrayList<Joueur> listeJoueur;
 
 
@@ -31,11 +30,9 @@ public abstract class AbstractMoteur implements Observable{
     public void age2Ini(ArrayList list) {};
     public void shuffle(ArrayList liste){};
     public void play(ArrayList<Carte> listCarte, int carteN, Joueur joueur) {};
-    public int calculPV(Joueur joueur) {};
-    private int min(int a, int b, int c) {};
 
     //Implémentation du pattern observer
-    public void addObserver(Observer obs) {
+   /**public void addObserver(Observer obs) {
         this.listObserver.add(obs);
     }
 
@@ -47,5 +44,5 @@ public abstract class AbstractMoteur implements Observable{
     public void removeObserver() {
         listObserver = new ArrayList<Observer>();
     }
-
+*/
 }

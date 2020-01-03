@@ -23,25 +23,26 @@ public class Moteur{
     private Age age;
 
     protected ArrayList<Joueur> listeJoueur;
+    protected  SousListe ssListeJoueur1;
+    protected  SousListe ssListeJoueur2;
+    protected  SousListe ssListeJoueur3;
+    protected  SousListe ssListeJoueur4;
+
 
     private EventListenerList listeners;
 
     public Moteur(int n_id) {
         this.ageActuel = n_id;
 
+    }
 
-        //mise en place Image des cartes cartes
-        try {
-            Imgcarte = new ImageIcon(ImageIO.read(urlCarte));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public Moteur(int n_id, SousListe newCards){
+        this.ageActuel = n_id;
 
-        age = new Age(1);
-
+        this.ssListeJoueur1 = newCards;
+        //ecoute des changements = notofication aux autres composants
         listeners = new EventListenerList();
 
-        SousListe sousListeJoueur = new SousListe(listeJoueur,1); //sous liste par age
     }
 
     public void age1Ini(ArrayList list) {
@@ -62,9 +63,9 @@ public class Moteur{
         r5.add(5);
         r6.add(6);
 
-        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 2, 7, 1));
-        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 2, 7,1));
-        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 1, 7,1));
+        list.add(new CarteRessource(1, Imgcarte, new ArrayList<Integer>(), 2, 7, 1));
+        list.add(new CarteRessource(2, Imgcarte, new ArrayList<Integer>(), 2, 7,1));
+        list.add(new CarteRessource(3, Imgcarte, new ArrayList<Integer>(), 1, 7,1));
         list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 0, 7,1));
         list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 3, 7,1));
         list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 3, 7,1));
@@ -96,17 +97,16 @@ public class Moteur{
         list.add(new Comptche(0,Imgcarte,new ArrayList<Integer>(),3));*/
     }
 
-
     public void shuffle(ArrayList liste) {
         Collections.shuffle(liste);
     }
 
     public SousListe getSsListeJoueur() {
-        return listeJoueur;
+        return ssListeJoueur1;
     }
 
     public void setSsListeJoueur(SousListe ssListeJoueur) {
-        this.listeJoueur = ssListeJoueur;
+        this.ssListeJoueur1 = ssListeJoueur;
 
         fireCardChanged();
     }
@@ -118,12 +118,15 @@ public class Moteur{
         listeners.add(CardListener.class, listener);
     }
 
-    public void removeCardListener(CardListener l) {
+    public void removeCardListener(CardListener listener) {
         //dés-enregistre une vue
-        listeners.remove(CardListener.class, l);
+        listeners.remove(CardListener.class, listener);
     }
 
     public void fireCardChanged() {
+        //Les méthodes fire~ permettent de lancer un
+        //évènement qui sera distribué à l'ensemble des
+        //listeners enregistrés
         CardListener[] listenerList = (CardListener[]) listeners.getListeners(CardListener.class);
 
         for (CardListener listener : listenerList) {
