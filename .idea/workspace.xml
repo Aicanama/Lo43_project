@@ -228,10 +228,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="399" y="211" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1280.680@0.0.1280.680" timestamp="1576068392424" />
-    <state x="282" y="0" key="CommitChangelistDialog2" timestamp="1576772208579">
+    <state x="282" y="0" key="CommitChangelistDialog2" timestamp="1578075126856">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="282" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1576772208579" />
+    <state x="282" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1578075126856" />
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1578050186246">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -280,6 +280,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1576143639156" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1578075141715">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1578075141715" />
     <state x="450" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578075090290">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
