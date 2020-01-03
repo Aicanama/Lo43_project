@@ -1,16 +1,17 @@
 package com.view;
 
-import java.awt.*;
+
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Fenetre /*extends AbstractViewCard implements ActionListener*/ {
+import  java.awt.*;
+
+public class Fenetre  extends  JFrame{
 
     private Plateau plateau = new Plateau();
     private static final long serialVersionUID = 1L; //--> qu'est ce que c'est ??
 
     public Fenetre(){
-
         ///Taille ecran
         Dimension tailleEcran = new Dimension((int)getToolkit().getScreenSize().getWidth(), (int)getToolkit().getScreenSize().getHeight()-35);
         int hauteur = (int)tailleEcran.getHeight()-35;
@@ -31,6 +32,5 @@ public class Fenetre /*extends AbstractViewCard implements ActionListener*/ {
     public static void main(String [] args){
         new Fenetre();  //appel constructeur
     }
-
 
 }

@@ -3,7 +3,6 @@ import com.model.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -15,18 +14,27 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.ArrayList;
 
-import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
-
 public class Plateau extends JPanel{
 
     //affichage
     private static final long serialVersionUID = 1L; //--> qu'est ce que c'est ??
-    private Image plateauJoueur;
-    private ImageIcon gold, carte;
+    private Image plateauJoueur1 , plateauJoueur2, plateauJoueur3, plateauJoueur4;
+    //icones ressources
+    private  ImageIcon gold, iconeBe, iconeBr, iconeOr, iconePi, iconeGl, iconePu, iconeBo;
+    //cartes ressources
+    private ImageIcon pizza, beer, ordi, brain, book, globe, puzzle, pizOrd, ordBra, braBee, beer2, brain2, pizza2, ordi2;
+    //cartes commerce
+    private ImageIcon mieCalE, mieCalO, oneS, boulD, caveVin, nooz, bar, litCarouf, foyer, laclerc, chambC, basicFat;
+    //cartes patrimoine
+    private ImageIcon savour, cuc, steleB, cine, lionB, poudr, fonta, palaisJ, mairie, belfHot, police, museum, citad;
+    //cartes connaissances
+    private ImageIcon matrice, anglais, etudeEc, codage, bulats, langue2, eloque, bilingue, etudeEtr, logiciel, science2, histoire2;
     private int largeurPlat;
     private int longueurPlat;
-    private JLabel labelGold1;
+    //diff√©rents label utilis√©s
+    private JLabel ico1, ico2, ico3, ico4, esp1, esp2, esp3, esp4, esp5, esp6, esp8, esp11, esp13, esp14, esp15, esp16, esp17, esp18;
     int i;
+
 
 
     //constructeur @leo
@@ -35,179 +43,492 @@ public class Plateau extends JPanel{
     protected String imageRessource;
     protected int nbrRessource;
 
-    public Plateau() {
+    public Plateau(){
+    	
+    	//grille pour les labels argent
+    	this.setLayout(new GridLayout(6,3));
+        
+    	//chemin relatif images
+    	URL urlPlateau1 = getClass().getResource("img/plateau_1.png");
+        URL urlPlateau2 = getClass().getResource("img/plateau_2.png");
+        URL urlPlateau3 = getClass().getResource("img/plateau_3.png");
+        URL urlPlateau4 = getClass().getResource("img/plateau_4.png");
+        URL urlPlateau5 = getClass().getResource("img/plateau_5.png");
+        URL urlPlateau6 = getClass().getResource("img/plateau_6.png");
+        URL urlPlateau7 = getClass().getResource("img/plateau_7.png");
+            //age I
+                //cartes
+        URL urlPizza = getClass().getResource("img/pizza.png");
+        URL urlPuzzle = getClass().getResource("img/puzzle.png");
+        URL urlBook = getClass().getResource("img/book.png");
+        URL urlBrain = getClass().getResource("img/brain.png");
+        URL urlBeer = getClass().getResource("img/beer.png");
+        URL urlGlobe = getClass().getResource("img/globe.png");
+        URL urlOrdi = getClass().getResource("img/ordi.png");
+        URL urlPiOr = getClass().getResource("img/pizza_ordi.png");
+        URL urlOrBr = getClass().getResource("img/ordi_brain.png");
+        URL urlBrBe = getClass().getResource("img/brain_beer.png");
+        URL urlMieE = getClass().getResource("img/mieCalinouEst.png");
+        URL urlMieO = getClass().getResource("img/mieCalinouOuest.png");
+        URL urlOne = getClass().getResource("img/oneShoot.png");
+        URL urlBou = getClass().getResource("img/bouleDisco.png");
+        URL urlSav = getClass().getResource("img/savoureuse.png");
+        URL urlCuc = getClass().getResource("img/CUC.png");
+        URL urlSte = getClass().getResource("img/steleBartholdi.png");
+        URL urlCin = getClass().getResource("img/cinema.png");
+        URL urlMat = getClass().getResource("img/matrice.png");
+        URL urlAng = getClass().getResource("img/anglais.png");
+        URL urlEtuEc = getClass().getResource("img/etudesEcrites.png");
+    	        //icones
+    	URL urlGold = getClass().getResource("img/gold.png");
+    	URL urlIcoBe = getClass().getResource("img/ibeer.png");
+        URL urlIcoBr = getClass().getResource("img/ibrain.png");
+        URL urlIcoPi = getClass().getResource("img/ipizza.png");
+        URL urlIcoPu = getClass().getResource("img/ipuzzle.png");
+        URL urlIcoGl = getClass().getResource("img/iglobe.png");
+        URL urlIcoOr = getClass().getResource("img/iordi.png");
+        URL urlIcoBo = getClass().getResource("img/ibook.png");
+            //Age II
+                //cartes
+        URL urlBe2 = getClass().getResource("img/beer2.png");
+        URL urlBr2 = getClass().getResource("img/brain2.png");
+        URL urlPi2 = getClass().getResource("img/pizza2.png");
+        URL urlOr2 = getClass().getResource("img/ordi2.png");
+        URL urlCave = getClass().getResource("img/caveAVins.png");
+        URL urlNo = getClass().getResource("img/nooz.png");
+        URL urlBar = getClass().getResource("img/bar.png");
+        URL urlLitCar = getClass().getResource("img/littleCarouf.png");
+        URL urlLion = getClass().getResource("img/lionBartholdi.png");
+        URL urlPoud = getClass().getResource("img/poudriere.png");
+        URL urlFont = getClass().getResource("img/fontaine.png");
+        URL urlPalais = getClass().getResource("img/palaisJustice.png");
+        URL urlCoda = getClass().getResource("img/codage.png");
+        URL urlBula = getClass().getResource("img/bulats.png");
+        URL urlLan2 = getClass().getResource("img/langue2.png");
+        URL urlEloq = getClass().getResource("img/eloquence.png");
+            //Age III
+        URL urlFoy = getClass().getResource("img/foyer.png");
+        URL urlLac = getClass().getResource("img/laclerc.png");
+        URL urlCham = getClass().getResource("img/chambreCommerce.png");
+        URL urlBas = getClass().getResource("img/basicFat.png");
+        URL urlMai = getClass().getResource("img/mairie.png");
+        URL urlBelf = getClass().getResource("img/belfortHotel.png");
+        URL urlPol = getClass().getResource("img/police.png");
+        URL urlMus = getClass().getResource("img/museum.png");
+        URL urlCit = getClass().getResource("img/citadelle.png");
+        URL urlBil = getClass().getResource("img/bilingue.png");
+        URL urlEtuEt = getClass().getResource("img/etudeEtranger.png");
+        URL urlLog = getClass().getResource("img/logiciel.png");
+        URL urlScie = getClass().getResource("img/sciences2.png");
+        URL urlHist = getClass().getResource("img/histoire2.png");
 
-        //grille pour les labels argent
-        this.setLayout(new GridLayout(2, 3));
-
-        //chemin relatif images
-        URL url7Wonders = getClass().getResource("img/7_Wonders.png");
-        URL urlCarte = getClass().getResource("img/1Carte.png");
-        URL urlGold = getClass().getResource("img/gold.png");
-
-        try {
-
-            //la mÈthode statique  read de la classe javax.imageio.ImageIO renvoie une instance de la classe 
-            //BufferedImage (qui Ètend la classe abstraite Image).
-
-            //Image fond
-            plateauJoueur = ImageIO.read(url7Wonders);
-
-            //Icon
+    	
+    	try {
+    		
+            //la m√©thode statique read de la classe javax.imageio.ImageIO renvoie une instance de la classe
+    		//BufferedImage (qui √©tend la classe abstraite Image).
+            	
+    			//Image fond
+    		plateauJoueur1 = ImageIO.read(urlPlateau2);
+    		plateauJoueur2 = ImageIO.read(urlPlateau5);
+    		plateauJoueur3 = ImageIO.read(urlPlateau6);
+    		plateauJoueur4 = ImageIO.read(urlPlateau3);
+            
+            	//Icon
             gold = new ImageIcon(ImageIO.read(urlGold));
             //carte = new ImageIcon(ImageIO.read(urlCarte));
 
         } catch (IOException e) {
+
+    	    iconeBe = new ImageIcon(ImageIO.read(urlIcoBe));
+            iconeBr = new ImageIcon(ImageIO.read(urlIcoBr));
+            iconeBo = new ImageIcon(ImageIO.read(urlIcoBo));
+            iconePi = new ImageIcon(ImageIO.read(urlIcoPi));
+            iconePu = new ImageIcon(ImageIO.read(urlIcoPu));
+            iconeOr = new ImageIcon(ImageIO.read(urlIcoOr));
+            iconeGl = new ImageIcon(ImageIO.read(urlIcoGl));
+                //Cartes Ressources
+            pizza = new ImageIcon(ImageIO.read(urlPizza));
+            beer = new ImageIcon(ImageIO.read(urlBeer));
+            ordi = new ImageIcon(ImageIO.read(urlOrdi));
+            brain = new ImageIcon(ImageIO.read(urlBrain));
+            book = new ImageIcon(ImageIO.read(urlBook));
+            globe = new ImageIcon(ImageIO.read(urlGlobe));
+            puzzle = new ImageIcon(ImageIO.read(urlPuzzle));
+            pizOrd = new ImageIcon(ImageIO.read(urlPiOr));
+            ordBra = new ImageIcon(ImageIO.read(urlOrBr));
+            braBee = new ImageIcon(ImageIO.read(urlBrBe));
+            beer2 = new ImageIcon(ImageIO.read(urlBe2));
+            brain2 = new ImageIcon(ImageIO.read(urlBr2));
+            pizza2 = new ImageIcon(ImageIO.read(urlPi2));
+            ordi2 = new ImageIcon(ImageIO.read(urlOr2));
+                //Cartes Commerce
+            mieCalE = new ImageIcon(ImageIO.read(urlMieE));
+            mieCalO = new ImageIcon(ImageIO.read(urlMieO));
+            oneS = new ImageIcon(ImageIO.read(urlOne));
+            boulD = new ImageIcon(ImageIO.read(urlBou));
+            caveVin = new ImageIcon(ImageIO.read(urlCave));
+            nooz = new ImageIcon(ImageIO.read(urlNo));
+            bar = new ImageIcon(ImageIO.read(urlBar));
+            litCarouf = new ImageIcon(ImageIO.read(urlLitCar));
+            foyer = new ImageIcon(ImageIO.read(urlFoy));
+            laclerc = new ImageIcon(ImageIO.read(urlLac));
+            chambC = new ImageIcon(ImageIO.read(urlCham));
+            basicFat = new ImageIcon(ImageIO.read(urlBas));
+                //Cartes Patrimoine
+            savour = new ImageIcon(ImageIO.read(urlSav));
+            cuc = new ImageIcon(ImageIO.read(urlCuc));
+            steleB = new ImageIcon(ImageIO.read(urlSte));
+            cine = new ImageIcon(ImageIO.read(urlCin));
+            lionB = new ImageIcon(ImageIO.read(urlLion));
+            poudr = new ImageIcon(ImageIO.read(urlPoud));
+            fonta = new ImageIcon(ImageIO.read(urlFont));
+            palaisJ = new ImageIcon(ImageIO.read(urlPalais));
+            mairie = new ImageIcon(ImageIO.read(urlMai));
+            belfHot = new ImageIcon(ImageIO.read(urlBelf));
+            police = new ImageIcon(ImageIO.read(urlPol));
+            museum = new ImageIcon(ImageIO.read(urlMus));
+            citad = new ImageIcon(ImageIO.read(urlCit));
+                //Cartes Connaissances
+            matrice = new ImageIcon(ImageIO.read(urlMat));
+            anglais = new ImageIcon(ImageIO.read(urlAng));
+            etudeEc = new ImageIcon(ImageIO.read(urlEtuEc));
+            codage = new ImageIcon(ImageIO.read(urlCoda));
+            bulats = new ImageIcon(ImageIO.read(urlBula));
+            langue2 = new ImageIcon(ImageIO.read(urlLan2));
+            eloque = new ImageIcon(ImageIO.read(urlEloq));
+            bilingue = new ImageIcon(ImageIO.read(urlBil));
+            etudeEtr = new ImageIcon(ImageIO.read(urlEtuEt));
+            logiciel = new ImageIcon(ImageIO.read(urlLog));
+            science2 = new ImageIcon(ImageIO.read(urlScie));
+            histoire2 = new ImageIcon(ImageIO.read(urlHist));
+            
+        }
+        catch(IOException e){
             e.printStackTrace();
         }
+    
+    	
+    ///Definition Espace Labels
+        esp1 = new JLabel();
+        esp2 = new JLabel();
+        esp3 = new JLabel();
+        esp4 = new JLabel();
+        esp5 = new JLabel();
+        esp6 = new JLabel();
+        ico1 = new JLabel("# or ");
+        esp8 = new JLabel();
+        ico2 = new JLabel("# or ");
+        ico3 = new JLabel("# or ");
+        esp11 = new JLabel();
+        ico4 = new JLabel("# or ");
+        esp13 = new JLabel();
+        esp14 = new JLabel();
+        esp15 = new JLabel();
+        esp16 = new JLabel();
+        esp17 = new JLabel();
+        esp18 = new JLabel();
 
 
-        ///Definition LabelGold et icon
-
-        labelGold1 = new JLabel("111"); //mettre espace a la fin !! car sinon trop collÈ
-        JLabel labelGold2 = new JLabel("22 ");
-        JLabel labelGold3 = new JLabel("333 ");
-        JLabel labelGold4 = new JLabel("444 ");
-        JLabel esp1 = new JLabel("esp1 "); //espace seront les endroits "vides"
-        JLabel esp2 = new JLabel("esp2 ");
-
-        Collection<JLabel> myLabelsGold = new ArrayList<JLabel>(); //crÈation liste des labels pour chaque action soit Ècrite en une fois
+        //cr√©ation liste des labels pour chaque action soit √©crite en une fois   /!\ revoir utilit√© /!\
+        Collection<JLabel> myLabelsGold = new ArrayList<JLabel>();
         //ordre important !!
-        myLabelsGold.add(labelGold1);
         myLabelsGold.add(esp1);
-        myLabelsGold.add(labelGold2);
-        myLabelsGold.add(labelGold3);
         myLabelsGold.add(esp2);
-        myLabelsGold.add(labelGold4);
+        myLabelsGold.add(esp3);
+        myLabelsGold.add(esp4);
+        myLabelsGold.add(esp5);
+        myLabelsGold.add(esp6);
+        myLabelsGold.add(ico1);
+        myLabelsGold.add(esp8);
+        myLabelsGold.add(ico2);
+        myLabelsGold.add(ico3);
+        myLabelsGold.add(esp11);
+        myLabelsGold.add(ico4);
+        myLabelsGold.add(esp13);
+        myLabelsGold.add(esp14);
+        myLabelsGold.add(esp15);
+        myLabelsGold.add(esp16);
+        myLabelsGold.add(esp17);
+        myLabelsGold.add(esp18);
 
-        Border border = BorderFactory.createLineBorder(Color.RED, 5); //va permettre de crÈer des espaces pour positionner mieux
 
+        ///REVOIR CETTE PARTIE
+
+        Border border = BorderFactory.createLineBorder(Color.BLUE , 2);
         for (JLabel label : myLabelsGold) {
-            //border
-            label.setBorder(border);
+        	//border
+        	label.setBorder(border);
+        	
+        	//icon
+        	String name = label.getText(); //texte donn√© pas le nom du label
 
-            //icon
-            String name = label.getText(); //texte donnÈ pas le nom du label
-            if (!name.startsWith("Esp")) {
-                label.setIcon(gold);
-            }
+        	if(name.startsWith("ico1") || name.startsWith("Ico2") || name.startsWith("Ico3") || name.startsWith("Ico4")) {
+        		label.setIcon(gold);
+        	}
 
-            if (name.startsWith("Esp")) {
-                label.setBorder(new EmptyBorder(10, 10, 10, 10));
-            }
+        	if(name.startsWith("esp")) {
+        		label.setBorder(new EmptyBorder(5, 1, 1, 1));
+        	}
 
-            //position Horizontal (tous pareil)
-            label.setHorizontalAlignment(SwingConstants.TRAILING);
+        	/*
+        	//position Horizontal (tous pareil)
+        	label.setHorizontalAlignment(SwingConstants.TRAILING); */
         }
 
-        /** Pour le moment laisser en commentaire pour bien voir o˘ mettre !!
-         *
-         * for (JLabel label : myLabels) {
-         String name = label.getText();
-         if(name.startsWith("Esp")) {
-         label.setBorder(new EmptyBorder(10, 10, 10, 10)); // border INVISIBLE (pas besoin si on met label en invisible)
-         label.setVisible(false); //fonction permettant de mettre la border et jlabel invisble
-         }
-         } */
+       
+       /** Pour le moment laisser en commentaire pour bien voir o√π mettre !!
+        * 
+        * for (JLabel label : myLabels) {
+        	String name = label.getText();
+        	if(name.startsWith("Esp")) {
+        		label.setBorder(new EmptyBorder(10, 10, 10, 10)); // border INVISIBLE (pas besoin si on met label en invisible)
+        		label.setVisible(false); //fonction permettant de mettre la border et jlabel invisble
+        	}
+        } */
 
-        //position canvas (vertical uniquement voir boucle pour horizontal)
-
-        labelGold1.setVerticalAlignment(SwingConstants.TOP);
-        labelGold2.setVerticalAlignment(SwingConstants.TOP);
-        labelGold3.setVerticalAlignment(SwingConstants.CENTER);
-        labelGold4.setVerticalAlignment(SwingConstants.CENTER);
-
+      //position canvas
+            //plateau 1
         esp1.setVerticalAlignment(SwingConstants.TOP);
         esp1.setHorizontalAlignment(SwingConstants.CENTER);
+        esp4.setVerticalAlignment(SwingConstants.TOP);
+        esp4.setHorizontalAlignment(SwingConstants.CENTER);
+            //esp carte haut
+        esp2.setVerticalAlignment(SwingConstants.BOTTOM);
+        esp2.setHorizontalAlignment(SwingConstants.LEFT);
+        esp5.setVerticalAlignment(SwingConstants.BOTTOM);
+        esp5.setHorizontalAlignment(SwingConstants.LEFT);
+        esp8.setVerticalAlignment(SwingConstants.CENTER);
+        esp8.setHorizontalAlignment(SwingConstants.LEFT);
+            //plateau 2
+        esp3.setVerticalAlignment(SwingConstants.CENTER);
+        esp3.setHorizontalAlignment(SwingConstants.LEFT);
+        esp6.setVerticalAlignment(SwingConstants.CENTER);
+        esp6.setHorizontalAlignment(SwingConstants.LEFT);
+            //Icone Plat1
+        ico1.setVerticalAlignment(SwingConstants.TOP);
+        ico1.setHorizontalAlignment(SwingConstants.RIGHT);
+            //Icone Plat2
+        ico2.setVerticalAlignment(SwingConstants.TOP);
+        ico2.setHorizontalAlignment(SwingConstants.RIGHT);
+            //Icone Plat3
+        ico3.setVerticalAlignment(SwingConstants.TOP);
+        ico3.setHorizontalAlignment(SwingConstants.RIGHT);
+            //Icone Plat4
+        ico4.setVerticalAlignment(SwingConstants.TOP);
+        ico4.setHorizontalAlignment(SwingConstants.RIGHT);
+            //esp carte bas
+        esp11.setVerticalAlignment(SwingConstants.BOTTOM);
+        esp11.setHorizontalAlignment(SwingConstants.LEFT);
+        esp14.setVerticalAlignment(SwingConstants.CENTER);
+        esp14.setHorizontalAlignment(SwingConstants.LEFT);
+        esp17.setVerticalAlignment(SwingConstants.CENTER);
+        esp17.setHorizontalAlignment(SwingConstants.LEFT);
+            //Plateau 3
+        esp13.setVerticalAlignment(SwingConstants.CENTER);
+        esp13.setHorizontalAlignment(SwingConstants.LEFT);
+        esp16.setVerticalAlignment(SwingConstants.CENTER);
+        esp16.setHorizontalAlignment(SwingConstants.LEFT);
+            //Plateau 4
+        esp15.setVerticalAlignment(SwingConstants.CENTER);
+        esp15.setHorizontalAlignment(SwingConstants.LEFT);
+        esp18.setVerticalAlignment(SwingConstants.CENTER);
+        esp18.setHorizontalAlignment(SwingConstants.LEFT);
 
-        esp2.setVerticalAlignment(SwingConstants.TOP);
-        esp2.setHorizontalAlignment(SwingConstants.CENTER);
+
+            //Grillage pour placer les cartes
+        Border borderLabelForCarte = BorderFactory.createLineBorder(Color.YELLOW, 1);
+        esp2.setLayout(new GridLayout(1,1,1,0));
+        esp2.setBorder(borderLabelForCarte);
+        esp5.setLayout(new GridLayout(1,1,1,0));
+        esp5.setBorder(borderLabelForCarte);
+        esp13.setLayout(new GridLayout(1,1,1,0));
+        esp13.setBorder(borderLabelForCarte);
+        esp17.setLayout(new GridLayout(1,1,1,0));
+        esp17.setBorder(borderLabelForCarte);
+        esp8.setLayout(new GridLayout(1,1,1,0));
+        esp8.setBorder(borderLabelForCarte);
+        esp11.setLayout(new GridLayout(1,1,1,0));
+        esp11.setBorder(borderLabelForCarte);
+        esp14.setLayout(new GridLayout(1,1,1,0));
+        esp14.setBorder(borderLabelForCarte);
+
+            //Grillage pour placer les icones
+        Border borderLabelForIcone = BorderFactory.createLineBorder(Color.RED, 1);
+        ico1.setLayout(new GridLayout(1,1,0,0));
+        ico1.setBorder(borderLabelForIcone);
+        ico2.setLayout(new GridLayout(1,1,0,0));
+        ico2.setBorder(borderLabelForIcone);
+        ico3.setLayout(new GridLayout(1,1,0,0));
+        ico3.setBorder(borderLabelForIcone);
+        ico4.setLayout(new GridLayout(1,1,0,0));
+        ico4.setBorder(borderLabelForIcone);
 
 
-        ///Definition Label Carte + button
+    ///Definition Label Carte (paquet de carte)
+        //carte du haut (4)
 
-        //carte du haut (4) = espace 1
+        //Espaces pour les plateaux
+        Border borderLabelForPlat = BorderFactory.createLineBorder(Color.GREEN , 1);
+        esp1.setLayout(new GridLayout(1,1,0,0));
+        esp1.setBorder(borderLabelForPlat);
+        esp3.setLayout(new GridLayout(4,4,0,0));
+        esp3.setBorder(borderLabelForPlat);
+        esp4.setLayout(new GridLayout(4,4,0,0));
+        esp4.setBorder(borderLabelForPlat);
+        esp6.setLayout(new GridLayout(4,4,0,0));
+        esp6.setBorder(borderLabelForPlat);
+        esp13.setLayout(new GridLayout(4,4,0,0));
+        esp13.setBorder(borderLabelForPlat);
+        esp15.setLayout(new GridLayout(4,4,0,0));
+        esp15.setBorder(borderLabelForPlat);
+        esp16.setLayout(new GridLayout(2,2,0,0));
+        esp16.setBorder(borderLabelForPlat);
+        esp18.setLayout(new GridLayout(2,2,0,0));
+        esp18.setBorder(borderLabelForPlat);
 
-        //Border espace
-        Border borderLabelForCarte = BorderFactory.createLineBorder(Color.GREEN, 5);
-        esp1.setLayout(new GridLayout(1, 4, 0, 0));
-        esp1.setBorder(borderLabelForCarte);
 
-        //CrÈation carte haut
-        //obligÈ de creer a chaque fois l'espace ...
-        JLabel espCarte1 = new JLabel("Esp carte1"); //espace mis a chaque fois au dessus des cartes button
-        JLabel espCarte2 = new JLabel("Esp carte2");
-        JLabel espCarte3 = new JLabel("Esp carte3");
-        JLabel espCarte4 = new JLabel("Esp carte4");
-
-
+        //Cr√©ation carte
+            //labels pour les cartes
         JLabel Carte1 = new JLabel();
-        Carte1.setLayout(new GridLayout(2, 1, 0, 0)); //mise en place de la rÈpartition dans la case d'une carte
-        JButton BtnC1 = new JButton(carte); //icone est mise sur le bouton
-        Carte1.add(espCarte1);
+        Carte1.setLayout(new GridLayout(1, 1, 0, 0));
+        JButton BtnC1 = new JButton(pizza);
         Carte1.add(BtnC1);
         BtnC1.setActionCommand("BtnC1");
-
-        BtnC1.addActionListener(this::actionPerformed);
+        BtnC1.addActionListener(this::actionPerformed);       //REVOIR COMMENT UTILISER CETTE FONCTION CAR PLUSIEUR ESPACES
 
         JLabel Carte2 = new JLabel();
-        Carte2.setLayout(new GridLayout(2, 1, 0, 0));
-        JButton BtnC2 = new JButton(carte);
-        Carte2.add(espCarte2);
+        Carte2.setLayout(new GridLayout(1, 1, 0, 0));
+        JButton BtnC2 = new JButton(oneS);
         Carte2.add(BtnC2);
 
         JLabel Carte3 = new JLabel();
-        Carte3.setLayout(new GridLayout(2, 1, 0, 0));
-        JButton BtnC3 = new JButton(carte);
-        Carte3.add(espCarte3);
+        Carte3.setLayout(new GridLayout(1, 1, 0, 0));
+        JButton BtnC3 = new JButton(cuc);
         Carte3.add(BtnC3);
 
         JLabel Carte4 = new JLabel();
-        Carte4.setLayout(new GridLayout(2, 1, 0, 0));
-        JButton BtnC4 = new JButton(carte);
-        Carte4.add(espCarte4);
+        Carte4.setLayout(new GridLayout(1, 1, 0, 0));
+        JButton BtnC4 = new JButton(beer);
         Carte4.add(BtnC4);
 
-        //set on esp1
-        esp1.add(Carte1);
-        esp1.add(Carte2);
-        esp1.add(Carte3);
-        esp1.add(Carte4);
+        /*
+        JButton Carte1 = new JButton("this card");
+        Carte1.setIcon(carte);
+        Carte1.setVerticalAlignment(SwingConstants.BOTTOM);
+        JLabel Carte2 = new JLabel();
+        Carte2.setVerticalAlignment(SwingConstants.BOTTOM);
+        Carte2.setIcon(carte);
+        JLabel Carte3 = new JLabel();
+        Carte3.setVerticalAlignment(SwingConstants.BOTTOM);
+        Carte3.setIcon(carte);
+        JLabel Carte4 = new JLabel();
+        Carte4.setVerticalAlignment(SwingConstants.BOTTOM);
+        Carte4.setIcon(carte);
+
+         */
+
+
+        //set on esp8
+        esp8.add(Carte1);
+        esp8.add(Carte2);
+        esp8.add(Carte3);
+        esp8.add(Carte4);
 
         //carte du bas (3) = espace 2
 
         //Border espace
-        esp2.setLayout(new GridLayout(1, 4, 0, 0));
-        esp2.setBorder(borderLabelForCarte);
+    /*    Esp2.setLayout(new GridLayout(1,4,0,0));
+        Esp2.setBorder(borderLabelForCarte);
 
-        //CrÈation carte Bas
+     */
+
 
         JLabel Carte5 = new JLabel();
-        Carte5.setLayout(new GridLayout(2, 1, 0, 0)); //mise en place de la rÈpartition dans la case d'une carte
-        JButton BtnC5 = new JButton(carte); //icone est mise sur le bouton
+        Carte5.setLayout(new GridLayout(1, 1, 0, 0)); //mise en place de la r√©partition dans la case d'une carte
+        JButton BtnC5 = new JButton(savour); //icone est mise sur le bouton
         Carte5.add(BtnC5);
 
         JLabel Carte6 = new JLabel();
-        Carte6.setLayout(new GridLayout(2, 1, 0, 0)); //mise en place de la rÈpartition dans la case d'une carte
-        JButton BtnC6 = new JButton(carte); //icone est mise sur le bouton
+        Carte6.setLayout(new GridLayout(1, 1, 0, 0)); //mise en place de la r√©partition dans la case d'une carte
+        JButton BtnC6 = new JButton(globe); //icone est mise sur le bouton
         Carte6.add(BtnC6);
 
         JLabel Carte7 = new JLabel();
-        Carte7.setLayout(new GridLayout(2, 1, 0, 0)); //mise en place de la rÈpartition dans la case d'une carte
-        JButton BtnC7 = new JButton(carte); //icone est mise sur le bouton
+        Carte7.setLayout(new GridLayout(1, 1, 0, 0)); //mise en place de la r√©partition dans la case d'une carte
+        JButton BtnC7 = new JButton(matrice); //icone est mise sur le bouton
         Carte7.add(BtnC7);
 
-        //set on esp2
-        esp2.add(Carte5);
-        esp2.add(Carte6);
-        esp2.add(Carte7);
+        /*
+
+        //Cr√©ation carte
+        JLabel Carte5 = new JLabel();
+        Carte5.setIcon(carte);
+        Carte5.setVerticalAlignment(SwingConstants.TOP);
+        JLabel Carte6 = new JLabel();
+        Carte6.setVerticalAlignment(SwingConstants.TOP);
+        Carte6.setHorizontalAlignment(SwingConstants.RIGHT);
+        Carte6.setIcon(carte);
+        JLabel Carte7 = new JLabel();
+        Carte7.setVerticalAlignment(SwingConstants.TOP);
+        Carte7.setIcon(carte);
+
+         */
+
+        //affichage carte bas
+        esp11.add(Carte5);
+        esp11.add(Carte6);
+        esp11.add(Carte7);
+
+
+        //Cr√©ation ic√¥nes en fonction cartes choisies  (test)  (6cartes/joueur pour Age I)
+        JLabel IconeCarte1 = new JLabel();
+        IconeCarte1.setIcon(iconeBe);
+        IconeCarte1.setVerticalAlignment(SwingConstants.TOP);
+        IconeCarte1.setHorizontalAlignment(SwingConstants.LEFT);
+        JLabel IconeCarte2 = new JLabel();
+        IconeCarte2.setIcon(iconePi);
+        IconeCarte2.setVerticalAlignment(SwingConstants.TOP);
+        JLabel IconeCarte3 = new JLabel();
+        IconeCarte3.setIcon(iconeBr);
+        IconeCarte3.setVerticalAlignment(SwingConstants.TOP);
+        JLabel IconeCarte4 = new JLabel();
+        IconeCarte4.setIcon(iconeOr);
+        IconeCarte4.setVerticalAlignment(SwingConstants.TOP);
+        JLabel IconeCarte5 = new JLabel();
+        IconeCarte5.setIcon(iconePu);
+        IconeCarte5.setVerticalAlignment(SwingConstants.TOP);
+        JLabel IconeCarte6 = new JLabel();
+        IconeCarte6.setIcon(iconeBo);
+        IconeCarte6.setVerticalAlignment(SwingConstants.TOP);
+
+        //affichage des icones √† ct√© des plateaux
+        ico1.add(IconeCarte1);
+        ico1.add(IconeCarte2);
+        ico1.add(IconeCarte3);
+        ico1.add(IconeCarte4);
+        ico1.add(IconeCarte5);
+        ico1.add(IconeCarte6);
 
 
         ///mise en place Plateau
         for (JLabel label : myLabelsGold) {
-            this.add(label);
+        	this.add(label);
         }
-
+        
+        
+        /** a voir lors utilsation connexion
+         *  test changement valeur labelgold1 :
+         * 
+        	JButton button = new JButton("Change flag");
+        	button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+            	labelGold1.setText("new value");
+            }
+        });
+        add(button);
+        */
     }
 
     public Plateau(char n_image, int n_ressource, String n_imageRessource) {
@@ -215,6 +536,26 @@ public class Plateau extends JPanel{
         this.imageRessource=n_imageRessource;
         this.ressource=n_ressource;
         this.nbrRessource=0;
+    }
+
+    public void actionPerformed(ActionEvent e, int joueur) {
+        if (joueur == 1) {
+            i = Integer.parseInt(ico1.getText());
+            this.i++;
+            ico1.setText(String.valueOf(i));
+        } else if (joueur == 2) {
+            i = Integer.parseInt(ico2.getText());
+            this.i++;
+            ico2.setText(String.valueOf(i));
+        } else if (joueur == 3) {
+            i = Integer.parseInt(ico3.getText());
+            this.i++;
+            ico3.setText(String.valueOf(i));
+        } else if (joueur == 4) {
+            i = Integer.parseInt(ico4.getText());
+            this.i++;
+            ico4.setText(String.valueOf(i));
+        }
     }
 
     public void paintComponent(Graphics g) {
@@ -227,28 +568,21 @@ public class Plateau extends JPanel{
 
         //super.paintComponent(g);
 
-        /* g.drawImage(): une image, les coordonnÈes du coin supÈrieur gauche, les dimensions 
-         * et un objet d'une classe implÈmentant l'interface java.awt.image.ImageObserver
+        /* g.drawImage(): une image, les coordonn√©es du coin sup√©rieur gauche, les dimensions
+         * et un objet d'une classe impl√©mentant l'interface java.awt.image.ImageObserver
          */
      //JOUEURS
             //joueur 1 - coin haut gauche
-        g.drawImage(plateauJoueur,0,0,largeurPlat,longueurPlat,this);
+        g.drawImage(plateauJoueur1,0,0,largeurPlat,longueurPlat,this);
 
             //joueur 2 - coin haut droit
-        g.drawImage(plateauJoueur,largeurPlat*2,0,largeurPlat,longueurPlat,this);
+        g.drawImage(plateauJoueur2,largeurPlat*2,0,largeurPlat,longueurPlat,this);
 
             //joueur 3 - coin bas gauche
-        g.drawImage(plateauJoueur,0,longueurPlat*2,largeurPlat,longueurPlat,this);
+        g.drawImage(plateauJoueur3,0,longueurPlat*2,largeurPlat,longueurPlat,this);
 
             //joueur 4 - coin gauche
-        g.drawImage(plateauJoueur,largeurPlat*2,longueurPlat*2,largeurPlat,longueurPlat,this);
-    }
-
-    public void actionPerformed(ActionEvent e) {
-        i = Integer.parseInt(labelGold1.getText());
-        this.i++;
-        labelGold1.setText(String.valueOf(i));
-
+        g.drawImage(plateauJoueur4,largeurPlat*2,longueurPlat*2,largeurPlat,longueurPlat,this);
     }
 
 
@@ -277,3 +611,6 @@ public class Plateau {
         this.listeRessource.add(carteR);
     }
 */
+=======
+}
+>>>>>>> bbbabdc992c1cf95736013d000d40ba37f171a56
