@@ -12,7 +12,7 @@ package com.model;
 public class Main {
     public static void main(String[] args) {
         Moteur moteur = new Moteur(1);
-        Age age = new Age(1, moteur);
+        Age age = new Age(1);
         moteur.shuffle(age.cartes);
         SousListe sliste = new SousListe(age.cartes, 0);
         System.out.println("test");

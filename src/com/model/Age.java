@@ -9,10 +9,10 @@ public class Age {
 
     protected ArrayList<Carte> cartes;
 
-    public Age(int ageNumber, Moteur moteur) {
+    public Age(int ageNumber/*, Moteur moteur*/) {
         if(ageNumber==1) {
             cartes = new ArrayList();
-            moteur.age1Ini(this.cartes);
+            //moteur.age1Ini(this.cartes);
         }
     }
 
