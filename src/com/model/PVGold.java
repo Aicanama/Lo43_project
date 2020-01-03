@@ -1,5 +1,6 @@
 package com.model;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 import static jdk.nashorn.internal.objects.NativeMap.size;
@@ -8,7 +9,7 @@ public class PVGold extends CarteCommerce {
     int PV;
     int gold;
 
-    public PVGold(int n_costGold, String n_image, ArrayList<CarteRessource> n_listeRessource) {
+    public PVGold(int n_costGold, ImageIcon n_image, ArrayList<CarteRessource> n_listeRessource) {
         super(n_costGold, n_image, n_listeRessource, 3);
         this.PV=0;
         this.gold=0;

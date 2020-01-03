@@ -14,7 +14,7 @@ import java.util.Collections;
 import static jdk.nashorn.internal.objects.NativeMap.size;
 
 
-public class Moteur {
+public class Moteur{
     //le modèle
 
     private int ageActuel;
@@ -22,7 +22,6 @@ public class Moteur {
     private URL urlCarte = getClass().getResource("img/1Carte.png");
     private Age age;
 
-    private SousListe ssListeJoueur1;
     protected ArrayList<Joueur> listeJoueur;
 
     private EventListenerList listeners;
@@ -42,53 +41,72 @@ public class Moteur {
 
         listeners = new EventListenerList();
 
-        listeJoueur = new ArrayList<Joueur>(); //sous liste par age
+        SousListe sousListeJoueur = new SousListe(listeJoueur,1); //sous liste par age
     }
 
     public void age1Ini(ArrayList list) {
         //le type 7 ne correspond à aucune ressource
         //Il est présent pour combler type2 lorsque la carte n'a qu'une ressource
-        CarteRessource carte0 = new CarteRessource(1, Imgcarte, 2, 7, 1);
-        list.add(carte0);
-        CarteRessource carte1 = new CarteRessource(2, Imgcarte, 2, 7, 1);
-        list.add(carte1);
-        CarteRessource carte2 = new CarteRessource(3, Imgcarte, 1, 7, 1);
-        list.add(carte2);
-        CarteRessource carte3 = new CarteRessource(4, Imgcarte, 0, 7, 1);
-        list.add(carte3);
-        CarteRessource carte4 = new CarteRessource(5, Imgcarte, 3, 7, 1);
-        list.add(carte4);
-        CarteRessource carte5 = new CarteRessource(6, Imgcarte, 3, 7, 1);
-        list.add(carte5);
-        CarteRessource carte6 = new CarteRessource(7, Imgcarte, 4, 7, 1);
-        list.add(carte6);
-        CarteRessource carte7 = new CarteRessource(8, Imgcarte, 5, 7, 1);
-        list.add(carte7);
-        CarteRessource carte8 = new CarteRessource(9, Imgcarte, 6, 7, 1);
-        list.add(carte8);
-        CarteRessource carte9 = new CarteRessource(10, Imgcarte, 0, 1, 1);
-        list.add(carte9);
-        CarteRessource carte10 = new CarteRessource(11, Imgcarte, 1, 2, 1);
-        list.add(carte10);
-        CarteRessource carte11 = new CarteRessource(12, Imgcarte, 0, 3, 1);
-        list.add(carte11);
+        ArrayList<Integer> r0 = new ArrayList<Integer>();
+        ArrayList<Integer> r1 = new ArrayList<Integer>();
+        ArrayList<Integer> r2 = new ArrayList<Integer>();
+        ArrayList<Integer> r3 = new ArrayList<Integer>();
+        ArrayList<Integer> r4 = new ArrayList<Integer>();
+        ArrayList<Integer> r5 = new ArrayList<Integer>();
+        ArrayList<Integer> r6 = new ArrayList<Integer>();
+        r0.add(0);
+        r1.add(1);
+        r2.add(2);
+        r3.add(3);
+        r4.add(4);
+        r5.add(5);
+        r6.add(6);
+
+        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 2, 7, 1));
+        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 2, 7,1));
+        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 1, 7,1));
+        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 0, 7,1));
+        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 3, 7,1));
+        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 3, 7,1));
+        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 4, 7,1));
+        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 5, 7,1));
+        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 6, 7,1));
+        list.add(new CarteRessource(1, Imgcarte, new ArrayList<Integer>(), 2, 1,1));
+        list.add(new CarteRessource(1, Imgcarte, new ArrayList<Integer>(), 1, 0,1));
+        list.add(new CarteRessource(1, Imgcarte, new ArrayList<Integer>(), 0, 3,1));
+
+        list.add(new CartePatrimoine(0,Imgcarte,new ArrayList<Integer>(),3));
+        list.add(new CartePatrimoine(0,Imgcarte,new ArrayList<Integer>(),2));
+        list.add(new CartePatrimoine(0,Imgcarte,new ArrayList<Integer>(),2));
+        list.add(new CartePatrimoine(0,Imgcarte,r1,3));
+
+        list.add(new CarteExamen(0,Imgcarte,r2,1));
+        list.add(new CarteExamen(0,Imgcarte,r0,1));
+        list.add(new CarteExamen(0,Imgcarte,r0,1));
+        list.add(new CarteExamen(0,Imgcarte,r3,1));
+
+        list.add(new CarteConnaissance(0,Imgcarte,r5,1));
+        list.add(new CarteConnaissance(0,Imgcarte,r6,3));
+        list.add(new CarteConnaissance(0,Imgcarte,r4,2));
+        list.add(new CarteConnaissance(0,Imgcarte,r4,2));
+
+       /* list.add(new GainG(0,Imgcarte,new ArrayList<Integer>(),0));
+        list.add(new Comptche(0,Imgcarte,new ArrayList<Integer>(),1));
+        list.add(new Comptche(0,Imgcarte,new ArrayList<Integer>(),2));
+        list.add(new Comptche(0,Imgcarte,new ArrayList<Integer>(),3));*/
     }
+
 
     public void shuffle(ArrayList liste) {
         Collections.shuffle(liste);
     }
 
-    public SousListe set7Cards(SousListe sliste, int idJoueur) {
-        sliste = new SousListe(age.cartes, idJoueur);
-        return sliste;
-    }
-
-    public SousListe getSsListeJoueur1() {
-        return ssListeJoueur1;
+    public SousListe getSsListeJoueur() {
+        return listeJoueur;
     }
 
     public void setSsListeJoueur(SousListe ssListeJoueur) {
-        this.ssListeJoueur1 = ssListeJoueur;
+        this.listeJoueur = ssListeJoueur;
 
         fireCardChanged();
     }
@@ -109,7 +127,7 @@ public class Moteur {
         CardListener[] listenerList = (CardListener[]) listeners.getListeners(CardListener.class);
 
         for (CardListener listener : listenerList) {
-            listener.cardChangedRound(new CardChangedEvent(this, getSsListeJoueur1()));
+            listener.cardChangedRound(new CardChangedEvent(this, getSsListeJoueur()));
         }
     }
 

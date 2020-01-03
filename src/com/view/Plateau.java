@@ -86,7 +86,7 @@ public class Plateau extends JPanel{
         URL urlIcoPi = getClass().getResource("img/ipizza.png");
         URL urlIcoPu = getClass().getResource("img/ipuzzle.png");
         URL urlIcoGl = getClass().getResource("img/iglobe.png");
-        URL urlIcoOr = getClass().getResource("img/iordi.png");
+        URL urlIcoOr = getClass().getResource("img/iordi_brain.png"); //maybe erreur ?
         URL urlIcoBo = getClass().getResource("img/ibook.png");
             //Age II
                 //cartes
@@ -137,17 +137,14 @@ public class Plateau extends JPanel{
             	//Icon
             gold = new ImageIcon(ImageIO.read(urlGold));
             //carte = new ImageIcon(ImageIO.read(urlCarte));
-
-        } catch (IOException e) {
-
-    	    iconeBe = new ImageIcon(ImageIO.read(urlIcoBe));
+            iconeBe = new ImageIcon(ImageIO.read(urlIcoBe));
             iconeBr = new ImageIcon(ImageIO.read(urlIcoBr));
             iconeBo = new ImageIcon(ImageIO.read(urlIcoBo));
             iconePi = new ImageIcon(ImageIO.read(urlIcoPi));
             iconePu = new ImageIcon(ImageIO.read(urlIcoPu));
             iconeOr = new ImageIcon(ImageIO.read(urlIcoOr));
             iconeGl = new ImageIcon(ImageIO.read(urlIcoGl));
-                //Cartes Ressources
+            //Cartes Ressources
             pizza = new ImageIcon(ImageIO.read(urlPizza));
             beer = new ImageIcon(ImageIO.read(urlBeer));
             ordi = new ImageIcon(ImageIO.read(urlOrdi));
@@ -162,7 +159,7 @@ public class Plateau extends JPanel{
             brain2 = new ImageIcon(ImageIO.read(urlBr2));
             pizza2 = new ImageIcon(ImageIO.read(urlPi2));
             ordi2 = new ImageIcon(ImageIO.read(urlOr2));
-                //Cartes Commerce
+            //Cartes Commerce
             mieCalE = new ImageIcon(ImageIO.read(urlMieE));
             mieCalO = new ImageIcon(ImageIO.read(urlMieO));
             oneS = new ImageIcon(ImageIO.read(urlOne));
@@ -175,7 +172,7 @@ public class Plateau extends JPanel{
             laclerc = new ImageIcon(ImageIO.read(urlLac));
             chambC = new ImageIcon(ImageIO.read(urlCham));
             basicFat = new ImageIcon(ImageIO.read(urlBas));
-                //Cartes Patrimoine
+            //Cartes Patrimoine
             savour = new ImageIcon(ImageIO.read(urlSav));
             cuc = new ImageIcon(ImageIO.read(urlCuc));
             steleB = new ImageIcon(ImageIO.read(urlSte));
@@ -189,7 +186,7 @@ public class Plateau extends JPanel{
             police = new ImageIcon(ImageIO.read(urlPol));
             museum = new ImageIcon(ImageIO.read(urlMus));
             citad = new ImageIcon(ImageIO.read(urlCit));
-                //Cartes Connaissances
+            //Cartes Connaissances
             matrice = new ImageIcon(ImageIO.read(urlMat));
             anglais = new ImageIcon(ImageIO.read(urlAng));
             etudeEc = new ImageIcon(ImageIO.read(urlEtuEc));
@@ -395,7 +392,7 @@ public class Plateau extends JPanel{
         JButton BtnC1 = new JButton(pizza);
         Carte1.add(BtnC1);
         BtnC1.setActionCommand("BtnC1");
-        BtnC1.addActionListener(this::actionPerformed);       //REVOIR COMMENT UTILISER CETTE FONCTION CAR PLUSIEUR ESPACES
+        //BtnC1.addActionListener(this::actionPerformed);       //REVOIR COMMENT UTILISER CETTE FONCTION CAR PLUSIEUR ESPACES
 
         JLabel Carte2 = new JLabel();
         Carte2.setLayout(new GridLayout(1, 1, 0, 0));
@@ -568,9 +565,6 @@ public class Plateau extends JPanel{
 
         //super.paintComponent(g);
 
-        /* g.drawImage(): une image, les coordonnées du coin supérieur gauche, les dimensions
-         * et un objet d'une classe implémentant l'interface java.awt.image.ImageObserver
-         */
      //JOUEURS
             //joueur 1 - coin haut gauche
         g.drawImage(plateauJoueur1,0,0,largeurPlat,longueurPlat,this);
@@ -611,6 +605,3 @@ public class Plateau {
         this.listeRessource.add(carteR);
     }
 */
-=======
-}
->>>>>>> bbbabdc992c1cf95736013d000d40ba37f171a56

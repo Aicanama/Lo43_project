@@ -6,26 +6,26 @@ import com.view.AbstractViewCard;
 import com.view.Fenetre;
 
 public class CardController {
-    public AbstractViewCard listView = null;
+    public AbstractViewCard buttonView = null;
 
     private Moteur model = null;
 
     public CardController (Moteur model){
         this.model = model;
-        listView = new Fenetre(/*this, model.getSsListeJoueur1()*/);
+        //buttonView = new Fenetre(/*this, model.getSsListeJoueur1()*/);
         addListenersToModel();
     }
 
     private void addListenersToModel() {
-        model.addCardListener(listView);
+        model.addCardListener(buttonView);
     }
 
     public void displayView(){
-        listView.display();
+        buttonView.display();
     }
 
     public void closeView(){
-        listView.close();
+        buttonView.close();
     }
 
     public void notifyCardChanged(SousListe SsListeJoueur) {

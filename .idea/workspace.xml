@@ -3,42 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="7b736fce-80e8-474d-80ab-31c775f0cb03" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/controller/CardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/AbstractMoteur.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/model/CarteCommerce.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/CarteConnaissance.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/model/CarteExamen.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/model/CartePatrimoine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/Comptche.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/model/GainG.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/PVGold.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/observer/CardChangedEvent.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/observer/CardListener.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/observer/Observable.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/observer/Observer.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/com/view/AbstractViewCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/Age.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/Carte.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/CarteRessource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/Joueur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/Moteur.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/Plateau.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/SousListe.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/view/Fenetre.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/view/Plateau.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/Age.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Age.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Carte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/CarteRessource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/CarteRessource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Joueur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/Moteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Moteur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Plateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/view/Fenetre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/Fenetre.java" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Rapport_Rolland_Melounou_Mallard.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Rapport_Rolland_Melounou_Mallard.pdf" beforeDir="false" />
@@ -51,10 +25,21 @@
       <change beforePath="$PROJECT_DIR$/SeqDiagramm/Sequence Diagram0.asta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SeqDiagramm/Sequence Diagramm.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UseCase Diagram0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/view/Fenetre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/view/Fenetre.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/view/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/view/Plateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/view/img/1Carte.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/view/img/7_Wonders.png" beforeDir="false" />
->>>>>>> bbbabdc992c1cf95736013d000d40ba37f171a56
+      <change beforePath="$PROJECT_DIR$/src/com/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/controller/CardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/AbstractMoteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/AbstractMoteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/Age.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Age.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Carte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/CarteRessource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/CarteRessource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/Comptche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Comptche.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/Moteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Moteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/PVGold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/PVGold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Plateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/observer/CardChangedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/observer/CardChangedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/view/Fenetre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/Fenetre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/view/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/Plateau.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/view/img/1Carte.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/view/img/7_Wonders.png" beforeDir="false" />
@@ -255,65 +240,26 @@
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1578050186246">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1578050186246" />
-    <state width="1237" height="89" key="GridCell.Tab.0.bottom" timestamp="1578049395465">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-<<<<<<< HEAD
-    <state width="1237" height="89" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1578049395465" />
-    <state width="1237" height="89" key="GridCell.Tab.0.center" timestamp="1578049395465">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="89" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1578049395465" />
-    <state width="1237" height="89" key="GridCell.Tab.0.left" timestamp="1578049395465">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="89" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1578049395465" />
-    <state width="1237" height="89" key="GridCell.Tab.0.right" timestamp="1578049395465">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="89" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578049395465" />
-    <state width="1237" height="203" key="GridCell.Tab.1.bottom" timestamp="1577579237035">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="203" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1577579237035" />
-    <state width="1237" height="203" key="GridCell.Tab.1.center" timestamp="1577579237035">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="203" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1577579237035" />
-    <state width="1237" height="203" key="GridCell.Tab.1.left" timestamp="1577579237035">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="203" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1577579237035" />
-    <state width="1237" height="203" key="GridCell.Tab.1.right" timestamp="1577579237035">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="1237" height="203" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1577579237035" />
-    <state x="316" y="39" key="NewModule_or_Project.wizard" timestamp="1578050202780">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="316" y="39" key="NewModule_or_Project.wizard/0.0.1280.680@0.0.1280.680" timestamp="1578050202780" />
-=======
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1576763479537" />
-    <state width="1322" height="168" key="GridCell.Tab.0.bottom" timestamp="1578047627625">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1578081216304">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="89" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1577108871509" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1578081216304" />
     <state width="1322" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578047627625" />
-    <state width="1322" height="168" key="GridCell.Tab.0.center" timestamp="1578047627625">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1578081216303">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="89" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1577108871508" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1578081216303" />
     <state width="1322" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578047627625" />
-    <state width="1322" height="168" key="GridCell.Tab.0.left" timestamp="1578047627624">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1578081216303">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="89" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1577108871508" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1578081216303" />
     <state width="1322" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578047627624" />
-    <state width="1322" height="168" key="GridCell.Tab.0.right" timestamp="1578047627625">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1578081216304">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="89" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1577108871508" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578081216304" />
     <state width="1322" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578047627625" />
     <state width="1237" height="203" key="GridCell.Tab.1.bottom" timestamp="1576773089878">
       <screen x="0" y="0" width="1280" height="680" />
@@ -331,7 +277,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="203" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1576773089878" />
->>>>>>> bbbabdc992c1cf95736013d000d40ba37f171a56
+    <state x="316" y="39" key="NewModule_or_Project.wizard" timestamp="1578050202780">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="316" y="39" key="NewModule_or_Project.wizard/0.0.1280.680@0.0.1280.680" timestamp="1578050202780" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1576143457454">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -340,35 +289,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1280.680@0.0.1280.680" timestamp="1576143639156" />
-<<<<<<< HEAD
     <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1578075141715">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1578075141715" />
-    <state x="450" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578075090290">
-=======
-    <state width="532" height="478" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1577703811746" />
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1578040563947">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1578040563947" />
-    <state x="450" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576772953149">
->>>>>>> bbbabdc992c1cf95736013d000d40ba37f171a56
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="450" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1578075090290" />
-    <state x="91" y="0" key="new project wizard" timestamp="1578050178179">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="91" y="0" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1578050178179" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1576146958335">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1576146958335" />
-    <state x="323" y="1" width="718" height="726" key="search.everywhere.popup" timestamp="1577626868519">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1576334861929" />
-    <state x="323" y="1" width="718" height="726" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1577626868519" />
+    <state x="450" y="257" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578075090290" />
   </component>
 </project>
