@@ -44,8 +44,6 @@ public class Joueur {
 
     }
 
-    public SousListe getSousListe() { return this.sousListe; }
-
     public int parcourir(ArrayList<Integer> checkList, ArrayList<CarteRessource> listeRessourceAC) {    //changer type des listeRessource
         int costp=0, j, i=0;
         ArrayList<CarteRessource> listeRessource = listeRessourceAC;

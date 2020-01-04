@@ -6,6 +6,7 @@ import com.observer.CardListener;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.EventListenerList;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -19,7 +20,6 @@ public class Moteur{
 
     private int ageActuel;
     private ImageIcon Imgcarte;
-    private URL urlCarte = getClass().getResource("img/1Carte.png");
     private Age age;
 
     protected ArrayList<Joueur> listeJoueur;
@@ -33,13 +33,12 @@ public class Moteur{
 
     public Moteur(int n_id) {
         this.ageActuel = n_id;
-
     }
 
     public Moteur(int n_id, SousListe newCards){
         this.ageActuel = n_id;
-
         this.ssListeJoueur1 = newCards;
+
         //ecoute des changements = notofication aux autres composants
         listeners = new EventListenerList();
 
@@ -62,6 +61,10 @@ public class Moteur{
         r4.add(4);
         r5.add(5);
         r6.add(6);
+
+        Imgcarte = new ImageIcon( "C:\\Users\\inesm\\Desktop\\Lo43_project\\src\\com\\view\\img\\1Carte.png");
+
+
 
         list.add(new CarteRessource(1, Imgcarte, new ArrayList<Integer>(), 2, 7, 1));
         list.add(new CarteRessource(2, Imgcarte, new ArrayList<Integer>(), 2, 7,1));
@@ -101,6 +104,8 @@ public class Moteur{
         Collections.shuffle(liste);
     }
 
+//----------------------------------------Listener handler---------------
+
     public SousListe getSsListeJoueur() {
         return ssListeJoueur1;
     }
@@ -110,7 +115,6 @@ public class Moteur{
 
         fireCardChanged();
     }
-
 
     /// Les méthodes gérant les vues sous forme de listener :
     public void addCardListener(CardListener listener) {
@@ -133,7 +137,7 @@ public class Moteur{
             listener.cardChangedRound(new CardChangedEvent(this, getSsListeJoueur()));
         }
     }
-
+//-----------------------------------------------------------------------------------------------
 
     //Léo
 

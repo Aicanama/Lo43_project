@@ -1,18 +1,18 @@
 package com.controller;
 
+import com.model.JFrameButtonCards;
 import com.model.Moteur;
 import com.model.SousListe;
-import com.view.AbstractViewCard;
 import com.view.Fenetre;
 
 public class CardController {
-    public AbstractViewCard buttonView = null;
+    public JFrameButtonCards buttonView = null;
 
     private Moteur model = null;
 
     public CardController (Moteur model){
         this.model = model;
-        //buttonView = new Fenetre(/*this, model.getSsListeJoueur1()*/);
+        buttonView = new JFrameButtonCards(this, model.getSsListeJoueur());
         addListenersToModel();
     }
 
