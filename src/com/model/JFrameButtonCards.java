@@ -86,15 +86,22 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         allButtonCards.add(btnC7);
 
         int i=0;
+        int k=ssListeJoueur.cartes.size();
 
         for(JButton button : allButtonCards){
+            if(k>0) {
                 button.setIcon(ssListeJoueur.cartes.get(i).image);
                 //set action listeners for button
                 button.addActionListener(this);
                 if (i < 4) contentPaneCarteHigh.add(button);
                 else contentPaneCarteLow.add(button);
                 i++;
+                k--;
+
+            }
+
         }
+
 
         // define a custom short action command for the button
        btnC1.setActionCommand("Carte1");
@@ -127,22 +134,45 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
 
     @Override
     public void cardChangedRound(CardChangedEvent event) {
-
-        System.out.println("cardchangedround :: ");
-
         int i=0; //faire separation entre carte hautes et basses
         int k=event.getNewCartesJoueur().cartes.size(); //taille sousliste du nouveau tas du joueur (sans celle enlevé précedemnt
-        System.out.println(k);
-        for(JButton button : allButtonCards){
+
+       for(JButton button : allButtonCards){
            if(k>0) {
                button.setIcon(event.getNewCartesJoueur().cartes.get(i).image);
                if (i < 4) contentPaneCarteHigh.add(button);
                else contentPaneCarteLow.add(button);
                i++;
                k--;
-           }
-
+          }
         }
+
+            switch (event.getNewCartesJoueur().cartes.size()) {
+                case 6 : contentPaneCarteLow.remove(btnC7);
+                    contentPaneCarteLow.repaint();
+                break;
+                case 5 : contentPaneCarteLow.remove(btnC6);
+                    contentPaneCarteLow.repaint();
+                    break;
+                case 4 : contentPaneCarteLow.remove(btnC5);
+                    contentPaneCarteLow.repaint();
+                    break;
+                case 3 : contentPaneCarteHigh.remove(btnC4);
+                    contentPaneCarteHigh.repaint();
+                    break;
+                case 2 : contentPaneCarteHigh.remove(btnC3);
+                    contentPaneCarteHigh.repaint();
+                    break;
+                case 1: contentPaneCarteHigh.remove(btnC2);
+                    JOptionPane.showMessageDialog(frame,
+                            "fin d'un age");
+                    btnC1.setEnabled(false);
+                    contentPaneCarteHigh.repaint();
+                    break;
+                default:
+                    System.out.println("Jframe :: cardChangedRound : plus qu'une seule carte dans ssliste = fin age");
+            }
+
 
     }
 
@@ -189,7 +219,6 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
             System.out.println("Clique Next");
             getController().notifyCardChanged(ssListeJoueur);
         }
-        System.out.println( " après action performed :: "+ssListeJoueur.cartes.size());
 
 
     }
