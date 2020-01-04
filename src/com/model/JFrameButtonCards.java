@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 public class JFrameButtonCards extends AbstractViewCard implements ActionListener {
 
@@ -24,6 +25,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     private Plateau plateau = null;
     protected SousListe ssListeJoueur;
 
+    private Collection<JButton> allButtonCards;
     private JButton btnC1;
     private JButton btnC2;
     private JButton btnC3;
@@ -44,6 +46,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     private void buildFrame(SousListe ssListeJoueur) {
         //fenetre
         frame = new JFrame();
+
         ///Taille ecran
         Dimension tailleEcran = new Dimension((int)frame.getToolkit().getScreenSize().getWidth(), (int)frame.getToolkit().getScreenSize().getHeight()-35);
         int hauteur = (int)tailleEcran.getHeight()-35;
@@ -73,7 +76,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         btnNext = new JButton("next player");
 
         //---- btn carte -----------------------
-        Collection<JButton> allButtonCards = new ArrayList<JButton>();
+        allButtonCards = new ArrayList<JButton>();
         allButtonCards.add(btnC1);
         allButtonCards.add(btnC2);
         allButtonCards.add(btnC3);
@@ -104,6 +107,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
 
 
        //----btn next -------------
+        btnNext.addActionListener(this);
         btnNext.setActionCommand("Next");
 
 
@@ -124,8 +128,21 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     @Override
     public void cardChangedRound(CardChangedEvent event) {
 
-        //envoi au modèle les nouvelles cartes
-        getController().notifyCardChanged(event.getNewCartesJoueur());
+        System.out.println("cardchangedround :: ");
+
+        int i=0; //faire separation entre carte hautes et basses
+        int k=event.getNewCartesJoueur().cartes.size(); //taille sousliste du nouveau tas du joueur (sans celle enlevé précedemnt
+        System.out.println(k);
+        for(JButton button : allButtonCards){
+           if(k>0) {
+               button.setIcon(event.getNewCartesJoueur().cartes.get(i).image);
+               if (i < 4) contentPaneCarteHigh.add(button);
+               else contentPaneCarteLow.add(button);
+               i++;
+               k--;
+           }
+
+        }
 
     }
 
@@ -134,36 +151,44 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         String action = e.getActionCommand();
         //ici lorsque clique
         if (action.equals("Carte1")) {
+            System.out.println("Clique Carte 1");
             getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(0));
             btnC1.setIcon(null);
         }
         else if (action.equals("Carte2")) {
+            System.out.println("Clique Carte 2");
             getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(1));
             btnC2.setIcon(null);
         }
         else if (action.equals("Carte3")) {
+            System.out.println("Clique Carte 3");
             getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(2));
             btnC3.setIcon(null);
         }
         else if (action.equals("Carte4")) {
+            System.out.println("Clique Carte 4");
             getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(3));
             btnC4.setIcon(null);
         }
         else if (action.equals("Carte5")) {
+            System.out.println("Clique Carte 5");
             getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(4));
             btnC5.setIcon(null);
         }
         else if (action.equals("Carte6")) {
+            System.out.println("Clique Carte 6");
             getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(5));
             btnC6.setIcon(null);
         }
         else if (action.equals("Carte7")) {
+            System.out.println("Clique Carte 7");
             getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(6));
             btnC7.setIcon(null);
         }
-        else System.out.println("actionperformed :: erreur action ou carte ou carte pas choisi");
-
-
+        if (action.equals("Next")){
+            System.out.println("Clique Next");
+            getController().notifyCardChanged(ssListeJoueur);
+        }
         System.out.println( " après action performed :: "+ssListeJoueur.cartes.size());
 
 

@@ -64,42 +64,173 @@ public class Moteur{
         r5.add(5);
         r6.add(6);
 
-        Imgcarte = new ImageIcon( "C:\\Users\\inesm\\Desktop\\Lo43_project\\src\\com\\view\\img\\1Carte.png");
-        Imgcarte2 = new ImageIcon( "C:\\Users\\inesm\\Desktop\\Lo43_project\\src\\com\\view\\img\\pizza.png");
+        //cartes
+        //age I
+        URL urlPizza = getClass().getResource("img/pizza.png");
+        URL urlPuzzle = getClass().getResource("img/puzzle.png");
+        URL urlBook = getClass().getResource("img/book.png");
+        URL urlBrain = getClass().getResource("img/brain.png");
+        URL urlBeer = getClass().getResource("img/beer.png");
+        URL urlGlobe = getClass().getResource("img/globe.png");
+        URL urlOrdi = getClass().getResource("img/ordi.png");
+        URL urlPiOr = getClass().getResource("img/pizza_ordi.png");
+        URL urlOrBr = getClass().getResource("img/ordi_brain.png");
+        URL urlBrBe = getClass().getResource("img/brain_beer.png");
+        URL urlMieE = getClass().getResource("img/mieCalinouEst.png");
+        URL urlMieO = getClass().getResource("img/mieCalinouOuest.png");
+        URL urlOne = getClass().getResource("img/oneShoot.png");
+        URL urlBou = getClass().getResource("img/bouleDisco.png");
+        URL urlSav = getClass().getResource("img/savoureuse.png");
+        URL urlCuc = getClass().getResource("img/CUC.png");
+        URL urlSte = getClass().getResource("img/steleBartholdi.png");
+        URL urlCin = getClass().getResource("img/cinema.png");
+        URL urlMat = getClass().getResource("img/matrice.png");
+        URL urlAng = getClass().getResource("img/anglais.png");
+        URL urlEtuEc = getClass().getResource("img/etudesEcrites.png");
+
+        //Age II
+        URL urlBe2 = getClass().getResource("img/beer2.png");
+        URL urlBr2 = getClass().getResource("img/brain2.png");
+        URL urlPi2 = getClass().getResource("img/pizza2.png");
+        URL urlOr2 = getClass().getResource("img/ordi2.png");
+        URL urlCave = getClass().getResource("img/caveAVins.png");
+        URL urlNo = getClass().getResource("img/nooz.png");
+        URL urlBar = getClass().getResource("img/bar.png");
+        URL urlLitCar = getClass().getResource("img/littleCarouf.png");
+        URL urlLion = getClass().getResource("img/lionBartholdi.png");
+        URL urlPoud = getClass().getResource("img/poudriere.png");
+        URL urlFont = getClass().getResource("img/fontaine.png");
+        URL urlPalais = getClass().getResource("img/palaisJustice.png");
+        URL urlCoda = getClass().getResource("img/codage.png");
+        URL urlBula = getClass().getResource("img/bulats.png");
+        URL urlLan2 = getClass().getResource("img/langue2.png");
+        URL urlEloq = getClass().getResource("img/eloquence.png");
+        //Age III
+        URL urlFoy = getClass().getResource("img/foyer.png");
+        URL urlLac = getClass().getResource("img/laclerc.png");
+        URL urlCham = getClass().getResource("img/chambreCommerce.png");
+        URL urlBas = getClass().getResource("img/basicFat.png");
+        URL urlMai = getClass().getResource("img/mairie.png");
+        URL urlBelf = getClass().getResource("img/belfortHotel.png");
+        URL urlPol = getClass().getResource("img/police.png");
+        URL urlMus = getClass().getResource("img/museum.png");
+        URL urlCit = getClass().getResource("img/citadelle.png");
+        URL urlBil = getClass().getResource("img/bilingue.png");
+        URL urlEtuEt = getClass().getResource("img/etudeEtranger.png");
+        URL urlLog = getClass().getResource("img/logiciel.png");
+        URL urlScie = getClass().getResource("img/sciences2.png");
+        URL urlHist = getClass().getResource("img/histoire2.png");
+
+        //cartes ressources
+        ImageIcon pizza = null,
+                beer= null,
+                ordi=null,
+                brain=null,
+                book=null,
+                globe=null,
+                puzzle=null,
+                pizOrd=null,
+                ordBra=null,
+                braBee=null;
+        //cartes commerce
+         ImageIcon mieCalE = null,
+                mieCalO=null, oneS=null, boulD=null, caveVin=null, nooz=null, bar=null, litCarouf=null, foyer=null, laclerc=null, chambC=null, basicFat=null;
+        //cartes patrimoine
+         ImageIcon savour=null, cuc=null, steleB=null, cine=null, lionB=null, poudr=null, fonta=null, palaisJ=null, mairie=null, belfHot=null, police=null, museum=null, citad=null;
+        //cartes connaissances
+         ImageIcon matrice=null, anglais=null, etudeEc=null, codage=null, bulats=null, langue2=null, eloque=null, bilingue=null, etudeEtr=null, logiciel=null, science2=null, histoire2=null;
 
 
-        list.add(new CarteRessource(1, Imgcarte, new ArrayList<Integer>(), 2, 7, 1));
-        list.add(new CarteRessource(2, Imgcarte, new ArrayList<Integer>(), 2, 7,1));
-        list.add(new CarteRessource(3, Imgcarte2, new ArrayList<Integer>(), 1, 7,1));
-        list.add(new CarteRessource(0, Imgcarte2, new ArrayList<Integer>(), 0, 7,1));
-        list.add(new CarteRessource(0, Imgcarte2, new ArrayList<Integer>(), 3, 7,1));
-        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 3, 7,1));
-        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 4, 7,1));
-        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 5, 7,1));
-        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 6, 7,1));
-        list.add(new CarteRessource(1, Imgcarte, new ArrayList<Integer>(), 2, 1,1));
-        list.add(new CarteRessource(1, Imgcarte, new ArrayList<Integer>(), 1, 0,1));
-        list.add(new CarteRessource(1, Imgcarte, new ArrayList<Integer>(), 0, 3,1));
+        try {
+            //Cartes Ressources
+            pizza = new ImageIcon(ImageIO.read(urlPizza));
+            beer = new ImageIcon(ImageIO.read(urlBeer));
+            ordi = new ImageIcon(ImageIO.read(urlOrdi));
+            brain = new ImageIcon(ImageIO.read(urlBrain));
+            book = new ImageIcon(ImageIO.read(urlBook));
+            globe = new ImageIcon(ImageIO.read(urlGlobe));
+            puzzle = new ImageIcon(ImageIO.read(urlPuzzle));
+            pizOrd = new ImageIcon(ImageIO.read(urlPiOr));
+            ordBra = new ImageIcon(ImageIO.read(urlOrBr));
+            braBee = new ImageIcon(ImageIO.read(urlBrBe));
 
-        list.add(new CartePatrimoine(0,Imgcarte,new ArrayList<Integer>(),3));
-        list.add(new CartePatrimoine(0,Imgcarte,new ArrayList<Integer>(),2));
-        list.add(new CartePatrimoine(0,Imgcarte,new ArrayList<Integer>(),2));
-        list.add(new CartePatrimoine(0,Imgcarte,r1,3));
+            //Cartes Commerce
+            mieCalE = new ImageIcon(ImageIO.read(urlMieE));
+            mieCalO = new ImageIcon(ImageIO.read(urlMieO));
+            oneS = new ImageIcon(ImageIO.read(urlOne));
+            boulD = new ImageIcon(ImageIO.read(urlBou));
+            caveVin = new ImageIcon(ImageIO.read(urlCave));
+            nooz = new ImageIcon(ImageIO.read(urlNo));
+            bar = new ImageIcon(ImageIO.read(urlBar));
+            litCarouf = new ImageIcon(ImageIO.read(urlLitCar));
+            foyer = new ImageIcon(ImageIO.read(urlFoy));
+            laclerc = new ImageIcon(ImageIO.read(urlLac));
+            chambC = new ImageIcon(ImageIO.read(urlCham));
+            basicFat = new ImageIcon(ImageIO.read(urlBas));
+            //Cartes Patrimoine
+            savour = new ImageIcon(ImageIO.read(urlSav));
+            cuc = new ImageIcon(ImageIO.read(urlCuc));
+            steleB = new ImageIcon(ImageIO.read(urlSte));
+            cine = new ImageIcon(ImageIO.read(urlCin));
+            lionB = new ImageIcon(ImageIO.read(urlLion));
+            poudr = new ImageIcon(ImageIO.read(urlPoud));
+            fonta = new ImageIcon(ImageIO.read(urlFont));
+            palaisJ = new ImageIcon(ImageIO.read(urlPalais));
+            mairie = new ImageIcon(ImageIO.read(urlMai));
+            belfHot = new ImageIcon(ImageIO.read(urlBelf));
+            police = new ImageIcon(ImageIO.read(urlPol));
+            museum = new ImageIcon(ImageIO.read(urlMus));
+            citad = new ImageIcon(ImageIO.read(urlCit));
+            //Cartes Connaissances
+            matrice = new ImageIcon(ImageIO.read(urlMat));
+            anglais = new ImageIcon(ImageIO.read(urlAng));
+            etudeEc = new ImageIcon(ImageIO.read(urlEtuEc));
+            codage = new ImageIcon(ImageIO.read(urlCoda));
+            bulats = new ImageIcon(ImageIO.read(urlBula));
+            langue2 = new ImageIcon(ImageIO.read(urlLan2));
+            eloque = new ImageIcon(ImageIO.read(urlEloq));
+            bilingue = new ImageIcon(ImageIO.read(urlBil));
+            etudeEtr = new ImageIcon(ImageIO.read(urlEtuEt));
+            logiciel = new ImageIcon(ImageIO.read(urlLog));
+            science2 = new ImageIcon(ImageIO.read(urlScie));
+            histoire2 = new ImageIcon(ImageIO.read(urlHist));
+        }
+        catch(IOException e){
+            e.printStackTrace();
+        }
 
-        list.add(new CarteExamen(0,Imgcarte,r2,1));
-        list.add(new CarteExamen(0,Imgcarte,r0,1));
-        list.add(new CarteExamen(0,Imgcarte,r0,1));
-        list.add(new CarteExamen(0,Imgcarte,r3,1));
+        list.add(new CarteRessource(1, pizza, new ArrayList<Integer>(), 2, 7, 1));
+        list.add(new CarteRessource(2, beer, new ArrayList<Integer>(), 2, 7,1));
+        list.add(new CarteRessource(3, brain, new ArrayList<Integer>(), 1, 7,1));
+        list.add(new CarteRessource(0, book, new ArrayList<Integer>(), 0, 7,1));
+        list.add(new CarteRessource(0, globe, new ArrayList<Integer>(), 3, 7,1));
+        list.add(new CarteRessource(0, puzzle, new ArrayList<Integer>(), 3, 7,1));
+        list.add(new CarteRessource(0, pizOrd, new ArrayList<Integer>(), 4, 7,1));
+        list.add(new CarteRessource(0, ordBra, new ArrayList<Integer>(), 5, 7,1));
+        list.add(new CarteRessource(0, braBee, new ArrayList<Integer>(), 6, 7,1));
+        list.add(new CarteRessource(1, mieCalE, new ArrayList<Integer>(), 2, 1,1));
+        list.add(new CarteRessource(1, mieCalO, new ArrayList<Integer>(), 1, 0,1));
+        list.add(new CarteRessource(1, mairie, new ArrayList<Integer>(), 0, 3,1));
 
-        list.add(new CarteConnaissance(0,Imgcarte,r5,1));
-        list.add(new CarteConnaissance(0,Imgcarte,r6,3));
-        list.add(new CarteConnaissance(0,Imgcarte,r4,2));
-        list.add(new CarteConnaissance(0,Imgcarte,r4,2));
+        list.add(new CartePatrimoine(0,ordi,new ArrayList<Integer>(),3));
+        list.add(new CartePatrimoine(0,ordi,new ArrayList<Integer>(),2));
+        list.add(new CartePatrimoine(0,ordi,new ArrayList<Integer>(),2));
+        list.add(new CartePatrimoine(0,ordi,r1,3));
 
-       /* list.add(new GainG(0,Imgcarte,new ArrayList<Integer>(),0));
-        list.add(new Comptche(0,Imgcarte,new ArrayList<Integer>(),1));
-        list.add(new Comptche(0,Imgcarte,new ArrayList<Integer>(),2));
-        list.add(new Comptche(0,Imgcarte,new ArrayList<Integer>(),3));*/
+        list.add(new CarteExamen(0,ordi,r2,1));
+        list.add(new CarteExamen(0,ordi,r0,1));
+        list.add(new CarteExamen(0,ordi,r0,1));
+        list.add(new CarteExamen(0,ordi,r3,1));
+
+        list.add(new CarteConnaissance(0,ordi,r5,1));
+        list.add(new CarteConnaissance(0,ordi,r6,3));
+        list.add(new CarteConnaissance(0,ordi,r4,2));
+        list.add(new CarteConnaissance(0,ordi,r4,2));
+
+       /* list.add(new GainG(0,ordi,new ArrayList<Integer>(),0));
+        list.add(new Comptche(0,ordi,new ArrayList<Integer>(),1));
+        list.add(new Comptche(0,ordi,new ArrayList<Integer>(),2));
+        list.add(new Comptche(0,ordi,new ArrayList<Integer>(),3));*/
     }
 
     public void shuffle(ArrayList liste) {
