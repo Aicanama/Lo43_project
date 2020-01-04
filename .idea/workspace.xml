@@ -2,91 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b736fce-80e8-474d-80ab-31c775f0cb03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/model/JFrameButtonCards.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/1Carte.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/7_Wonders.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/CUC.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/anglais.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/basicFat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/beer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/beer2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/belfortHotel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/bilingue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/book.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/bouleDisco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/brain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/brain2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/brain_beer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/bulats.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/caveAVins.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/chambreCommerce.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/cinema.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/citadelle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/codage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/eloquence.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/etudeEtranger.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/etudesEcrites.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/fontaine.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/foyer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/globe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/gold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/histoire2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/ibeer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/ibook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/ibrain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/ibrain_beer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/icomputer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/iglobe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/iordi_brain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/ipizza.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/ipizza_ordi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/ipuzzle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/laclerc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/langue2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/lionBartholdi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/littleCarouf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/logiciel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/mairie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/matrice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/mieCalinouEst.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/mieCalinouOuest.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/museum.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/nooz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/oneShoot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/ordi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/ordi2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/ordi_brain.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/palaisJustice.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/pizza.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/pizza2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/pizza_ordi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/plateau_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/plateau_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/plateau_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/plateau_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/plateau_5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/plateau_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/plateau_7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/police.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/poudriere.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/puzzle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/savoureuse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/sciences2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/model/img/steleBartholdi.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/observer/Observable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/observer/Observer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/view/AbstractViewCard.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/controller/CardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/AbstractMoteur.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/JFrameButtonCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/JFrameButtonCards.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/model/Moteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Moteur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/observer/Observable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/observer/Observer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/view/AbstractViewCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/controller/AbstractViewCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/view/Fenetre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/Fenetre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/view/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/Plateau.java" afterDir="false" />
     </list>
@@ -117,7 +37,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/model" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -294,25 +214,25 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1576763479537" />
-    <state width="1237" height="179" key="GridCell.Tab.0.bottom" timestamp="1578147564252">
+    <state width="1237" height="185" key="GridCell.Tab.0.bottom" timestamp="1578153519901">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="179" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1578147564252" />
+    <state width="1237" height="185" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1578153519901" />
     <state width="1322" height="168" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578047627625" />
-    <state width="1237" height="179" key="GridCell.Tab.0.center" timestamp="1578147564251">
+    <state width="1237" height="185" key="GridCell.Tab.0.center" timestamp="1578153519901">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="179" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1578147564251" />
+    <state width="1237" height="185" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1578153519901" />
     <state width="1322" height="168" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578047627625" />
-    <state width="1237" height="179" key="GridCell.Tab.0.left" timestamp="1578147564251">
+    <state width="1237" height="185" key="GridCell.Tab.0.left" timestamp="1578153519901">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="179" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1578147564251" />
+    <state width="1237" height="185" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1578153519901" />
     <state width="1322" height="168" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578047627624" />
-    <state width="1237" height="179" key="GridCell.Tab.0.right" timestamp="1578147564251">
+    <state width="1237" height="185" key="GridCell.Tab.0.right" timestamp="1578153519901">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="179" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578147564251" />
+    <state width="1237" height="185" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578153519901" />
     <state width="1322" height="168" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578047627625" />
     <state width="1237" height="229" key="GridCell.Tab.1.bottom" timestamp="1578146842417">
       <screen x="0" y="0" width="1280" height="680" />

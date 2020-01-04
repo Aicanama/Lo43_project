@@ -5,8 +5,11 @@ import com.model.Moteur;
 import com.model.SousListe;
 import com.view.Fenetre;
 
+import javax.swing.*;
+
 public class CardController {
     public JFrameButtonCards buttonView = null;
+    public Fenetre fenetre = null;
 
     private Moteur model = null;
 

@@ -1,6 +1,8 @@
 package com.view;
 
 
+import com.model.JFrameButtonCards;
+
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -27,6 +29,10 @@ public class Fenetre  extends  JFrame{
 
         this.pack();    // pack fait en sorte que tous les composants preferredSize, ou au dessus
         this.setVisible(true); //rend visible
+    }
+
+    public static void main(String[] args) {
+        new Fenetre();
     }
 
 

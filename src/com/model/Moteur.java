@@ -20,6 +20,7 @@ public class Moteur{
 
     private int ageActuel;
     private ImageIcon Imgcarte;
+    private ImageIcon Imgcarte2;
     private Age age;
 
     protected ArrayList<Joueur> listeJoueur;
@@ -30,6 +31,7 @@ public class Moteur{
 
 
     private EventListenerList listeners;
+
 
     public Moteur(int n_id) {
         this.ageActuel = n_id;
@@ -63,14 +65,14 @@ public class Moteur{
         r6.add(6);
 
         Imgcarte = new ImageIcon( "C:\\Users\\inesm\\Desktop\\Lo43_project\\src\\com\\view\\img\\1Carte.png");
-
+        Imgcarte2 = new ImageIcon( "C:\\Users\\inesm\\Desktop\\Lo43_project\\src\\com\\view\\img\\pizza.png");
 
 
         list.add(new CarteRessource(1, Imgcarte, new ArrayList<Integer>(), 2, 7, 1));
         list.add(new CarteRessource(2, Imgcarte, new ArrayList<Integer>(), 2, 7,1));
-        list.add(new CarteRessource(3, Imgcarte, new ArrayList<Integer>(), 1, 7,1));
-        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 0, 7,1));
-        list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 3, 7,1));
+        list.add(new CarteRessource(3, Imgcarte2, new ArrayList<Integer>(), 1, 7,1));
+        list.add(new CarteRessource(0, Imgcarte2, new ArrayList<Integer>(), 0, 7,1));
+        list.add(new CarteRessource(0, Imgcarte2, new ArrayList<Integer>(), 3, 7,1));
         list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 3, 7,1));
         list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 4, 7,1));
         list.add(new CarteRessource(0, Imgcarte, new ArrayList<Integer>(), 5, 7,1));

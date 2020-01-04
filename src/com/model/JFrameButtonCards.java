@@ -4,7 +4,7 @@ import com.controller.AbstractViewCard;
 import com.controller.CardController;
 import com.model.SousListe;
 import com.observer.CardChangedEvent;
-import com.view.Fenetre;
+import com.view.Plateau;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -19,11 +19,18 @@ import java.util.Collection;
 public class JFrameButtonCards extends AbstractViewCard implements ActionListener {
 
     private JFrame frame = null;
-    private JPanel contentPane = null;
-    private JButton button1 = null;
+    private JPanel contentPaneCarteHigh = null;
+    private JPanel  contentPaneCarteLow = null;
+    private Plateau plateau = null;
 
-    private JButton button2 = null;
-    private JButton button3 = null;
+    private JButton btnC1 = null;
+    private JButton btnC2 = null;
+    private JButton btnC3 = null;
+    private JButton btnC4 = null;
+    private JButton btnC5 = null;
+    private JButton btnC6 = null;
+    private JButton btnC7 = null;
+
     private  ImageIcon pizza;
 
     public JFrameButtonCards(CardController controller, SousListe ssListeJoueur) {
@@ -32,27 +39,55 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     }
 
     private void buildFrame(SousListe ssListeJoueur) {
+        //fenetre
         frame = new JFrame();
-        contentPane = new JPanel();
+        ///Taille ecran
+        Dimension tailleEcran = new Dimension((int)frame.getToolkit().getScreenSize().getWidth(), (int)frame.getToolkit().getScreenSize().getHeight()-35);
+        int hauteur = (int)tailleEcran.getHeight()-35;
+        int largeur = (int)tailleEcran.getWidth();
 
-        button1 = new JButton("Mettre à jour1");
-        button2 = new JButton("Mettre à jour2");
-        button3 = new JButton("Mettre à jour3");
+        frame.setTitle("---Game---"); //titre
+        frame.setPreferredSize(tailleEcran); //plein ecran
+        frame.setResizable(false);
 
-        Collection<JButton> myButton = new ArrayList<JButton>();
-        myButton.add(button1);
-        myButton.add(button2);
-        myButton.add(button3);
+
+        //content pane
+        contentPaneCarteHigh = new JPanel();
+        contentPaneCarteLow = new JPanel();
+        plateau = new Plateau();
+
+        contentPaneCarteHigh.setLayout(new GridLayout(1,4,1,0));
+        btnC1 = new JButton();
+        btnC2 = new JButton();
+        btnC3 = new JButton();
+        btnC4 = new JButton();
+
+        contentPaneCarteHigh.setLayout(new GridLayout(1,3,1,0));
+        btnC5 = new JButton();
+        btnC6 = new JButton();
+        btnC7 = new JButton();
+
+        Collection<JButton> allButtonCards = new ArrayList<JButton>();
+        allButtonCards.add(btnC1);
+        allButtonCards.add(btnC2);
+        allButtonCards.add(btnC3);
+        allButtonCards.add(btnC4);
+        allButtonCards.add(btnC5);
+        allButtonCards.add(btnC6);
+        allButtonCards.add(btnC7);
+
         int i=0;
-        for(JButton button : myButton){
+        for(JButton button : allButtonCards){
             button.setIcon(ssListeJoueur.cartes.get(i).image);
-            button.setText(String.valueOf(ssListeJoueur.cartes.get(i).costGold));
             button.addActionListener(this);
-            contentPane.add(button);
+            if(i<4) contentPaneCarteHigh.add(button);
+            else contentPaneCarteLow.add(button);
             i++;
         }
-        frame.setContentPane(contentPane);
-        frame.setTitle("JFRame");
+        plateau.add(contentPaneCarteHigh,7);
+        plateau.add(contentPaneCarteLow,10);
+        frame.setContentPane(plateau);
+
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -74,20 +109,20 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     public void cardChangedRound(CardChangedEvent event) {
 
         int i = 0;
-        Collection<JButton> myButton = new ArrayList<JButton>();
-        for(JButton button : myButton){
+        Collection<JButton> allButtonCards = new ArrayList<JButton>();
+        for(JButton button : allButtonCards){
             button.setIcon(event.getNewCartesJoueur().cartes.get(i).image);
             button.setText("maj");
             button.addActionListener(this);
-            contentPane.add(button);
+            contentPaneCarteHigh.add(button);
             i++;
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Ca marche ");
-        button1.setText("ok ");
+        System.out.println("clique sur boutton carte");
+
 
     }
 }

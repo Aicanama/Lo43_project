@@ -32,7 +32,7 @@ public class Main {
 
         //listJoueur.get(0).showSousListe();
         System.out.println(" Main :: arraylist Joueur : " + listJoueur.get(0).sousListe.cartes.get(2).image );
-        /* meme facon d'arriver aux cartes du joueur 0 avoir la 2ème carte
+        /* meme facon d'arriver aux cartes du joueur 1 avoir la 2ème carte
         listJoueur.get(0).sousListe.cartes.get(2).costGold
         = age.cartes.get(2).costGold
         = ssListeJoueur1.cartes.get(2).costGold

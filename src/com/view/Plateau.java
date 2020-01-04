@@ -239,10 +239,10 @@ public class Plateau extends JPanel{
         myLabelsGold.add(esp5);
         myLabelsGold.add(esp6);
         myLabelsGold.add(ico1);
-        myLabelsGold.add(esp8);
+        //myLabelsGold.add(esp8); plus besoin vu que définit dans la fenetre
         myLabelsGold.add(ico2);
         myLabelsGold.add(ico3);
-        myLabelsGold.add(esp11);
+        //myLabelsGold.add(esp11);
         myLabelsGold.add(ico4);
         myLabelsGold.add(esp13);
         myLabelsGold.add(esp14);
@@ -262,7 +262,7 @@ public class Plateau extends JPanel{
         	//icon
         	String name = label.getText(); //texte donné pas le nom du label
 
-        	if(name.startsWith("ico1") || name.startsWith("Ico2") || name.startsWith("Ico3") || name.startsWith("Ico4")) {
+        	if(name.startsWith("Ico1") || name.startsWith("Ico2") || name.startsWith("Ico3") || name.startsWith("Ico4")) {
         		label.setIcon(gold);
         	}
 
@@ -336,36 +336,35 @@ public class Plateau extends JPanel{
 
 
             //Grillage pour placer les cartes
-        Border borderLabelForCarte = BorderFactory.createLineBorder(Color.YELLOW, 1);
+        Border borderLabelForCarte = BorderFactory.createLineBorder(Color.MAGENTA, 5);
         esp2.setLayout(new GridLayout(1,1,1,0));
-        esp2.setBorder(borderLabelForCarte);
+        esp2.setBorder( BorderFactory.createLineBorder(Color.darkGray, 1));
         esp5.setLayout(new GridLayout(1,1,1,0));
-        esp5.setBorder(borderLabelForCarte);
+        esp5.setBorder(BorderFactory.createLineBorder(Color.darkGray, 1));
         esp13.setLayout(new GridLayout(1,1,1,0));
-        esp13.setBorder(borderLabelForCarte);
+        esp13.setBorder(BorderFactory.createLineBorder(Color.darkGray, 1));
         esp17.setLayout(new GridLayout(1,1,1,0));
-        esp17.setBorder(borderLabelForCarte);
-        esp8.setLayout(new GridLayout(1,1,1,0));
+        esp17.setBorder(BorderFactory.createLineBorder(Color.darkGray, 1));
+        esp8.setLayout(new GridLayout(1,1/*4*/,1,0));
         esp8.setBorder(borderLabelForCarte);
-        esp11.setLayout(new GridLayout(1,1,1,0));
+        esp11.setLayout(new GridLayout(1,1/*3*/,1,0));
         esp11.setBorder(borderLabelForCarte);
         esp14.setLayout(new GridLayout(1,1,1,0));
-        esp14.setBorder(borderLabelForCarte);
+        esp14.setBorder(BorderFactory.createLineBorder(Color.darkGray, 1));
 
             //Grillage pour placer les icones
         Border borderLabelForIcone = BorderFactory.createLineBorder(Color.RED, 1);
         ico1.setLayout(new GridLayout(1,1,0,0));
         ico1.setBorder(borderLabelForIcone);
         ico2.setLayout(new GridLayout(1,1,0,0));
-        ico2.setBorder(borderLabelForIcone);
+        ico2.setBorder(BorderFactory.createLineBorder(Color.ORANGE, 5));
         ico3.setLayout(new GridLayout(1,1,0,0));
-        ico3.setBorder(borderLabelForIcone);
+        ico3.setBorder(BorderFactory.createLineBorder(Color.ORANGE, 5));
         ico4.setLayout(new GridLayout(1,1,0,0));
         ico4.setBorder(borderLabelForIcone);
 
 
-    ///Definition Label Carte (paquet de carte)
-        //carte du haut (4)
+
 
         //Espaces pour les plateaux
         Border borderLabelForPlat = BorderFactory.createLineBorder(Color.GREEN , 1);
@@ -386,98 +385,8 @@ public class Plateau extends JPanel{
         esp18.setLayout(new GridLayout(2,2,0,0));
         esp18.setBorder(borderLabelForPlat);
 
-
-        //Création carte
-            //labels pour les cartes
-        JLabel Carte1 = new JLabel();
-        Carte1.setLayout(new GridLayout(1, 1, 0, 0));
-        JButton BtnC1 = new JButton(pizza);
-        Carte1.add(BtnC1);
-        BtnC1.setActionCommand("BtnC1");
-        //BtnC1.addActionListener(this::actionPerformed);       //REVOIR COMMENT UTILISER CETTE FONCTION CAR PLUSIEUR ESPACES
-
-        JLabel Carte2 = new JLabel();
-        Carte2.setLayout(new GridLayout(1, 1, 0, 0));
-        JButton BtnC2 = new JButton(oneS);
-        Carte2.add(BtnC2);
-
-        JLabel Carte3 = new JLabel();
-        Carte3.setLayout(new GridLayout(1, 1, 0, 0));
-        JButton BtnC3 = new JButton(cuc);
-        Carte3.add(BtnC3);
-
-        JLabel Carte4 = new JLabel();
-        Carte4.setLayout(new GridLayout(1, 1, 0, 0));
-        JButton BtnC4 = new JButton(beer);
-        Carte4.add(BtnC4);
-
-        /*
-        JButton Carte1 = new JButton("this card");
-        Carte1.setIcon(carte);
-        Carte1.setVerticalAlignment(SwingConstants.BOTTOM);
-        JLabel Carte2 = new JLabel();
-        Carte2.setVerticalAlignment(SwingConstants.BOTTOM);
-        Carte2.setIcon(carte);
-        JLabel Carte3 = new JLabel();
-        Carte3.setVerticalAlignment(SwingConstants.BOTTOM);
-        Carte3.setIcon(carte);
-        JLabel Carte4 = new JLabel();
-        Carte4.setVerticalAlignment(SwingConstants.BOTTOM);
-        Carte4.setIcon(carte);
-
-         */
-
-
-        //set on esp8
-        esp8.add(Carte1);
-        esp8.add(Carte2);
-        esp8.add(Carte3);
-        esp8.add(Carte4);
-
-        //carte du bas (3) = espace 2
-
-        //Border espace
-    /*    Esp2.setLayout(new GridLayout(1,4,0,0));
-        Esp2.setBorder(borderLabelForCarte);
-
-     */
-
-
-        JLabel Carte5 = new JLabel();
-        Carte5.setLayout(new GridLayout(1, 1, 0, 0)); //mise en place de la répartition dans la case d'une carte
-        JButton BtnC5 = new JButton(savour); //icone est mise sur le bouton
-        Carte5.add(BtnC5);
-
-        JLabel Carte6 = new JLabel();
-        Carte6.setLayout(new GridLayout(1, 1, 0, 0)); //mise en place de la répartition dans la case d'une carte
-        JButton BtnC6 = new JButton(globe); //icone est mise sur le bouton
-        Carte6.add(BtnC6);
-
-        JLabel Carte7 = new JLabel();
-        Carte7.setLayout(new GridLayout(1, 1, 0, 0)); //mise en place de la répartition dans la case d'une carte
-        JButton BtnC7 = new JButton(matrice); //icone est mise sur le bouton
-        Carte7.add(BtnC7);
-
-        /*
-
-        //Création carte
-        JLabel Carte5 = new JLabel();
-        Carte5.setIcon(carte);
-        Carte5.setVerticalAlignment(SwingConstants.TOP);
-        JLabel Carte6 = new JLabel();
-        Carte6.setVerticalAlignment(SwingConstants.TOP);
-        Carte6.setHorizontalAlignment(SwingConstants.RIGHT);
-        Carte6.setIcon(carte);
-        JLabel Carte7 = new JLabel();
-        Carte7.setVerticalAlignment(SwingConstants.TOP);
-        Carte7.setIcon(carte);
-
-         */
-
-        //affichage carte bas
-        esp11.add(Carte5);
-        esp11.add(Carte6);
-        esp11.add(Carte7);
+        ///Definition Label Carte (paquet de carte)
+        // --> definition dans JFrameButtonCards
 
 
         //Création icônes en fonction cartes choisies  (test)  (6cartes/joueur pour Age I)
@@ -530,14 +439,6 @@ public class Plateau extends JPanel{
         */
     }
 
-   /* public void recupCarteSousListeJoueur( ArrayList<Joueur> listJoueur, int idJoueur){
-        cardsToPrint = listJoueur.get(idJoueur).getSousListe();
-    }
-
-   public ImageIcon afficheCarteOnButton() {
-       SousListe cardsToPrint = this.cardsToPrint;
-       return cardsToPrint;
-    }*/
 
     public void actionPerformed(ActionEvent e, int joueur) {
         if (joueur == 1) {
