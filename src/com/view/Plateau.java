@@ -530,13 +530,14 @@ public class Plateau extends JPanel{
         */
     }
 
-    public void recupCarteSousListeJoueur( ArrayList<Joueur> listJoueur, int idJoueur){
+   /* public void recupCarteSousListeJoueur( ArrayList<Joueur> listJoueur, int idJoueur){
         cardsToPrint = listJoueur.get(idJoueur).getSousListe();
     }
 
-    public ImageIcon afficheCarteOnButton() {
-        return cardsToPrint.getClass().
-    }
+   public ImageIcon afficheCarteOnButton() {
+       SousListe cardsToPrint = this.cardsToPrint;
+       return cardsToPrint;
+    }*/
 
     public void actionPerformed(ActionEvent e, int joueur) {
         if (joueur == 1) {

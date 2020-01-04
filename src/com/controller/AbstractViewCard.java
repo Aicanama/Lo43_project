@@ -1,4 +1,4 @@
-package com.view;
+package com.controller;
 
 import com.controller.CardController;
 import com.observer.CardListener;
