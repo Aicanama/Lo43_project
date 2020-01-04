@@ -215,7 +215,7 @@ public class Plateau extends JPanel{
         esp4 = new JLabel();
         esp5 = new JLabel();
         esp6 = new JLabel();
-        ico1 = new JLabel("# or ");
+        ico1 = new JLabel("# or "); //pk mettre l'argent en haut ?
         esp8 = new JLabel();
         ico2 = new JLabel("# or ");
         ico3 = new JLabel("# or ");
@@ -233,7 +233,7 @@ public class Plateau extends JPanel{
         Collection<JLabel> myLabelsGold = new ArrayList<JLabel>();
         //ordre important !!
         myLabelsGold.add(esp1);
-        myLabelsGold.add(esp2);
+        //myLabelsGold.add(esp2);
         myLabelsGold.add(esp3);
         myLabelsGold.add(esp4);
         myLabelsGold.add(esp5);

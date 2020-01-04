@@ -117,6 +117,13 @@ public class Moteur{
 
         fireCardChanged();
     }
+    public void remove1CardFromSousListe(Carte carte) {
+        for (int i = 0; i<ssListeJoueur1.cartes.size();i++) {
+            if (ssListeJoueur1.cartes.get(i).equals(carte))
+                ssListeJoueur1.cartes.remove(i);
+        }
+
+    }
 
     /// Les méthodes gérant les vues sous forme de listener :
     public void addCardListener(CardListener listener) {

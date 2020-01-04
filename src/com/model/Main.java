@@ -42,7 +42,6 @@ public class Main {
 
 
         Moteur moteur1 = new Moteur(1,ssListeJoueur1);
-        //moteur1.age1Ini(age.cartes);
         CardController controller  = new CardController(moteur1);
         controller.displayView();
 

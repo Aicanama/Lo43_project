@@ -31,9 +31,9 @@ public class Fenetre  extends  JFrame{
         this.setVisible(true); //rend visible
     }
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         new Fenetre();
-    }
+    }*/
 
 
 

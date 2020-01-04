@@ -22,19 +22,22 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     private JPanel contentPaneCarteHigh = null;
     private JPanel  contentPaneCarteLow = null;
     private Plateau plateau = null;
+    protected SousListe ssListeJoueur;
 
-    private JButton btnC1 = null;
-    private JButton btnC2 = null;
-    private JButton btnC3 = null;
-    private JButton btnC4 = null;
-    private JButton btnC5 = null;
-    private JButton btnC6 = null;
-    private JButton btnC7 = null;
+    private JButton btnC1;
+    private JButton btnC2;
+    private JButton btnC3;
+    private JButton btnC4;
+    private JButton btnC5;
+    private JButton btnC6;
+    private JButton btnC7;
+    private JButton btnNext;
 
     private  ImageIcon pizza;
 
     public JFrameButtonCards(CardController controller, SousListe ssListeJoueur) {
         super(controller);
+        this.ssListeJoueur = ssListeJoueur;
         buildFrame(ssListeJoueur);
     }
 
@@ -67,6 +70,9 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         btnC6 = new JButton();
         btnC7 = new JButton();
 
+        btnNext = new JButton("next player");
+
+        //---- btn carte -----------------------
         Collection<JButton> allButtonCards = new ArrayList<JButton>();
         allButtonCards.add(btnC1);
         allButtonCards.add(btnC2);
@@ -77,22 +83,37 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         allButtonCards.add(btnC7);
 
         int i=0;
+
         for(JButton button : allButtonCards){
-            button.setIcon(ssListeJoueur.cartes.get(i).image);
-            button.addActionListener(this);
-            if(i<4) contentPaneCarteHigh.add(button);
-            else contentPaneCarteLow.add(button);
-            i++;
+                button.setIcon(ssListeJoueur.cartes.get(i).image);
+                //set action listeners for button
+                button.addActionListener(this);
+                if (i < 4) contentPaneCarteHigh.add(button);
+                else contentPaneCarteLow.add(button);
+                i++;
         }
+
+        // define a custom short action command for the button
+       btnC1.setActionCommand("Carte1");
+       btnC2.setActionCommand("Carte2");
+       btnC3.setActionCommand("Carte3");
+       btnC4.setActionCommand("Carte4");
+       btnC5.setActionCommand("Carte5");
+       btnC6.setActionCommand("Carte6");
+       btnC7.setActionCommand("Carte7");
+
+
+       //----btn next -------------
+        btnNext.setActionCommand("Next");
+
+
+        plateau.add(btnNext,1);
         plateau.add(contentPaneCarteHigh,7);
         plateau.add(contentPaneCarteLow,10);
         frame.setContentPane(plateau);
 
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-
-
     }
 
     @Override
@@ -101,27 +122,49 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     }
 
     @Override
-    public void close() {
-        frame.dispose();
-    }
-
-    @Override
     public void cardChangedRound(CardChangedEvent event) {
 
-        int i = 0;
-        Collection<JButton> allButtonCards = new ArrayList<JButton>();
-        for(JButton button : allButtonCards){
-            button.setIcon(event.getNewCartesJoueur().cartes.get(i).image);
-            button.setText("maj");
-            button.addActionListener(this);
-            contentPaneCarteHigh.add(button);
-            i++;
-        }
+        //envoi au modèle les nouvelles cartes
+        getController().notifyCardChanged(event.getNewCartesJoueur());
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("clique sur boutton carte");
+        String action = e.getActionCommand();
+        //ici lorsque clique
+        if (action.equals("Carte1")) {
+            getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(0));
+            btnC1.setIcon(null);
+        }
+        else if (action.equals("Carte2")) {
+            getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(1));
+            btnC2.setIcon(null);
+        }
+        else if (action.equals("Carte3")) {
+            getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(2));
+            btnC3.setIcon(null);
+        }
+        else if (action.equals("Carte4")) {
+            getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(3));
+            btnC4.setIcon(null);
+        }
+        else if (action.equals("Carte5")) {
+            getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(4));
+            btnC5.setIcon(null);
+        }
+        else if (action.equals("Carte6")) {
+            getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(5));
+            btnC6.setIcon(null);
+        }
+        else if (action.equals("Carte7")) {
+            getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(6));
+            btnC7.setIcon(null);
+        }
+        else System.out.println("actionperformed :: erreur action ou carte ou carte pas choisi");
+
+
+        System.out.println( " après action performed :: "+ssListeJoueur.cartes.size());
 
 
     }

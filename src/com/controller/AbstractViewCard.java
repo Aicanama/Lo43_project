@@ -19,5 +19,4 @@ public abstract class AbstractViewCard implements CardListener {
     }
 
     public abstract void display();
-    public abstract void close();
 }
