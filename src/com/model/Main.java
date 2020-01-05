@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        
+
         System.out.println(" Main ok ");
 
         Moteur moteur1 = new Moteur(1);

@@ -29,26 +29,10 @@ public class Moteur extends Thread{
 
 
     protected ArrayList<Joueur> listeJoueur;
-    protected  SousListe ssListeJoueur1;
-    protected  SousListe ssListeJoueur2;
     protected int idJoueur;
-
 
     private EventListenerList listeners;
 
-
-  /**  public Moteur(int n_id) {
-        this.ageActuel = n_id;
-    }*/
-
-    public Moteur(int n_id, SousListe newCards){
-        this.ageActuel = n_id;
-        this.ssListeJoueur1 = newCards;
-
-        //ecoute des changements = notofication aux autres composants
-        listeners = new EventListenerList();
-
-    }
 
     public void age1Ini(ArrayList list) {
         //le type 7 ne correspond à aucune ressource
@@ -247,17 +231,19 @@ public class Moteur extends Thread{
         this.ageActuel = n_id;
         this.idJoueur = 0;
         this.age = new Age(ageActuel);
+
+        //pour 'linstant le seul moyen de communiquer les souslistes
         age1Ini(age.cartes);
         listeJoueur= new ArrayList<Joueur>();
         this.listeJoueur.add(new Joueur(0,null,new SousListe(age.cartes,0)));
         this.listeJoueur.add(new Joueur(1,null,new SousListe(age.cartes,1)));
 
-        listeJoueur.get(0).showSousListe();
-        listeJoueur.get(1).showSousListe();
 
         //ecoute des changements = notofication aux autres composants
         listeners = new EventListenerList();
 
+        //erreur dans > run : https://stackoverflow.com/questions/22189475/unable-to-run-wait-method-in-threading?noredirect=1&lq=1
+        // run();
     }
 
     /// Les méthodes gérant les vues sous forme de listener :
@@ -310,14 +296,12 @@ public class Moteur extends Thread{
             listener.cardChangedPlayer(new PlayerChangedEvent(this, getIdJoueur(),getSsListeJoueur(idJoueur)));
         }
 
-
-
     }
 
+//prends la carte choisie depuis la vue et la supprime de la sousliste du modèle
     public void remove1CardFromSousListe(Carte carte) {
         for (int i = 0; i<listeJoueur.get(idJoueur).sousListe.cartes.size();i++) {
             if (listeJoueur.get(idJoueur).sousListe.cartes.get(i).equals(carte)) {
-                System.out.println("remove1CardFromSousListe : carte.listejoueur egale a carte.remove");
                 listeJoueur.get(idJoueur).sousListe.cartes.remove(i);
             }
         }

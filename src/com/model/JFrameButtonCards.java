@@ -83,6 +83,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         btnC7 = new JButton();
 
         btnNext = new JButton("next player");
+        btnNext.setEnabled(false);
 
         //---- btn carte -----------------------
         allButtonCards = new ArrayList<JButton>();
@@ -144,7 +145,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     }
 
     @Override
-    //affichage nouvelle carte joueur 1 uniquement
+    //affichage sans la carte choisie dun joueur
     public void cardChangedRound(CardChangedEvent event) {
         int i=0; //faire separation entre carte hautes et basses
         int k=event.getNewCartesJoueur().cartes.size(); //taille sousliste du nouveau tas du joueur (sans celle enlevé précedemnt
@@ -153,7 +154,6 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
        for(JButton button : allButtonCards){
            if(k>0) {
                button.setIcon(event.getNewCartesJoueur().cartes.get(i).image);
-               button.setEnabled(true);
                if (i < 4) contentPaneCarteHigh.add(button);
                else contentPaneCarteLow.add(button);
                i++;
@@ -163,7 +163,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
 
             switch (event.getNewCartesJoueur().cartes.size()) {
                 case 7 :
-                    System.out.println("nouveau joueur");
+                    System.out.println("cardChangedRound:: nouveau joueur");
                 case 6 : contentPaneCarteLow.remove(btnC7);
                     contentPaneCarteLow.repaint();
                 break;
@@ -193,6 +193,8 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     }
 
     @Override
+    //changement carte lors clique next player
+    //affichage sous liste joueur suivant
     public void cardChangedPlayer(PlayerChangedEvent event){
         int i=0; //faire separation entre carte hautes et basses
         int k=event.getNewCards().cartes.size(); //taille sousliste du nouveau tas du joueur (sans celle enlevé précedemnt
@@ -202,7 +204,6 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         for(JButton button : allButtonCards){
             if(k>0) {
                 button.setIcon(event.getNewCards().cartes.get(i).image);
-                button.setEnabled(true);
                 if (i < 4) contentPaneCarteHigh.add(button);
                 else contentPaneCarteLow.add(button);
                 i++;
@@ -210,12 +211,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
             }
         }
 
-
-
-
-
         fieldNumJoueur.setText("Tour de J" + String.valueOf(event.getNewJoueurId()+1));
-        //System.out.println("cardChangedPlayer");
         plateau.repaint();
     }
 
@@ -224,11 +220,9 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     public void actionPerformed(ActionEvent e) {
         String action = e.getActionCommand();
 
-        System.out.println("actionPerformed :: idjoueur "+idJoueur );
         //ici lorsque clique
         if (action.equals("Carte1")) {
             System.out.println("Clique Carte 1");
-            System.out.println(ssListeJoueur.cartes.get(0).costGold);
             getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(0));
             btnC1.setIcon(null);
         }
@@ -266,6 +260,8 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         for(JButton button : allButtonCards){
             button.setEnabled(false);
         }
+
+        btnNext.setEnabled(true);
         //envoi au controller nouvelle sous liste sans la carte choisie du joueur en cours
         getController().notifyCardChanged(ssListeJoueur);
 
@@ -278,8 +274,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
                 button.setEnabled(true);
             }
         }
-        contentPaneCarteLow.repaint();
-        contentPaneCarteHigh.repaint();
+        plateau.repaint();
 
     }
 
