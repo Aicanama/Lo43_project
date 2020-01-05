@@ -252,6 +252,9 @@ public class Moteur extends Thread{
         this.listeJoueur.add(new Joueur(0,null,new SousListe(age.cartes,0)));
         this.listeJoueur.add(new Joueur(1,null,new SousListe(age.cartes,1)));
 
+        listeJoueur.get(0).showSousListe();
+        listeJoueur.get(1).showSousListe();
+
         //ecoute des changements = notofication aux autres composants
         listeners = new EventListenerList();
 
@@ -313,8 +316,10 @@ public class Moteur extends Thread{
 
     public void remove1CardFromSousListe(Carte carte) {
         for (int i = 0; i<listeJoueur.get(idJoueur).sousListe.cartes.size();i++) {
-            if (listeJoueur.get(idJoueur).sousListe.cartes.get(i).equals(carte))
+            if (listeJoueur.get(idJoueur).sousListe.cartes.get(i).equals(carte)) {
+                System.out.println("remove1CardFromSousListe : carte.listejoueur egale a carte.remove");
                 listeJoueur.get(idJoueur).sousListe.cartes.remove(i);
+            }
         }
         System.out.println("remove1CardFromSousListe : this.listeJoueur.get("+idJoueur+").show :");
         this.listeJoueur.get(idJoueur).showSousListe();

@@ -19,6 +19,7 @@ public class PlayerChangedEvent extends EventObject {
     public int getNewJoueurId(){
         return idJoueur;
     }
+
     public SousListe getNewCards(){
         return newCards;
     }

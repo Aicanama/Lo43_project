@@ -100,6 +100,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         for(JButton button : allButtonCards){
             if(k>0) {
                 button.setIcon(ssListeJoueur.cartes.get(i).image);
+                button.setEnabled(true);
                 //set action listeners for button
                 button.addActionListener(this);
                 if (i < 4) contentPaneCarteHigh.add(button);
@@ -147,11 +148,12 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     public void cardChangedRound(CardChangedEvent event) {
         int i=0; //faire separation entre carte hautes et basses
         int k=event.getNewCartesJoueur().cartes.size(); //taille sousliste du nouveau tas du joueur (sans celle enlevé précedemnt
-        System.out.println("event.getNewCartesJoueur().cartes.size() : " + k);
+        System.out.println("cardChangedRound :: event.getNewCartesJoueur().cartes.size() : " + k);
 
        for(JButton button : allButtonCards){
            if(k>0) {
                button.setIcon(event.getNewCartesJoueur().cartes.get(i).image);
+               button.setEnabled(true);
                if (i < 4) contentPaneCarteHigh.add(button);
                else contentPaneCarteLow.add(button);
                i++;
@@ -192,8 +194,28 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
 
     @Override
     public void cardChangedPlayer(PlayerChangedEvent event){
+        int i=0; //faire separation entre carte hautes et basses
+        int k=event.getNewCards().cartes.size(); //taille sousliste du nouveau tas du joueur (sans celle enlevé précedemnt
+        System.out.println("cardChangedPlayer :: event.getNewCartesJoueur().cartes.size() : " + k);
+        ssListeJoueur = event.getNewCards();
+
+        for(JButton button : allButtonCards){
+            if(k>0) {
+                button.setIcon(event.getNewCards().cartes.get(i).image);
+                button.setEnabled(true);
+                if (i < 4) contentPaneCarteHigh.add(button);
+                else contentPaneCarteLow.add(button);
+                i++;
+                k--;
+            }
+        }
+
+
+
+
+
         fieldNumJoueur.setText("Tour de J" + String.valueOf(event.getNewJoueurId()+1));
-        System.out.println("cardChangedPlayer");
+        //System.out.println("cardChangedPlayer");
         plateau.repaint();
     }
 
@@ -201,9 +223,12 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     @Override
     public void actionPerformed(ActionEvent e) {
         String action = e.getActionCommand();
+
+        System.out.println("actionPerformed :: idjoueur "+idJoueur );
         //ici lorsque clique
         if (action.equals("Carte1")) {
             System.out.println("Clique Carte 1");
+            System.out.println(ssListeJoueur.cartes.get(0).costGold);
             getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(0));
             btnC1.setIcon(null);
         }
@@ -237,13 +262,25 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
             getController().wantRemoveCardChosen(ssListeJoueur.cartes.get(6));
             btnC7.setIcon(null);
         }
+
+        for(JButton button : allButtonCards){
+            button.setEnabled(false);
+        }
+        //envoi au controller nouvelle sous liste sans la carte choisie du joueur en cours
+        getController().notifyCardChanged(ssListeJoueur);
+
         if (action.equals("Next")){
             System.out.println("Clique Next");
-            getController().notifyCardChanged(ssListeJoueur);
+            //envoi au controller le nouvel idJoueur
             ++idJoueur;
             getController().notifyIdJoueurChanged(idJoueur);
+            for(JButton button : allButtonCards){
+                button.setEnabled(true);
+            }
         }
-
+        contentPaneCarteLow.repaint();
+        contentPaneCarteHigh.repaint();
 
     }
+
 }
