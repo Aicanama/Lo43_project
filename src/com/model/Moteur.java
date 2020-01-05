@@ -2,6 +2,8 @@ package com.model;
 
 import com.observer.CardChangedEvent;
 import com.observer.CardListener;
+import com.observer.PlayerChangedEvent;
+import com.observer.PlayerListener;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -19,8 +21,6 @@ public class Moteur extends Thread{
     //le modèle
 
     private int ageActuel;
-    private ImageIcon Imgcarte;
-    private ImageIcon Imgcarte2;
     private Age age;
     private int carteN0;
     private int carteN1;
@@ -31,16 +31,15 @@ public class Moteur extends Thread{
     protected ArrayList<Joueur> listeJoueur;
     protected  SousListe ssListeJoueur1;
     protected  SousListe ssListeJoueur2;
-    protected  SousListe ssListeJoueur3;
-    protected  SousListe ssListeJoueur4;
+    protected int idJoueur;
 
 
     private EventListenerList listeners;
 
 
-    public Moteur(int n_id) {
+  /**  public Moteur(int n_id) {
         this.ageActuel = n_id;
-    }
+    }*/
 
     public Moteur(int n_id, SousListe newCards){
         this.ageActuel = n_id;
@@ -207,35 +206,35 @@ public class Moteur extends Thread{
         list.add(new CarteRessource(1, pizza, new ArrayList<Integer>(), 2, 7, 1));
         list.add(new CarteRessource(2, beer, new ArrayList<Integer>(), 2, 7,1));
         list.add(new CarteRessource(3, brain, new ArrayList<Integer>(), 1, 7,1));
-        list.add(new CarteRessource(0, book, new ArrayList<Integer>(), 0, 7,1));
-        list.add(new CarteRessource(0, globe, new ArrayList<Integer>(), 3, 7,1));
-        list.add(new CarteRessource(0, puzzle, new ArrayList<Integer>(), 3, 7,1));
-        list.add(new CarteRessource(0, pizOrd, new ArrayList<Integer>(), 4, 7,1));
-        list.add(new CarteRessource(0, ordBra, new ArrayList<Integer>(), 5, 7,1));
-        list.add(new CarteRessource(0, braBee, new ArrayList<Integer>(), 6, 7,1));
-        list.add(new CarteRessource(1, mieCalE, new ArrayList<Integer>(), 2, 1,1));
-        list.add(new CarteRessource(1, mieCalO, new ArrayList<Integer>(), 1, 0,1));
-        list.add(new CarteRessource(1, mairie, new ArrayList<Integer>(), 0, 3,1));
+        list.add(new CarteRessource(4, book, new ArrayList<Integer>(), 0, 7,1));
+        list.add(new CarteRessource(5, globe, new ArrayList<Integer>(), 3, 7,1));
+        list.add(new CarteRessource(6, puzzle, new ArrayList<Integer>(), 3, 7,1));
+        list.add(new CarteRessource(7, pizOrd, new ArrayList<Integer>(), 4, 7,1));
+        list.add(new CarteRessource(8, ordBra, new ArrayList<Integer>(), 5, 7,1));
+        list.add(new CarteRessource(9, braBee, new ArrayList<Integer>(), 6, 7,1));
+        list.add(new CarteRessource(10, mieCalE, new ArrayList<Integer>(), 2, 1,1));
+        list.add(new CarteRessource(11, mieCalO, new ArrayList<Integer>(), 1, 0,1));
+        list.add(new CarteRessource(12, mairie, new ArrayList<Integer>(), 0, 3,1));
 
-        list.add(new CartePatrimoine(0,ordi,new ArrayList<Integer>(),3));
-        list.add(new CartePatrimoine(0,ordi,new ArrayList<Integer>(),2));
-        list.add(new CartePatrimoine(0,ordi,new ArrayList<Integer>(),2));
-        list.add(new CartePatrimoine(0,ordi,r1,3));
+        list.add(new CartePatrimoine(13,ordi,new ArrayList<Integer>(),3));
+        list.add(new CartePatrimoine(14,histoire2,new ArrayList<Integer>(),2));
+        list.add(new CartePatrimoine(15,basicFat,new ArrayList<Integer>(),2));
+        list.add(new CartePatrimoine(16,bar,r1,3));
 
-        list.add(new CarteExamen(0,ordi,r2,1));
-        list.add(new CarteExamen(0,ordi,r0,1));
-        list.add(new CarteExamen(0,ordi,r0,1));
-        list.add(new CarteExamen(0,ordi,r3,1));
+        list.add(new CarteExamen(17,belfHot,r2,1));
+        list.add(new CarteExamen(18,bilingue,r0,1));
+        list.add(new CarteExamen(19,boulD,r0,1));
+        list.add(new CarteExamen(20,book,r3,1));
 
-        list.add(new CarteConnaissance(0,ordi,r5,1));
-        list.add(new CarteConnaissance(0,ordi,r6,3));
-        list.add(new CarteConnaissance(0,ordi,r4,2));
-        list.add(new CarteConnaissance(0,ordi,r4,2));
+        list.add(new CarteConnaissance(21,ordi,r5,1));
+        list.add(new CarteConnaissance(22,ordi,r6,3));
+        list.add(new CarteConnaissance(23,ordi,r4,2));
+        list.add(new CarteConnaissance(24,ordi,r4,2));
 
-       /* list.add(new GainG(0,ordi,new ArrayList<Integer>(),0));
-        list.add(new Comptche(0,ordi,new ArrayList<Integer>(),1));
-        list.add(new Comptche(0,ordi,new ArrayList<Integer>(),2));
-        list.add(new Comptche(0,ordi,new ArrayList<Integer>(),3));*/
+        list.add(new GainG(25,ordi,new ArrayList<CarteRessource>(),0));
+        list.add(new Comptche(26,ordi,new ArrayList<CarteRessource>(),1));
+        list.add(new Comptche(27,ordi,new ArrayList<CarteRessource>(),2));
+        list.add(new Comptche(28,ordi,new ArrayList<CarteRessource>(),3));
     }
 
     public void shuffle(ArrayList liste) {
@@ -244,20 +243,17 @@ public class Moteur extends Thread{
 
 //----------------------------------------Listener handler---------------
 
-    public SousListe getSsListeJoueur() {
-        return ssListeJoueur1;
-    }
+    public Moteur(int n_id){
+        this.ageActuel = n_id;
+        this.idJoueur = 0;
+        this.age = new Age(ageActuel);
+        age1Ini(age.cartes);
+        listeJoueur= new ArrayList<Joueur>();
+        this.listeJoueur.add(new Joueur(0,null,new SousListe(age.cartes,0)));
+        this.listeJoueur.add(new Joueur(1,null,new SousListe(age.cartes,1)));
 
-    public void setSsListeJoueur(SousListe ssListeJoueur) {
-        this.ssListeJoueur1 = ssListeJoueur;
-
-        fireCardChanged();
-    }
-    public void remove1CardFromSousListe(Carte carte) {
-        for (int i = 0; i<ssListeJoueur1.cartes.size();i++) {
-            if (ssListeJoueur1.cartes.get(i).equals(carte))
-                ssListeJoueur1.cartes.remove(i);
-        }
+        //ecoute des changements = notofication aux autres composants
+        listeners = new EventListenerList();
 
     }
 
@@ -267,21 +263,65 @@ public class Moteur extends Thread{
         listeners.add(CardListener.class, listener);
     }
 
-    public void removeCardListener(CardListener listener) {
-        //dés-enregistre une vue
-        listeners.remove(CardListener.class, listener);
+    public void addPlayerListener(PlayerListener l) {
+        //enregistre une vue pour quelle soit avertie des changements
+        listeners.add(PlayerListener.class, l);
     }
 
-    public void fireCardChanged() {
+    //donne le nouvel id au controller depuis le modèle
+    public int getIdJoueur(){
+        return idJoueur;
+    }
+
+    //change par le nouvel id du modèle depuis la vue
+    public void setIdJoueur(int idJ){
+        this.idJoueur = idJ;
+    }
+
+    //donne la sous liste du joueur au controller depuis le modèle
+    public SousListe getSsListeJoueur(int idJ) {
+        return listeJoueur.get(idJ).sousListe;
+    }
+
+    //change par la nouvelle sous liste du joueur du modèle depuis la vue
+    public void setSsListeJoueur(SousListe ssListeJoueur) {
+        this.listeJoueur.get(idJoueur).sousListe = ssListeJoueur;
+
+        fireCardPlayer();
+    }
+
+
+    public void fireCardPlayer() {
         //Les méthodes fire~ permettent de lancer un
         //évènement qui sera distribué à l'ensemble des
         //listeners enregistrés
-        CardListener[] listenerList = (CardListener[]) listeners.getListeners(CardListener.class);
+        CardListener[] cardListeners = (CardListener[]) listeners.getListeners(CardListener.class);
 
-        for (CardListener listener : listenerList) {
-            listener.cardChangedRound(new CardChangedEvent(this, getSsListeJoueur()));
+        for (CardListener listener : cardListeners) {
+            //listener.cardChangedPlayer(new CardChangedEvent(this, getSsListeJoueur(idJoueur)));
+            listener.cardChangedRound(new CardChangedEvent(this, getSsListeJoueur(idJoueur)));
         }
+
+        PlayerListener[] playerListeners = (PlayerListener[]) listeners.getListeners(PlayerListener.class);
+        for (PlayerListener listener : playerListeners) {
+            listener.cardChangedPlayer(new PlayerChangedEvent(this, getIdJoueur(),getSsListeJoueur(idJoueur)));
+        }
+
+
+
     }
+
+    public void remove1CardFromSousListe(Carte carte) {
+        for (int i = 0; i<listeJoueur.get(idJoueur).sousListe.cartes.size();i++) {
+            if (listeJoueur.get(idJoueur).sousListe.cartes.get(i).equals(carte))
+                listeJoueur.get(idJoueur).sousListe.cartes.remove(i);
+        }
+        System.out.println("remove1CardFromSousListe : this.listeJoueur.get("+idJoueur+").show :");
+        this.listeJoueur.get(idJoueur).showSousListe();
+
+
+    }
+
 //-----------------------------------------------------------------------------------------------
 
     //Léo
@@ -310,7 +350,7 @@ public class Moteur extends Thread{
         }
         for (int i=0;i<3;++i) {
             iniAge();
-            while (size(this.listeJoueur.get(0).sousListe.cartes) != 0) {
+            while (this.listeJoueur.get(0).sousListe.cartes.size() != 0) {
                 for (int j=0;j<4;++j) {
                     this.listeJoueur.get(j).showSousListe();
                     try {

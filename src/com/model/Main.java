@@ -18,20 +18,11 @@ public class Main {
     public static void main(String[] args) {
 
         Moteur moteur = new Moteur(1);
-        Age age = new Age(1);
-        moteur.age1Ini(age.cartes); //création du tas de l'âge
+        //Age age = new Age(1);
+        //moteur.age1Ini(age.cartes); //création du tas de l'âge
         //moteur.shuffle(age.cartes);
 
-        //creation accès cartes d'un joueur
-        SousListe ssListeJoueur1 = new SousListe(age.cartes,0); //sous liste joueur1
-        SousListe  ssListeJoueur2 = new SousListe(age.cartes,1); //sous liste joueur2
-        ArrayList<Joueur> listJoueur = new ArrayList<Joueur>();
-
-        listJoueur.add( new Joueur(0,null,ssListeJoueur1));
-        listJoueur.add( new Joueur(1,null,ssListeJoueur2));
-
-        //listJoueur.get(0).showSousListe();
-        System.out.println(" Main :: arraylist Joueur : " + listJoueur.get(0).sousListe.cartes.get(2).image );
+        System.out.println(" Main ok ");
         /* meme facon d'arriver aux cartes du joueur 1 avoir la 2ème carte
         listJoueur.get(0).sousListe.cartes.get(2).costGold
         = age.cartes.get(2).costGold
@@ -41,7 +32,7 @@ public class Main {
 
 
 
-        Moteur moteur1 = new Moteur(1,ssListeJoueur1);
+        Moteur moteur1 = new Moteur(1);
         CardController controller  = new CardController(moteur1);
         controller.displayView();
 

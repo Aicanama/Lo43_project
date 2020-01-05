@@ -235,7 +235,7 @@ public class Plateau extends JPanel{
         myLabelsGold.add(esp1);
         //myLabelsGold.add(esp2);
         myLabelsGold.add(esp3);
-        myLabelsGold.add(esp4);
+        //myLabelsGold.add(esp4);
         myLabelsGold.add(esp5);
         myLabelsGold.add(esp6);
         myLabelsGold.add(ico1);

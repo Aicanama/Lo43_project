@@ -2,20 +2,19 @@ package com.model;
 
 import com.controller.AbstractViewCard;
 import com.controller.CardController;
-import com.model.SousListe;
 import com.observer.CardChangedEvent;
+import com.observer.PlayerChangedEvent;
 import com.view.Plateau;
 
-import javax.imageio.ImageIO;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.text.NumberFormat;
+
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
+
 
 public class JFrameButtonCards extends AbstractViewCard implements ActionListener {
 
@@ -24,6 +23,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     private JPanel  contentPaneCarteLow = null;
     private Plateau plateau = null;
     protected SousListe ssListeJoueur;
+    protected int idJoueur;
 
     private Collection<JButton> allButtonCards;
     private JButton btnC1;
@@ -35,11 +35,14 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     private JButton btnC7;
     private JButton btnNext;
 
+    private JLabel fieldNumJoueur = null;
+
     private  ImageIcon pizza;
 
-    public JFrameButtonCards(CardController controller, SousListe ssListeJoueur) {
+    public JFrameButtonCards(CardController controller, SousListe ssListeJoueur, int idj) {
         super(controller);
         this.ssListeJoueur = ssListeJoueur;
+        this.idJoueur = idj;
         buildFrame(ssListeJoueur);
     }
 
@@ -61,6 +64,12 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         contentPaneCarteHigh = new JPanel();
         contentPaneCarteLow = new JPanel();
         plateau = new Plateau();
+
+        //affichage numero joueur
+        fieldNumJoueur = new JLabel();
+        fieldNumJoueur.setText(" Tour de J" + String.valueOf(idJoueur+1));
+        fieldNumJoueur.setHorizontalAlignment(SwingConstants.CENTER);
+        fieldNumJoueur.setFont(new Font("Serif", Font.BOLD, 30));
 
         contentPaneCarteHigh.setLayout(new GridLayout(1,4,1,0));
         btnC1 = new JButton();
@@ -118,6 +127,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         btnNext.setActionCommand("Next");
 
 
+        plateau.add(fieldNumJoueur,3);
         plateau.add(btnNext,1);
         plateau.add(contentPaneCarteHigh,7);
         plateau.add(contentPaneCarteLow,10);
@@ -133,9 +143,11 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     }
 
     @Override
+    //affichage nouvelle carte joueur 1 uniquement
     public void cardChangedRound(CardChangedEvent event) {
         int i=0; //faire separation entre carte hautes et basses
         int k=event.getNewCartesJoueur().cartes.size(); //taille sousliste du nouveau tas du joueur (sans celle enlevé précedemnt
+        System.out.println("event.getNewCartesJoueur().cartes.size() : " + k);
 
        for(JButton button : allButtonCards){
            if(k>0) {
@@ -148,6 +160,8 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         }
 
             switch (event.getNewCartesJoueur().cartes.size()) {
+                case 7 :
+                    System.out.println("nouveau joueur");
                 case 6 : contentPaneCarteLow.remove(btnC7);
                     contentPaneCarteLow.repaint();
                 break;
@@ -175,6 +189,14 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
 
 
     }
+
+    @Override
+    public void cardChangedPlayer(PlayerChangedEvent event){
+        fieldNumJoueur.setText("Tour de J" + String.valueOf(event.getNewJoueurId()+1));
+        System.out.println("cardChangedPlayer");
+        plateau.repaint();
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -218,6 +240,8 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         if (action.equals("Next")){
             System.out.println("Clique Next");
             getController().notifyCardChanged(ssListeJoueur);
+            ++idJoueur;
+            getController().notifyIdJoueurChanged(idJoueur);
         }
 
 

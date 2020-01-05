@@ -71,10 +71,10 @@ public class Joueur {
         int cost=0, p=0, s=0;
         int prixp=0, prixs=0;
         ArrayList listC = carte.listeRessource;
-        if(size(listC)!=0){
+        if(listC.size()!=0){
             parcourir(listC,joueur.get(id).plateau.listeRessource);
         }
-        if(size(listC)!=0) {
+        if(listC.size()!=0) {
             switch(id) { //défini quels sont les voisins du joueur
                 case 0:
                     p=3;
@@ -108,7 +108,7 @@ public class Joueur {
                 cost = prixs + prixp;
             }
         }
-        if(size(listC)!=0 || joueur.get(id).gold < cost) {
+        if(listC.size()!=0 || joueur.get(id).gold < cost) {
             return false;
         }
         else {

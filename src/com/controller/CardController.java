@@ -12,21 +12,27 @@ public class CardController {
 
     public CardController (Moteur model){
         this.model = model;
-        buttonView = new JFrameButtonCards(this, model.getSsListeJoueur());
+        buttonView = new JFrameButtonCards(this, model.getSsListeJoueur(model.getIdJoueur()),model.getIdJoueur());
         addListenersToModel();
     }
 
     private void addListenersToModel() {
         model.addCardListener(buttonView);
+        model.addPlayerListener(buttonView);
     }
 
     public void displayView(){
         buttonView.display();
     }
 
-
     public void notifyCardChanged(SousListe SsListeJoueur) {
         model.setSsListeJoueur(SsListeJoueur);
+    }
+
+    public void notifyIdJoueurChanged(int idj) {
+        model.setIdJoueur(idj);
+        System.out.println("CardController :: notifyIdJoueurChanged: id :  " + idj);
+        model.setSsListeJoueur(model.getSsListeJoueur(idj));
     }
 
     public void wantRemoveCardChosen(Carte carte){
