@@ -15,13 +15,18 @@ import java.util.Collections;
 import static jdk.nashorn.internal.objects.NativeMap.size;
 
 
-public class Moteur{
+public class Moteur extends Thread{
     //le modèle
 
     private int ageActuel;
     private ImageIcon Imgcarte;
     private ImageIcon Imgcarte2;
     private Age age;
+    private int carteN0;
+    private int carteN1;
+    private int carteN2;
+    private int carteN3;
+
 
     protected ArrayList<Joueur> listeJoueur;
     protected  SousListe ssListeJoueur1;
@@ -280,17 +285,60 @@ public class Moteur{
 //-----------------------------------------------------------------------------------------------
 
     //Léo
+    public void carteSet(int carteN, int id) { //permet de set la carte que le joueur id va jouer
+        switch (id) {
+            case 0:
+                this.carteN0=carteN;
+                break;
+            case 1:
+                this.carteN1=carteN;
+                break;
+            case 2:
+                this.carteN2=carteN;
+                break;
+            case 3:
+                this.carteN3=carteN;
+                break;
+            default:
+        }
+    }
 
-    public void gameStart() { //Fonction à finir
-//        Ini joueur
-        for (int i = 0; i < 3; ++i) {
+    public void run() {
+        int carteN=0;
+        for(int i=0;i<4;++i) {
+            this.listeJoueur.add(new Joueur(i, null, null));
+        }
+        for (int i=0;i<3;++i) {
             iniAge();
-            //ini liste joueur
             while (size(this.listeJoueur.get(0).sousListe.cartes) != 0) {
-                for (int j = 0; j < 4; ++j) {
-                    //propose carte
+                for (int j=0;j<4;++j) {
+                    this.listeJoueur.get(j).showSousListe();
+                    try {
+                        this.wait();                    //endort le thread, il doit être réveillé depuis le controller une fois qu'une carte a été sélectionnée
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    //Il manque une instruction pour faire disparaître la sous-liste de l'écran ?
                 }
-                //joue (fonction play à appeler avec la carte select)
+                for(int k=0;k<4;++k) {
+                    switch (k) {
+                        case 0:
+                            carteN=this.carteN0;
+                            break;
+                        case 1:
+                            carteN=this.carteN1;
+                            break;
+                        case 2:
+                            carteN=this.carteN2;
+                            break;
+                        case 3:
+                            carteN=this.carteN3;
+                            break;
+                        default:
+                            carteN=0;
+                    }
+                    play(listeJoueur.get(k).sousListe.cartes, carteN, listeJoueur.get(k));
+                }
                 this.rotation();
             }
             this.applyPower();
@@ -313,6 +361,9 @@ public class Moteur{
                 break;
             default:
                 System.out.println("age inconnu");
+        }
+        for(int i=0;i<4;++i) {
+            this.listeJoueur.get(i).sousListe = new SousListe(carteList, i);
         }
     }
 
