@@ -236,12 +236,8 @@ public class Plateau extends JPanel {
         //myLabelsGold.add(esp4);
         myLabelsGold.add(esp5);
         myLabelsGold.add(esp6);
-        myLabelsGold.add(ico1);
         //myLabelsGold.add(esp8); plus besoin vu que définit dans la fenetre
-        myLabelsGold.add(ico2);
-        myLabelsGold.add(ico3);
         //myLabelsGold.add(esp11);
-        myLabelsGold.add(ico4);
         myLabelsGold.add(esp13);
         myLabelsGold.add(esp14);
         myLabelsGold.add(esp15);
@@ -250,10 +246,18 @@ public class Plateau extends JPanel {
         myLabelsGold.add(esp18);
 
 
+        Collection<JLabel> labelIcone = new ArrayList<JLabel>();
+        labelIcone.add(ico1);
+        labelIcone.add(ico2);
+        labelIcone.add(ico3);
+        labelIcone.add(ico4);
+
+
         ///REVOIR CETTE PARTIE
 
         Border border = BorderFactory.createLineBorder(Color.BLUE, 2);
         for (JLabel label : myLabelsGold) {
+<<<<<<< HEAD
             //border
             label.setBorder(border);
 
@@ -288,6 +292,36 @@ public class Plateau extends JPanel {
              } */
 
             //position canvas
+=======
+        	//border
+        	label.setBorder(border);
+
+        	label.setBorder(new EmptyBorder(5, 1, 1, 1));
+
+        	/*
+        	//position Horizontal (tous pareil)
+        	label.setHorizontalAlignment(SwingConstants.TRAILING); */
+        }
+
+        for (JLabel label : labelIcone) {
+            label.setVerticalAlignment(SwingConstants.TOP);
+            label.setHorizontalAlignment(SwingConstants.RIGHT);
+            label.setIcon(gold);
+        }
+
+       
+       /** Pour le moment laisser en commentaire pour bien voir où mettre !!
+        * 
+        * for (JLabel label : myLabels) {
+        	String name = label.getText();
+        	if(name.startsWith("Esp")) {
+        		label.setBorder(new EmptyBorder(10, 10, 10, 10)); // border INVISIBLE (pas besoin si on met label en invisible)
+        		label.setVisible(false); //fonction permettant de mettre la border et jlabel invisble
+        	}
+        } */
+
+      //position canvas
+>>>>>>> def40e1e4482dc18788504d0b3a3238021669848
             //plateau 1
             //esp1.setVerticalAlignment(SwingConstants.TOP);
             //esp1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -301,6 +335,7 @@ public class Plateau extends JPanel {
             esp8.setVerticalAlignment(SwingConstants.CENTER);
             esp8.setHorizontalAlignment(SwingConstants.LEFT);
             //plateau 2
+<<<<<<< HEAD
             //esp3.setVerticalAlignment(SwingConstants.CENTER);
             //esp3.setHorizontalAlignment(SwingConstants.LEFT);
             esp6.setVerticalAlignment(SwingConstants.CENTER);
@@ -317,6 +352,12 @@ public class Plateau extends JPanel {
             //Icone Plat4
             ico4.setVerticalAlignment(SwingConstants.TOP);
             ico4.setHorizontalAlignment(SwingConstants.RIGHT);
+=======
+        esp3.setVerticalAlignment(SwingConstants.CENTER);
+        esp3.setHorizontalAlignment(SwingConstants.LEFT);
+        esp6.setVerticalAlignment(SwingConstants.CENTER);
+        esp6.setHorizontalAlignment(SwingConstants.LEFT);
+>>>>>>> def40e1e4482dc18788504d0b3a3238021669848
             //esp carte bas
             esp11.setVerticalAlignment(SwingConstants.BOTTOM);
             esp11.setHorizontalAlignment(SwingConstants.LEFT);
@@ -354,6 +395,7 @@ public class Plateau extends JPanel {
             esp14.setBorder(BorderFactory.createLineBorder(Color.darkGray, 1));
 
             //Grillage pour placer les icones
+<<<<<<< HEAD
             Border borderLabelForIcone = BorderFactory.createLineBorder(Color.RED, 1);
             ico1.setLayout(new GridLayout(1, 1, 0, 0));
             ico1.setBorder(borderLabelForIcone);
@@ -421,6 +463,166 @@ public class Plateau extends JPanel {
             ///mise en place Plateau
             for (JLabel label : myLabelsGold) {
                 this.add(label);
+=======
+        Border borderLabelForIcone = BorderFactory.createLineBorder(Color.RED, 1);
+        ico1.setLayout(new GridLayout(1,1,0,0));
+        ico1.setBorder(borderLabelForIcone);
+        ico2.setLayout(new GridLayout(1,1,0,0));
+        ico2.setBorder(BorderFactory.createLineBorder(Color.ORANGE, 5));
+        ico3.setLayout(new GridLayout(1,1,0,0));
+        ico3.setBorder(BorderFactory.createLineBorder(Color.ORANGE, 5));
+        ico4.setLayout(new GridLayout(1,1,0,0));
+        ico4.setBorder(borderLabelForIcone);
+
+
+        //Espaces pour les plateaux
+        Border borderLabelForPlat = BorderFactory.createLineBorder(Color.GREEN , 1);
+        esp1.setLayout(new GridLayout(1,1,0,0));
+        esp1.setBorder(borderLabelForPlat);
+        esp3.setLayout(new GridLayout(4,4,0,0));
+        esp3.setBorder(borderLabelForPlat);
+        esp4.setLayout(new GridLayout(4,4,0,0));
+        esp4.setBorder(borderLabelForPlat);
+        esp6.setLayout(new GridLayout(4,4,0,0));
+        esp6.setBorder(borderLabelForPlat);
+        esp13.setLayout(new GridLayout(4,4,0,0));
+        esp13.setBorder(borderLabelForPlat);
+        esp15.setLayout(new GridLayout(4,4,0,0));
+        esp15.setBorder(borderLabelForPlat);
+        esp16.setLayout(new GridLayout(2,2,0,0));
+        esp16.setBorder(borderLabelForPlat);
+        esp18.setLayout(new GridLayout(2,2,0,0));
+        esp18.setBorder(borderLabelForPlat);
+
+        ///Definition Label Carte (paquet de carte)
+        // --> definition dans JFrameButtonCards
+
+
+        //Création icônes pour les cartes
+        JLabel IconeCarte1 = new JLabel();
+        JLabel IconeCarte2 = new JLabel();
+        JLabel IconeCarte3 = new JLabel();
+        JLabel IconeCarte4 = new JLabel();
+        JLabel IconeCarte5 = new JLabel();
+        JLabel IconeCarte6 = new JLabel();
+        JLabel IconeCarte7 = new JLabel();
+        JLabel IconeCarte8 = new JLabel();
+        JLabel IconeCarte9 = new JLabel();
+        JLabel IconeCarte10 = new JLabel();
+        JLabel IconeCarte11 = new JLabel();
+        JLabel IconeCarte12 = new JLabel();
+        JLabel IconeCarte13 = new JLabel();
+        JLabel IconeCarte14 = new JLabel();
+        JLabel IconeCarte15 = new JLabel();
+
+        IconeCarte1.setHorizontalAlignment(SwingConstants.LEFT);
+
+
+        //AIDE POUR AFFICHAGE   A CHANGER APRES EN FONCTION DU CLIC
+        IconeCarte1.setIcon(iconeBe);
+        IconeCarte2.setIcon(iconePi);
+        IconeCarte3.setIcon(iconeBr);
+        IconeCarte4.setIcon(iconeOr);
+        IconeCarte5.setIcon(iconePu);
+        IconeCarte6.setIcon(iconeBo);
+
+        //affichage des icones à côté des plateaux
+        //Joueur 1
+            //age I
+        ico1.add(IconeCarte1);
+        ico1.add(IconeCarte2);
+        ico1.add(IconeCarte3);
+        ico1.add(IconeCarte4);
+        ico1.add(IconeCarte5);
+        ico1.add(IconeCarte6);
+            //age II
+        ico1.add(IconeCarte7);
+        ico1.add(IconeCarte8);
+        ico1.add(IconeCarte9);
+        ico1.add(IconeCarte10);
+        ico1.add(IconeCarte11);
+            //age III
+        ico1.add(IconeCarte12);
+        ico1.add(IconeCarte13);
+        ico1.add(IconeCarte14);
+        ico1.add(IconeCarte15);
+
+        //Joueur 2
+            //age I
+        ico2.add(IconeCarte1);
+        ico2.add(IconeCarte2);
+        ico2.add(IconeCarte3);
+        ico2.add(IconeCarte4);
+        ico2.add(IconeCarte5);
+        ico2.add(IconeCarte6);
+            //age II
+        ico2.add(IconeCarte7);
+        ico2.add(IconeCarte8);
+        ico2.add(IconeCarte9);
+        ico2.add(IconeCarte10);
+        ico2.add(IconeCarte11);
+            //age III
+        ico2.add(IconeCarte12);
+        ico2.add(IconeCarte13);
+        ico2.add(IconeCarte14);
+        ico2.add(IconeCarte15);
+
+        //Joueur 3
+            //age I
+        ico3.add(IconeCarte1);
+        ico3.add(IconeCarte2);
+        ico3.add(IconeCarte3);
+        ico3.add(IconeCarte4);
+        ico3.add(IconeCarte5);
+        ico3.add(IconeCarte6);
+            //age II
+        ico3.add(IconeCarte7);
+        ico3.add(IconeCarte8);
+        ico3.add(IconeCarte9);
+        ico3.add(IconeCarte10);
+        ico3.add(IconeCarte11);
+            //age III
+        ico3.add(IconeCarte12);
+        ico3.add(IconeCarte13);
+        ico3.add(IconeCarte14);
+        ico3.add(IconeCarte15);
+
+        //Joueur 4
+            //age I
+        ico4.add(IconeCarte1);
+        ico4.add(IconeCarte2);
+        ico4.add(IconeCarte3);
+        ico4.add(IconeCarte4);
+        ico4.add(IconeCarte5);
+        ico4.add(IconeCarte6);
+            //age II
+        ico4.add(IconeCarte7);
+        ico4.add(IconeCarte8);
+        ico4.add(IconeCarte9);
+        ico4.add(IconeCarte10);
+        ico4.add(IconeCarte11);
+            //age III
+        ico4.add(IconeCarte12);
+        ico4.add(IconeCarte13);
+        ico4.add(IconeCarte14);
+        ico4.add(IconeCarte15);
+
+
+        ///mise en place Plateau
+        for (JLabel label : myLabelsGold) {
+        	this.add(label);
+        }
+        
+        
+        /** a voir lors utilsation connexion
+         *  test changement valeur labelgold1 :
+         * 
+        	JButton button = new JButton("Change flag");
+        	button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+            	labelGold1.setText("new value");
+>>>>>>> def40e1e4482dc18788504d0b3a3238021669848
             }
 
 
