@@ -39,4 +39,13 @@ public class CardController {
         model.remove1CardFromSousListe(carte);
     }
 
+
+    //fonction pour changer l'argent sur le plateau
+        //j'ai mis la fonction getGold dans Joueur mais je ne sais pas où la mettre sinon ?
+    /*
+    public void showGold(Joueur j, JLabel label){
+        label.setText(Integer.toString(j.getGold()));
+    }
+    */
+
 }

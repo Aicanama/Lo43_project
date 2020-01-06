@@ -238,12 +238,8 @@ public class Plateau extends JPanel{
         //myLabelsGold.add(esp4);
         myLabelsGold.add(esp5);
         myLabelsGold.add(esp6);
-        myLabelsGold.add(ico1);
         //myLabelsGold.add(esp8); plus besoin vu que définit dans la fenetre
-        myLabelsGold.add(ico2);
-        myLabelsGold.add(ico3);
         //myLabelsGold.add(esp11);
-        myLabelsGold.add(ico4);
         myLabelsGold.add(esp13);
         myLabelsGold.add(esp14);
         myLabelsGold.add(esp15);
@@ -252,27 +248,31 @@ public class Plateau extends JPanel{
         myLabelsGold.add(esp18);
 
 
+        Collection<JLabel> labelIcone = new ArrayList<JLabel>();
+        labelIcone.add(ico1);
+        labelIcone.add(ico2);
+        labelIcone.add(ico3);
+        labelIcone.add(ico4);
+
+
         ///REVOIR CETTE PARTIE
 
         Border border = BorderFactory.createLineBorder(Color.BLUE , 2);
         for (JLabel label : myLabelsGold) {
         	//border
         	label.setBorder(border);
-        	
-        	//icon
-        	String name = label.getText(); //texte donné pas le nom du label
 
-        	if(name.startsWith("Ico1") || name.startsWith("Ico2") || name.startsWith("Ico3") || name.startsWith("Ico4")) {
-        		label.setIcon(gold);
-        	}
-
-        	if(name.startsWith("esp")) {
-        		label.setBorder(new EmptyBorder(5, 1, 1, 1));
-        	}
+        	label.setBorder(new EmptyBorder(5, 1, 1, 1));
 
         	/*
         	//position Horizontal (tous pareil)
         	label.setHorizontalAlignment(SwingConstants.TRAILING); */
+        }
+
+        for (JLabel label : labelIcone) {
+            label.setVerticalAlignment(SwingConstants.TOP);
+            label.setHorizontalAlignment(SwingConstants.RIGHT);
+            label.setIcon(gold);
         }
 
        
@@ -304,18 +304,6 @@ public class Plateau extends JPanel{
         esp3.setHorizontalAlignment(SwingConstants.LEFT);
         esp6.setVerticalAlignment(SwingConstants.CENTER);
         esp6.setHorizontalAlignment(SwingConstants.LEFT);
-            //Icone Plat1
-        ico1.setVerticalAlignment(SwingConstants.TOP);
-        ico1.setHorizontalAlignment(SwingConstants.RIGHT);
-            //Icone Plat2
-        ico2.setVerticalAlignment(SwingConstants.TOP);
-        ico2.setHorizontalAlignment(SwingConstants.RIGHT);
-            //Icone Plat3
-        ico3.setVerticalAlignment(SwingConstants.TOP);
-        ico3.setHorizontalAlignment(SwingConstants.RIGHT);
-            //Icone Plat4
-        ico4.setVerticalAlignment(SwingConstants.TOP);
-        ico4.setHorizontalAlignment(SwingConstants.RIGHT);
             //esp carte bas
         esp11.setVerticalAlignment(SwingConstants.BOTTOM);
         esp11.setHorizontalAlignment(SwingConstants.LEFT);
@@ -364,8 +352,6 @@ public class Plateau extends JPanel{
         ico4.setBorder(borderLabelForIcone);
 
 
-
-
         //Espaces pour les plateaux
         Border borderLabelForPlat = BorderFactory.createLineBorder(Color.GREEN , 1);
         esp1.setLayout(new GridLayout(1,1,0,0));
@@ -389,34 +375,114 @@ public class Plateau extends JPanel{
         // --> definition dans JFrameButtonCards
 
 
-        //Création icônes en fonction cartes choisies  (test)  (6cartes/joueur pour Age I)
+        //Création icônes pour les cartes
         JLabel IconeCarte1 = new JLabel();
-        IconeCarte1.setIcon(iconeBe);
-        IconeCarte1.setVerticalAlignment(SwingConstants.TOP);
-        IconeCarte1.setHorizontalAlignment(SwingConstants.LEFT);
         JLabel IconeCarte2 = new JLabel();
-        IconeCarte2.setIcon(iconePi);
-        IconeCarte2.setVerticalAlignment(SwingConstants.TOP);
         JLabel IconeCarte3 = new JLabel();
-        IconeCarte3.setIcon(iconeBr);
-        IconeCarte3.setVerticalAlignment(SwingConstants.TOP);
         JLabel IconeCarte4 = new JLabel();
-        IconeCarte4.setIcon(iconeOr);
-        IconeCarte4.setVerticalAlignment(SwingConstants.TOP);
         JLabel IconeCarte5 = new JLabel();
-        IconeCarte5.setIcon(iconePu);
-        IconeCarte5.setVerticalAlignment(SwingConstants.TOP);
         JLabel IconeCarte6 = new JLabel();
-        IconeCarte6.setIcon(iconeBo);
-        IconeCarte6.setVerticalAlignment(SwingConstants.TOP);
+        JLabel IconeCarte7 = new JLabel();
+        JLabel IconeCarte8 = new JLabel();
+        JLabel IconeCarte9 = new JLabel();
+        JLabel IconeCarte10 = new JLabel();
+        JLabel IconeCarte11 = new JLabel();
+        JLabel IconeCarte12 = new JLabel();
+        JLabel IconeCarte13 = new JLabel();
+        JLabel IconeCarte14 = new JLabel();
+        JLabel IconeCarte15 = new JLabel();
 
-        //affichage des icones à cté des plateaux
+        IconeCarte1.setHorizontalAlignment(SwingConstants.LEFT);
+
+
+        //AIDE POUR AFFICHAGE   A CHANGER APRES EN FONCTION DU CLIC
+        IconeCarte1.setIcon(iconeBe);
+        IconeCarte2.setIcon(iconePi);
+        IconeCarte3.setIcon(iconeBr);
+        IconeCarte4.setIcon(iconeOr);
+        IconeCarte5.setIcon(iconePu);
+        IconeCarte6.setIcon(iconeBo);
+
+        //affichage des icones à côté des plateaux
+        //Joueur 1
+            //age I
         ico1.add(IconeCarte1);
         ico1.add(IconeCarte2);
         ico1.add(IconeCarte3);
         ico1.add(IconeCarte4);
         ico1.add(IconeCarte5);
         ico1.add(IconeCarte6);
+            //age II
+        ico1.add(IconeCarte7);
+        ico1.add(IconeCarte8);
+        ico1.add(IconeCarte9);
+        ico1.add(IconeCarte10);
+        ico1.add(IconeCarte11);
+            //age III
+        ico1.add(IconeCarte12);
+        ico1.add(IconeCarte13);
+        ico1.add(IconeCarte14);
+        ico1.add(IconeCarte15);
+
+        //Joueur 2
+            //age I
+        ico2.add(IconeCarte1);
+        ico2.add(IconeCarte2);
+        ico2.add(IconeCarte3);
+        ico2.add(IconeCarte4);
+        ico2.add(IconeCarte5);
+        ico2.add(IconeCarte6);
+            //age II
+        ico2.add(IconeCarte7);
+        ico2.add(IconeCarte8);
+        ico2.add(IconeCarte9);
+        ico2.add(IconeCarte10);
+        ico2.add(IconeCarte11);
+            //age III
+        ico2.add(IconeCarte12);
+        ico2.add(IconeCarte13);
+        ico2.add(IconeCarte14);
+        ico2.add(IconeCarte15);
+
+        //Joueur 3
+            //age I
+        ico3.add(IconeCarte1);
+        ico3.add(IconeCarte2);
+        ico3.add(IconeCarte3);
+        ico3.add(IconeCarte4);
+        ico3.add(IconeCarte5);
+        ico3.add(IconeCarte6);
+            //age II
+        ico3.add(IconeCarte7);
+        ico3.add(IconeCarte8);
+        ico3.add(IconeCarte9);
+        ico3.add(IconeCarte10);
+        ico3.add(IconeCarte11);
+            //age III
+        ico3.add(IconeCarte12);
+        ico3.add(IconeCarte13);
+        ico3.add(IconeCarte14);
+        ico3.add(IconeCarte15);
+
+        //Joueur 4
+            //age I
+        ico4.add(IconeCarte1);
+        ico4.add(IconeCarte2);
+        ico4.add(IconeCarte3);
+        ico4.add(IconeCarte4);
+        ico4.add(IconeCarte5);
+        ico4.add(IconeCarte6);
+            //age II
+        ico4.add(IconeCarte7);
+        ico4.add(IconeCarte8);
+        ico4.add(IconeCarte9);
+        ico4.add(IconeCarte10);
+        ico4.add(IconeCarte11);
+            //age III
+        ico4.add(IconeCarte12);
+        ico4.add(IconeCarte13);
+        ico4.add(IconeCarte14);
+        ico4.add(IconeCarte15);
 
 
         ///mise en place Plateau

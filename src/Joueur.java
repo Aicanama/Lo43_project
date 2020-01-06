@@ -32,6 +32,8 @@ public class Joueur {
         this.power=0;
     }
 
+    public int getGold() {return this.gold; }
+
     public void showSousListe() {
 
     }
