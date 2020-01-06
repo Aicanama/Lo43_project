@@ -8,7 +8,6 @@ import com.observer.PlayerListener;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.EventListenerList;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -382,12 +381,12 @@ public class Moteur extends Thread{
             case 1:
                 age1Ini(carteList);
                 break;
-            case 2:
+            /*case 2:
                 //age2Ini(carteList);
                 break;
             case 3:
                 //age3Ini(carteList);
-                break;
+                break;*/
             default:
                 System.out.println("age inconnu");
         }
