@@ -169,7 +169,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     //affichage sans la carte choisie dun joueur
     public void cardChangedRound(CardChangedEvent event) {
         int i=0; //faire separation entre carte hautes et basses
-        int k=event.getNewCartesJoueur().cartes.size(); //taille sousliste du nouveau tas du joueur (sans celle enlevé précedemnt
+        int k=event.getNewCartesJoueur().cartes.size(); //taille sousliste du nouveau tas du joueur (sans celle enlevÃ© prÃ©cedemnt
         System.out.println("cardChangedRound :: event.getNewCartesJoueur().cartes.size() : " + k);
 
        for(JButton button : allButtonCards){
@@ -216,7 +216,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     //affichage sous liste joueur suivant
     public void cardChangedPlayer(PlayerChangedEvent event){
         int i=0; //faire separation entre carte hautes et basses
-        int k=event.getNewCards().cartes.size(); //taille sousliste du nouveau tas du joueur (sans celle enlevé précedemnt
+        int k=event.getNewCards().cartes.size(); //taille sousliste du nouveau tas du joueur (sans celle enlevÃ© prÃ©cedemnt
         System.out.println("cardChangedPlayer :: event.getNewCartesJoueur().cartes.size() : " + k);
         ssListeJoueur = event.getNewCards();
 
@@ -282,7 +282,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         }
 
         //si dernier joueur au dernier tour sinon au prochain joueur
-        if(idJoueur==3 && allButtonCards.size()==1) {
+        if(idJoueur==3 && ssListeJoueur.cartes.size()==1) {
             btnNext.setEnabled(false);
         }
         else btnNext.setEnabled(true);
