@@ -5,15 +5,15 @@ import com.view.Fenetre;
 
 import javax.swing.*;
 
-public class CardController /*extends Thread*/ {
+public class CardController extends Thread {
     public JFrameButtonCards buttonView = null;
 
     private Moteur model = null;
 
     public CardController (Moteur model){
         this.model = model;
-        buttonView = new JFrameButtonCards(this, model.getSsListeJoueur(model.getIdJoueur()),model.getIdJoueur());
-        addListenersToModel();
+      /*  buttonView = new JFrameButtonCards(this, model.getSsListeJoueur(model.getIdJoueur()),model.getIdJoueur());
+        addListenersToModel();*/
     }
 
     private void addListenersToModel() {
@@ -48,16 +48,21 @@ public class CardController /*extends Thread*/ {
     }
     */
 
-   /* @Override
+   @Override
     public void run() {
+       try {
+           sleep(2000); //pour initialisation
+       } catch (InterruptedException e) {
+           e.printStackTrace();
+       }
+       System.out.println("controller :: run ");
+       buttonView = new JFrameButtonCards(this, model.getSsListeJoueur(model.getIdJoueur()),model.getIdJoueur());
+       addListenersToModel();
 
             while(true){
-                int idJ = model.getMessageJoueurChanged();
-                buttonView = new JFrameButtonCards(this, model.getSsListeJoueur(model.getIdJoueur()),model.getIdJoueur());
-                addListenersToModel();
                 displayView();
             }
 
-    }*/
+    }
 
 }

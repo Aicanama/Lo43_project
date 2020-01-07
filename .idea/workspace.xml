@@ -4,11 +4,9 @@
     <list default="true" id="7b736fce-80e8-474d-80ab-31c775f0cb03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/controller/CardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/controller/CardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/JFrameButtonCards.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/model/JFrameButtonCards.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/model/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/Moteur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/model/Moteur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/controller/CardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/JFrameButtonCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/JFrameButtonCards.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/model/Moteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Moteur.java" afterDir="false" />
     </list>
@@ -74,22 +72,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="81" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1578346654241" />
-    <state width="1237" height="155" key="GridCell.Tab.0.bottom" timestamp="1578386141794">
+    <state width="1237" height="155" key="GridCell.Tab.0.bottom" timestamp="1578392151593">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="155" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1578386141794" />
-    <state width="1237" height="155" key="GridCell.Tab.0.center" timestamp="1578386141794">
+    <state width="1237" height="155" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1578392151593" />
+    <state width="1237" height="155" key="GridCell.Tab.0.center" timestamp="1578392151593">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="155" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1578386141794" />
-    <state width="1237" height="155" key="GridCell.Tab.0.left" timestamp="1578386141794">
+    <state width="1237" height="155" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1578392151593" />
+    <state width="1237" height="155" key="GridCell.Tab.0.left" timestamp="1578392151593">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="155" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1578386141794" />
-    <state width="1237" height="155" key="GridCell.Tab.0.right" timestamp="1578386141794">
+    <state width="1237" height="155" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1578392151593" />
+    <state width="1237" height="155" key="GridCell.Tab.0.right" timestamp="1578392151593">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="155" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578386141794" />
+    <state width="1237" height="155" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578392151593" />
     <state width="1237" height="237" key="GridCell.Tab.1.bottom" timestamp="1578383915669">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

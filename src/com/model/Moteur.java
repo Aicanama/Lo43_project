@@ -16,7 +16,7 @@ import java.util.Collections;
 import static jdk.nashorn.internal.objects.NativeMap.size;
 
 
-public class Moteur /*extends Thread*/{
+public class Moteur extends Thread{
     //le modèle
 
     private int ageActuel;
@@ -248,11 +248,11 @@ public class Moteur /*extends Thread*/{
     public Moteur(int n_id){
         this.ageActuel = n_id;
         this.idJoueur = 0;
-        this.age = new Age(ageActuel);
+        //this.age = new Age(ageActuel);
 
         //ecoute des changements = notofication aux autres composants
         listeners = new EventListenerList();
-        startGame();
+       // startGame();
 
         //erreur dans > run : https://stackoverflow.com/questions/22189475/unable-to-run-wait-method-in-threading?noredirect=1&lq=1
     }
@@ -342,15 +342,15 @@ public class Moteur /*extends Thread*/{
         }
     }
 
-public void startGame () {
+/*public void startGame () {
     listeJoueur = new ArrayList<Joueur>();
     for (int i = 0; i < 4; ++i) {
         this.listeJoueur.add(new Joueur(i, null, null));
     }
     iniAge();
-}
+}*/
 
-   /* public void run() {
+  /* public void run() {
         int carteN = 0;
         listeJoueur = new ArrayList<Joueur>();
         for (int i = 0; i < 4; ++i) {
@@ -367,48 +367,44 @@ public void startGame () {
                         e.printStackTrace();
                     }
                 }
+            }
+        }
 }*/
 
-  /* Moi: public void run() {
-         System.out.println("Moteur ;; run");
-        int carteN = 0;
-        listeJoueur = new ArrayList<Joueur>();
-        for (int i = 0; i < 4; ++i) {
-            this.listeJoueur.add(new Joueur(i, null, null));
-        }
-         System.out.println("pas initialisation");
-         iniAge();
-         System.out.println("initialisation done");
-        while (this.listeJoueur.get(3).sousListe.cartes.size() > 1) {
-           //int x =  getInitialistionSousListe();
-        }
-         System.out.println("fin run");
-    }
-*/
+/*  public void run() {
+      synchronized (this) {
+          System.out.println("Moteur :: run");
+          int carteN = 0;
+          listeJoueur = new ArrayList<Joueur>();
+          for (int i = 0; i < 4; ++i) {
+              this.listeJoueur.add(new Joueur(i, null, null));
+          }
+          System.out.println("pas initialisation");
+          iniAge();
+          System.out.println("initialisation done");
+          while (this.listeJoueur.get(3).sousListe.cartes.size() > 1) {
 
-   /* public synchronized int getInitialistionSousListe() throws InterruptedException{
-        notify();
-        System.out.println("Moteur :: rentrer ds run et getmessage");
-        while (idJoueur >= 0 && idJoueur < 4) {
-            try {
-                this.wait();//By executing wait() from a synchronized block, a thread gives up its hold on the lock and goes to sleep.
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        return -1;
-    }
-*/
+          }
+          System.out.println("fin run");
+      }
+  }
 
+
+*/
     public void run() {
-            int carteN = 0;
-            listeJoueur = new ArrayList<Joueur>();
-            for (int i = 0; i < 4; ++i) {
-                this.listeJoueur.add(new Joueur(i, null, null));
-            }
-            for (int i = 0; i < 3; ++i) {
-                iniAge();
-                while (this.listeJoueur.get(3).sousListe.cartes.size() != 0) {
+      synchronized (this) {
+          System.out.println("Moteur :: run");
+          int carteN = 0;
+          listeJoueur = new ArrayList<Joueur>();
+          for (int i = 0; i < 4; ++i) {
+              this.listeJoueur.add(new Joueur(i, null, null));
+          }
+          System.out.println("pas initialisation");
+          iniAge();
+          System.out.println("initialisation done");
+
+          while (this.listeJoueur.get(3).sousListe.cartes.size() > 5) {
+              System.out.println("Moteur : :run : "+listeJoueur.get(3).sousListe.cartes.size());
                     for (int j = 0; j < 4; ++j) {
                         this.listeJoueur.get(j).showSousListe();
                         try {
@@ -438,13 +434,12 @@ public void startGame () {
                     }
                     this.rotation();
                 }
-                this.applyPower();
+                //this.applyPower();
                 this.ageActuel = this.ageActuel + 1;
             }
-            this.affichage();
+            //this.affichage();
 
     }
-
 
 
     public void assignAge(ArrayList list) {

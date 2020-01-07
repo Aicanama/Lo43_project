@@ -20,11 +20,11 @@ public class Main {
         System.out.println(" Main ok ");
 
         Moteur moteur1 = new Moteur(1);
-       /* moteur1.setName("moteur");
-        moteur1.start();*/
+        //moteur1.setName("moteur");
+        moteur1.start();
         CardController controller  = new CardController(moteur1);
-        //controller.start();
-        controller.displayView();
+        controller.start();
+        //controller.displayView();
 
 
 
