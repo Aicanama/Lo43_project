@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class Plateau extends JPanel {
 
     //affichage
-    private static final long serialVersionUID = 1L; //--> qu'est ce que c'est ??
+    private static final long serialVersionUID = 1L;
     private Image plateauJoueur1, plateauJoueur2, plateauJoueur3, plateauJoueur4;
     //icones ressources
     private ImageIcon gold, iconeBe, iconeBr, iconeOr, iconePi, iconeGl, iconePu, iconeBo;
@@ -38,7 +38,7 @@ public class Plateau extends JPanel {
     protected SousListe cardsToPrint;
 
 
-    //constructeur @leo
+    //constructeur @model?
     protected char image;
     protected int ressource;
     protected String imageRessource;
@@ -57,29 +57,7 @@ public class Plateau extends JPanel {
         URL urlPlateau5 = getClass().getResource("img/plateau_5.png");
         URL urlPlateau6 = getClass().getResource("img/plateau_6.png");
         URL urlPlateau7 = getClass().getResource("img/plateau_7.png");
-        //age I
-        //cartes
-        URL urlPizza = getClass().getResource("img/pizza.png");
-        URL urlPuzzle = getClass().getResource("img/puzzle.png");
-        URL urlBook = getClass().getResource("img/book.png");
-        URL urlBrain = getClass().getResource("img/brain.png");
-        URL urlBeer = getClass().getResource("img/beer.png");
-        URL urlGlobe = getClass().getResource("img/globe.png");
-        URL urlOrdi = getClass().getResource("img/ordi.png");
-        URL urlPiOr = getClass().getResource("img/pizza_ordi.png");
-        URL urlOrBr = getClass().getResource("img/ordi_brain.png");
-        URL urlBrBe = getClass().getResource("img/brain_beer.png");
-        URL urlMieE = getClass().getResource("img/mieCalinouEst.png");
-        URL urlMieO = getClass().getResource("img/mieCalinouOuest.png");
-        URL urlOne = getClass().getResource("img/oneShoot.png");
-        URL urlBou = getClass().getResource("img/bouleDisco.png");
-        URL urlSav = getClass().getResource("img/savoureuse.png");
-        URL urlCuc = getClass().getResource("img/CUC.png");
-        URL urlSte = getClass().getResource("img/steleBartholdi.png");
-        URL urlCin = getClass().getResource("img/cinema.png");
-        URL urlMat = getClass().getResource("img/matrice.png");
-        URL urlAng = getClass().getResource("img/anglais.png");
-        URL urlEtuEc = getClass().getResource("img/etudesEcrites.png");
+
         //icones
         URL urlGold = getClass().getResource("img/gold.png");
         URL urlIcoBe = getClass().getResource("img/ibeer.png");
@@ -89,39 +67,6 @@ public class Plateau extends JPanel {
         URL urlIcoGl = getClass().getResource("img/iglobe.png");
         URL urlIcoOr = getClass().getResource("img/iordi_brain.png");
         URL urlIcoBo = getClass().getResource("img/ibook.png");
-        //Age II
-        //cartes
-        URL urlBe2 = getClass().getResource("img/beer2.png");
-        URL urlBr2 = getClass().getResource("img/brain2.png");
-        URL urlPi2 = getClass().getResource("img/pizza2.png");
-        URL urlOr2 = getClass().getResource("img/ordi2.png");
-        URL urlCave = getClass().getResource("img/caveAVins.png");
-        URL urlNo = getClass().getResource("img/nooz.png");
-        URL urlBar = getClass().getResource("img/bar.png");
-        URL urlLitCar = getClass().getResource("img/littleCarouf.png");
-        URL urlLion = getClass().getResource("img/lionBartholdi.png");
-        URL urlPoud = getClass().getResource("img/poudriere.png");
-        URL urlFont = getClass().getResource("img/fontaine.png");
-        URL urlPalais = getClass().getResource("img/palaisJustice.png");
-        URL urlCoda = getClass().getResource("img/codage.png");
-        URL urlBula = getClass().getResource("img/bulats.png");
-        URL urlLan2 = getClass().getResource("img/langue2.png");
-        URL urlEloq = getClass().getResource("img/eloquence.png");
-        //Age III
-        URL urlFoy = getClass().getResource("img/foyer.png");
-        URL urlLac = getClass().getResource("img/laclerc.png");
-        URL urlCham = getClass().getResource("img/chambreCommerce.png");
-        URL urlBas = getClass().getResource("img/basicFat.png");
-        URL urlMai = getClass().getResource("img/mairie.png");
-        URL urlBelf = getClass().getResource("img/belfortHotel.png");
-        URL urlPol = getClass().getResource("img/police.png");
-        URL urlMus = getClass().getResource("img/museum.png");
-        URL urlCit = getClass().getResource("img/citadelle.png");
-        URL urlBil = getClass().getResource("img/bilingue.png");
-        URL urlEtuEt = getClass().getResource("img/etudeEtranger.png");
-        URL urlLog = getClass().getResource("img/logiciel.png");
-        URL urlScie = getClass().getResource("img/sciences2.png");
-        URL urlHist = getClass().getResource("img/histoire2.png");
 
 
         try {
@@ -145,61 +90,6 @@ public class Plateau extends JPanel {
             iconePu = new ImageIcon(ImageIO.read(urlIcoPu));
             iconeOr = new ImageIcon(ImageIO.read(urlIcoOr));
             iconeGl = new ImageIcon(ImageIO.read(urlIcoGl));
-            //Cartes Ressources
-            pizza = new ImageIcon(ImageIO.read(urlPizza));
-            beer = new ImageIcon(ImageIO.read(urlBeer));
-            ordi = new ImageIcon(ImageIO.read(urlOrdi));
-            brain = new ImageIcon(ImageIO.read(urlBrain));
-            book = new ImageIcon(ImageIO.read(urlBook));
-            globe = new ImageIcon(ImageIO.read(urlGlobe));
-            puzzle = new ImageIcon(ImageIO.read(urlPuzzle));
-            pizOrd = new ImageIcon(ImageIO.read(urlPiOr));
-            ordBra = new ImageIcon(ImageIO.read(urlOrBr));
-            braBee = new ImageIcon(ImageIO.read(urlBrBe));
-            beer2 = new ImageIcon(ImageIO.read(urlBe2));
-            brain2 = new ImageIcon(ImageIO.read(urlBr2));
-            pizza2 = new ImageIcon(ImageIO.read(urlPi2));
-            ordi2 = new ImageIcon(ImageIO.read(urlOr2));
-            //Cartes Commerce
-            mieCalE = new ImageIcon(ImageIO.read(urlMieE));
-            mieCalO = new ImageIcon(ImageIO.read(urlMieO));
-            oneS = new ImageIcon(ImageIO.read(urlOne));
-            boulD = new ImageIcon(ImageIO.read(urlBou));
-            caveVin = new ImageIcon(ImageIO.read(urlCave));
-            nooz = new ImageIcon(ImageIO.read(urlNo));
-            bar = new ImageIcon(ImageIO.read(urlBar));
-            litCarouf = new ImageIcon(ImageIO.read(urlLitCar));
-            foyer = new ImageIcon(ImageIO.read(urlFoy));
-            laclerc = new ImageIcon(ImageIO.read(urlLac));
-            chambC = new ImageIcon(ImageIO.read(urlCham));
-            basicFat = new ImageIcon(ImageIO.read(urlBas));
-            //Cartes Patrimoine
-            savour = new ImageIcon(ImageIO.read(urlSav));
-            cuc = new ImageIcon(ImageIO.read(urlCuc));
-            steleB = new ImageIcon(ImageIO.read(urlSte));
-            cine = new ImageIcon(ImageIO.read(urlCin));
-            lionB = new ImageIcon(ImageIO.read(urlLion));
-            poudr = new ImageIcon(ImageIO.read(urlPoud));
-            fonta = new ImageIcon(ImageIO.read(urlFont));
-            palaisJ = new ImageIcon(ImageIO.read(urlPalais));
-            mairie = new ImageIcon(ImageIO.read(urlMai));
-            belfHot = new ImageIcon(ImageIO.read(urlBelf));
-            police = new ImageIcon(ImageIO.read(urlPol));
-            museum = new ImageIcon(ImageIO.read(urlMus));
-            citad = new ImageIcon(ImageIO.read(urlCit));
-            //Cartes Connaissances
-            matrice = new ImageIcon(ImageIO.read(urlMat));
-            anglais = new ImageIcon(ImageIO.read(urlAng));
-            etudeEc = new ImageIcon(ImageIO.read(urlEtuEc));
-            codage = new ImageIcon(ImageIO.read(urlCoda));
-            bulats = new ImageIcon(ImageIO.read(urlBula));
-            langue2 = new ImageIcon(ImageIO.read(urlLan2));
-            eloque = new ImageIcon(ImageIO.read(urlEloq));
-            bilingue = new ImageIcon(ImageIO.read(urlBil));
-            etudeEtr = new ImageIcon(ImageIO.read(urlEtuEt));
-            logiciel = new ImageIcon(ImageIO.read(urlLog));
-            science2 = new ImageIcon(ImageIO.read(urlScie));
-            histoire2 = new ImageIcon(ImageIO.read(urlHist));
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -213,7 +103,7 @@ public class Plateau extends JPanel {
         esp4 = new JLabel();
         esp5 = new JLabel();
         esp6 = new JLabel();
-        ico1 = new JLabel(); //pk mettre l'argent en haut ?
+        ico1 = new JLabel();
         esp8 = new JLabel();
         ico2 = new JLabel();
         ico3 = new JLabel();
@@ -272,10 +162,6 @@ public class Plateau extends JPanel {
             if (name.startsWith("E")) {
                 label.setBorder(new EmptyBorder(5, 1, 1, 1));
             }
-
-
-            //position Horizontal (tous pareil)
-            label.setHorizontalAlignment(SwingConstants.TRAILING);
         }
 
 
@@ -423,40 +309,6 @@ public class Plateau extends JPanel {
         ///mise en place Plateau
         for (JLabel label : myLabelsGold) {
             this.add(label);
-        }
-
-
-        /** a voir lors utilsation connexion
-         *  test changement valeur labelgold1 :
-         *
-         JButton button = new JButton("Change flag");
-         button.addActionListener(new ActionListener() {
-        @Override public void actionPerformed(ActionEvent arg0) {
-        labelGold1.setText("new value");
-        }
-        });
-         add(button);
-         */
-    }
-
-
-    public void actionPerformed(ActionEvent e, int joueur) {
-        if (joueur == 1) {
-            i = Integer.parseInt(ico1.getText());
-            this.i++;
-            ico1.setText(String.valueOf(i));
-        } else if (joueur == 2) {
-            i = Integer.parseInt(ico2.getText());
-            this.i++;
-            ico2.setText(String.valueOf(i));
-        } else if (joueur == 3) {
-            i = Integer.parseInt(ico3.getText());
-            this.i++;
-            ico3.setText(String.valueOf(i));
-        } else if (joueur == 4) {
-            i = Integer.parseInt(ico4.getText());
-            this.i++;
-            ico4.setText(String.valueOf(i));
         }
     }
 

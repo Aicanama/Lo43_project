@@ -1,9 +1,6 @@
 package com.controller;
 
 import com.model.*;
-import com.view.Fenetre;
-
-import javax.swing.*;
 
 public class CardController extends Thread {
     public JFrameButtonCards buttonView = null;

@@ -10,9 +10,6 @@ package com.model;
  - verre = puzzle = 6*/
 
 import com.controller.CardController;
-import com.view.Fenetre;
-
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {

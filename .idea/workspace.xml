@@ -3,10 +3,42 @@
   <component name="ChangeListManager">
     <list default="true" id="7b736fce-80e8-474d-80ab-31c775f0cb03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/Age.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/Carte.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/CarteCommerce.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/CarteConnaissance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/CarteExamen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/CartePatrimoine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/CarteRessource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/Comptche.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/GainG.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/Image.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/Joueur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/Moteur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/PVGold.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/Plateau.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet_form/SousListe.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Age.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Carte.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarteCommerce.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarteConnaissance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarteExamen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CartePatrimoine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarteRessource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Comptche.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GainG.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Image.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Joueur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Moteur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PVGold.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Plateau.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SousListe.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/controller/CardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/JFrameButtonCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/JFrameButtonCards.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/model/Moteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Moteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/view/Fenetre.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/view/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/Plateau.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +49,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1W4cLWBOLLXLeXpXeD7hf9mgrSl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -56,6 +95,13 @@
     <configuration />
   </component>
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b736fce-80e8-474d-80ab-31c775f0cb03" name="Default Changelist" comment="" />
+      <created>1578412251623</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578412251623</updated>
+    </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
@@ -76,25 +122,25 @@
     </state>
     <state x="421" y="81" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1578346654241" />
     <state x="449" y="87" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1578392712130" />
-    <state width="1322" height="174" key="GridCell.Tab.0.bottom" timestamp="1578394429799">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="595" height="163" key="GridCell.Tab.0.bottom" timestamp="1578413343868">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="155" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1578392151593" />
+    <state width="595" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1578413343868" />
     <state width="1322" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578394429799" />
-    <state width="1322" height="174" key="GridCell.Tab.0.center" timestamp="1578394429798">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="595" height="163" key="GridCell.Tab.0.center" timestamp="1578413343867">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="155" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1578392151593" />
+    <state width="595" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1578413343867" />
     <state width="1322" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578394429798" />
-    <state width="1322" height="174" key="GridCell.Tab.0.left" timestamp="1578394429798">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="595" height="163" key="GridCell.Tab.0.left" timestamp="1578413343865">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="155" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1578392151593" />
+    <state width="595" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1578413343865" />
     <state width="1322" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578394429798" />
-    <state width="1322" height="174" key="GridCell.Tab.0.right" timestamp="1578394429799">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="595" height="163" key="GridCell.Tab.0.right" timestamp="1578413343868">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="155" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578392151593" />
+    <state width="595" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578413343868" />
     <state width="1322" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578394429799" />
     <state width="1237" height="237" key="GridCell.Tab.1.bottom" timestamp="1578383915669">
       <screen x="0" y="0" width="1280" height="680" />
@@ -128,17 +174,5 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1578350749560" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/com/model/Moteur.java</url>
-          <line>30</line>
-          <properties field="idJoueur" class="com.model.Moteur" />
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
