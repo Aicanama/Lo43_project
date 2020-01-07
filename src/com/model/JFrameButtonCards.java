@@ -179,16 +179,14 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
                 case 2 : contentPaneCarteHigh.remove(btnC3);
                     contentPaneCarteHigh.repaint();
                     break;
-                case 1: contentPaneCarteHigh.remove(btnC2);
+                default: contentPaneCarteHigh.remove(btnC2);
                     JOptionPane.showMessageDialog(frame,
                             "fin d'un age");
                     btnC1.setEnabled(false);
                     contentPaneCarteHigh.repaint();
-                    break;
-                default:
                     System.out.println("Jframe :: cardChangedRound : plus qu'une seule carte dans ssliste = fin age");
+                    break;
             }
-
 
     }
 
@@ -212,6 +210,7 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         }
 
         fieldNumJoueur.setText("Tour de J" + String.valueOf(event.getNewJoueurId()+1));
+        fieldNumJoueur.repaint();
         plateau.repaint();
     }
 
@@ -261,18 +260,27 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
             button.setEnabled(false);
         }
 
-        btnNext.setEnabled(true);
+        //si dernier joueur au dernier tour sinon au prochain joueur
+        if(idJoueur==3 && allButtonCards.size()==1) {
+            btnNext.setEnabled(false);
+        }
+        else btnNext.setEnabled(true);
+
         //envoi au controller nouvelle sous liste sans la carte choisie du joueur en cours
         getController().notifyCardChanged(ssListeJoueur);
 
         if (action.equals("Next")){
             System.out.println("Clique Next");
-            //envoi au controller le nouvel idJoueur
             ++idJoueur;
+            if(idJoueur==4)
+                idJoueur=0;
+
+            //envoi au controller le nouvel idJoueur
             getController().notifyIdJoueurChanged(idJoueur);
             for(JButton button : allButtonCards){
                 button.setEnabled(true);
             }
+            btnNext.setEnabled(false);
         }
         plateau.repaint();
 

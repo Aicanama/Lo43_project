@@ -16,7 +16,7 @@ import java.util.Collections;
 import static jdk.nashorn.internal.objects.NativeMap.size;
 
 
-public class Moteur extends Thread{
+public class Moteur /*extends Thread*/{
     //le modèle
 
     private int ageActuel;
@@ -32,6 +32,25 @@ public class Moteur extends Thread{
 
     private EventListenerList listeners;
 
+    public void iniAge() {
+        ArrayList<Carte> carteList = new ArrayList<Carte>();
+        switch (this.ageActuel) {
+            case 1:
+                age1Ini(carteList);
+                break;
+            /*case 2:
+                //age2Ini(carteList);
+                break;
+            case 3:
+                //age3Ini(carteList);
+                break;*/
+            default:
+                System.out.println("age inconnu");
+        }
+        for(int i=0;i<4;++i) {
+            this.listeJoueur.get(i).sousListe = new SousListe(carteList, i);
+        }
+    }
 
     public void age1Ini(ArrayList list) {
         //le type 7 ne correspond à aucune ressource
@@ -231,18 +250,11 @@ public class Moteur extends Thread{
         this.idJoueur = 0;
         this.age = new Age(ageActuel);
 
-        //pour 'linstant le seul moyen de communiquer les souslistes
-        age1Ini(age.cartes);
-        listeJoueur= new ArrayList<Joueur>();
-        this.listeJoueur.add(new Joueur(0,null,new SousListe(age.cartes,0)));
-        this.listeJoueur.add(new Joueur(1,null,new SousListe(age.cartes,1)));
-
-
         //ecoute des changements = notofication aux autres composants
         listeners = new EventListenerList();
+        startGame();
 
         //erreur dans > run : https://stackoverflow.com/questions/22189475/unable-to-run-wait-method-in-threading?noredirect=1&lq=1
-        // run();
     }
 
     /// Les méthodes gérant les vues sous forme de listener :
@@ -286,7 +298,6 @@ public class Moteur extends Thread{
         CardListener[] cardListeners = (CardListener[]) listeners.getListeners(CardListener.class);
 
         for (CardListener listener : cardListeners) {
-            //listener.cardChangedPlayer(new CardChangedEvent(this, getSsListeJoueur(idJoueur)));
             listener.cardChangedRound(new CardChangedEvent(this, getSsListeJoueur(idJoueur)));
         }
 
@@ -331,69 +342,110 @@ public class Moteur extends Thread{
         }
     }
 
-    public void run() {
-        int carteN=0;
-        for(int i=0;i<4;++i) {
+public void startGame () {
+    listeJoueur = new ArrayList<Joueur>();
+    for (int i = 0; i < 4; ++i) {
+        this.listeJoueur.add(new Joueur(i, null, null));
+    }
+    iniAge();
+}
+
+   /* public void run() {
+        int carteN = 0;
+        listeJoueur = new ArrayList<Joueur>();
+        for (int i = 0; i < 4; ++i) {
             this.listeJoueur.add(new Joueur(i, null, null));
         }
-        for (int i=0;i<3;++i) {
+        for (int i = 0; i < 3; ++i) {
             iniAge();
-            while (this.listeJoueur.get(0).sousListe.cartes.size() != 0) {
-                for (int j=0;j<4;++j) {
+            while (this.listeJoueur.get(3).sousListe.cartes.size() != 0) {
+                for (int j = 0; j < 4; ++j) {
                     this.listeJoueur.get(j).showSousListe();
                     try {
-                        this.wait();                    //endort le thread, il doit être réveillé depuis le controller une fois qu'une carte a été sélectionnée
+                        wait();                    //endort le thread, il doit être réveillé depuis le controller une fois qu'une carte a été sélectionnée
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    //Il manque une instruction pour faire disparaître la sous-liste de l'écran ?
                 }
-                for(int k=0;k<4;++k) {
-                    switch (k) {
-                        case 0:
-                            carteN=this.carteN0;
-                            break;
-                        case 1:
-                            carteN=this.carteN1;
-                            break;
-                        case 2:
-                            carteN=this.carteN2;
-                            break;
-                        case 3:
-                            carteN=this.carteN3;
-                            break;
-                        default:
-                            carteN=0;
-                    }
-                    play(listeJoueur.get(k).sousListe.cartes, carteN, listeJoueur.get(k));
-                }
-                this.rotation();
-            }
-            this.applyPower();
-            this.ageActuel = this.ageActuel + 1;
+}*/
+
+  /* Moi: public void run() {
+         System.out.println("Moteur ;; run");
+        int carteN = 0;
+        listeJoueur = new ArrayList<Joueur>();
+        for (int i = 0; i < 4; ++i) {
+            this.listeJoueur.add(new Joueur(i, null, null));
         }
-        this.affichage();
+         System.out.println("pas initialisation");
+         iniAge();
+         System.out.println("initialisation done");
+        while (this.listeJoueur.get(3).sousListe.cartes.size() > 1) {
+           //int x =  getInitialistionSousListe();
+        }
+         System.out.println("fin run");
+    }
+*/
+
+   /* public synchronized int getInitialistionSousListe() throws InterruptedException{
+        notify();
+        System.out.println("Moteur :: rentrer ds run et getmessage");
+        while (idJoueur >= 0 && idJoueur < 4) {
+            try {
+                this.wait();//By executing wait() from a synchronized block, a thread gives up its hold on the lock and goes to sleep.
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        return -1;
+    }
+*/
+
+    public void run() {
+            int carteN = 0;
+            listeJoueur = new ArrayList<Joueur>();
+            for (int i = 0; i < 4; ++i) {
+                this.listeJoueur.add(new Joueur(i, null, null));
+            }
+            for (int i = 0; i < 3; ++i) {
+                iniAge();
+                while (this.listeJoueur.get(3).sousListe.cartes.size() != 0) {
+                    for (int j = 0; j < 4; ++j) {
+                        this.listeJoueur.get(j).showSousListe();
+                        try {
+                            wait();                    //endort le thread, il doit être réveillé depuis le controller une fois qu'une carte a été sélectionnée
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    for (int k = 0; k < 4; ++k) {
+                        switch (k) {
+                            case 0:
+                                carteN = this.carteN0;
+                                break;
+                            case 1:
+                                carteN = this.carteN1;
+                                break;
+                            case 2:
+                                carteN = this.carteN2;
+                                break;
+                            case 3:
+                                carteN = this.carteN3;
+                                break;
+                            default:
+                                carteN = 0;
+                        }
+                        play(listeJoueur.get(k).sousListe.cartes, carteN, listeJoueur.get(k));
+                    }
+                    this.rotation();
+                }
+                this.applyPower();
+                this.ageActuel = this.ageActuel + 1;
+            }
+            this.affichage();
+
     }
 
-    public void iniAge() {
-        ArrayList<Carte> carteList = new ArrayList<Carte>();
-        switch (this.ageActuel) {
-            case 1:
-                age1Ini(carteList);
-                break;
-            /*case 2:
-                //age2Ini(carteList);
-                break;
-            case 3:
-                //age3Ini(carteList);
-                break;*/
-            default:
-                System.out.println("age inconnu");
-        }
-        for(int i=0;i<4;++i) {
-            this.listeJoueur.get(i).sousListe = new SousListe(carteList, i);
-        }
-    }
+
 
     public void assignAge(ArrayList list) {
         this.shuffle(list);

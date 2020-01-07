@@ -5,7 +5,7 @@ import com.view.Fenetre;
 
 import javax.swing.*;
 
-public class CardController {
+public class CardController /*extends Thread*/ {
     public JFrameButtonCards buttonView = null;
 
     private Moteur model = null;
@@ -31,14 +31,14 @@ public class CardController {
 
     public void notifyIdJoueurChanged(int idj) {
         model.setIdJoueur(idj);
-        System.out.println("CardController :: notifyIdJoueurChanged: id :  " + idj);
-        model.setSsListeJoueur(model.getSsListeJoueur(idj));
+            System.out.println("CardController :: notifyIdJoueurChanged: id :  " + idj);
+            model.setSsListeJoueur(model.getSsListeJoueur(idj));
+
     }
 
     public void wantRemoveCardChosen(Carte carte){
         model.remove1CardFromSousListe(carte);
     }
-
 
     //fonction pour changer l'argent sur le plateau
         //j'ai mis la fonction getGold dans Joueur mais je ne sais pas où la mettre sinon ?
@@ -47,5 +47,17 @@ public class CardController {
         label.setText(Integer.toString(j.getGold()));
     }
     */
+
+   /* @Override
+    public void run() {
+
+            while(true){
+                int idJ = model.getMessageJoueurChanged();
+                buttonView = new JFrameButtonCards(this, model.getSsListeJoueur(model.getIdJoueur()),model.getIdJoueur());
+                addListenersToModel();
+                displayView();
+            }
+
+    }*/
 
 }
