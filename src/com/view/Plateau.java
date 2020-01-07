@@ -262,6 +262,8 @@ public class Plateau extends JPanel {
 
             if (name.startsWith("Ico1") || name.startsWith("Ico2") || name.startsWith("Ico3") || name.startsWith("Ico4")) {
                 label.setIcon(gold);
+                label.setVerticalAlignment(SwingConstants.TOP);
+                label.setHorizontalAlignment(SwingConstants.RIGHT);
             } else {
                 label.setText("E");
                 label.setFont(new Font("Serif", Font.ITALIC, 1));

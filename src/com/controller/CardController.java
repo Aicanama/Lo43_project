@@ -33,20 +33,20 @@ public class CardController extends Thread {
         model.setIdJoueur(idj);
             System.out.println("CardController :: notifyIdJoueurChanged: id :  " + idj);
             model.setSsListeJoueur(model.getSsListeJoueur(idj));
-
+            model.getGoldJoueur();
     }
 
     public void wantRemoveCardChosen(Carte carte){
         model.remove1CardFromSousListe(carte);
     }
 
-    //fonction pour changer l'argent sur le plateau
-        //j'ai mis la fonction getGold dans Joueur mais je ne sais pas où la mettre sinon ?
     /*
+    //fonction pour changer l'argent sur le plateau
     public void showGold(Joueur j, JLabel label){
         label.setText(Integer.toString(j.getGold()));
     }
-    */
+     */
+
 
    @Override
     public void run() {
@@ -56,13 +56,11 @@ public class CardController extends Thread {
            e.printStackTrace();
        }
        System.out.println("controller :: run ");
-       buttonView = new JFrameButtonCards(this, model.getSsListeJoueur(model.getIdJoueur()),model.getIdJoueur());
+       buttonView = new JFrameButtonCards(this, model.getSsListeJoueur(model.getIdJoueur()),model.getIdJoueur(), model.getJoueur());
        addListenersToModel();
 
             while(true){
                 displayView();
             }
-
     }
-
 }

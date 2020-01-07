@@ -3,20 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="7b736fce-80e8-474d-80ab-31c775f0cb03" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/controller/CardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/controller/CardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/model/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet_form/com/model/Moteur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet_form/com/model/Moteur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/controller/CardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/JFrameButtonCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/JFrameButtonCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/model/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Joueur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/model/Moteur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/model/Moteur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/view/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/view/Plateau.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -68,26 +71,31 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="377" height="466" key="DebuggerActiveHint/0.0.1280.680@0.0.1280.680" timestamp="1578350942407" />
-    <state x="421" y="81" key="FileChooserDialogImpl" timestamp="1578346654241">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="449" y="87" key="FileChooserDialogImpl" timestamp="1578392712130">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="421" y="81" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1578346654241" />
-    <state width="1237" height="155" key="GridCell.Tab.0.bottom" timestamp="1578392151593">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="449" y="87" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1578392712130" />
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom" timestamp="1578394429799">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1237" height="155" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1578392151593" />
-    <state width="1237" height="155" key="GridCell.Tab.0.center" timestamp="1578392151593">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1322" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578394429799" />
+    <state width="1322" height="174" key="GridCell.Tab.0.center" timestamp="1578394429798">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1237" height="155" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1578392151593" />
-    <state width="1237" height="155" key="GridCell.Tab.0.left" timestamp="1578392151593">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1322" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578394429798" />
+    <state width="1322" height="174" key="GridCell.Tab.0.left" timestamp="1578394429798">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1237" height="155" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1578392151593" />
-    <state width="1237" height="155" key="GridCell.Tab.0.right" timestamp="1578392151593">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1322" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578394429798" />
+    <state width="1322" height="174" key="GridCell.Tab.0.right" timestamp="1578394429799">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1237" height="155" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1578392151593" />
+    <state width="1322" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578394429799" />
     <state width="1237" height="237" key="GridCell.Tab.1.bottom" timestamp="1578383915669">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

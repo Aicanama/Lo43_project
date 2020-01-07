@@ -35,6 +35,8 @@ public class Joueur {
         this.power=0;
     }
 
+    public int getGold() {return this.gold; }
+
     public void showSousListe() {
         System.out.println("Joueur :: show sous liste du joueur id  :"+ this.id);
         for(int i=0;i<this.sousListe.cartes.size();i++)

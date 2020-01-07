@@ -273,6 +273,12 @@ public class Moteur extends Thread{
         return idJoueur;
     }
 
+    //on récupère un joueur
+    public Joueur getJoueur(){return listeJoueur.get(idJoueur);}
+
+    //cherche argent joueur
+    public int getGoldJoueur() {return listeJoueur.get(idJoueur).getGold();}
+
     //change par le nouvel id du modèle depuis la vue
     public void setIdJoueur(int idJ){
         this.idJoueur = idJ;
