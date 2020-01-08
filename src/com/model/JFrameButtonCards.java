@@ -27,20 +27,12 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     protected Joueur joueur;
 
     private Collection<JButton> allButtonCards;
-    private JButton btnC1;
-    private JButton btnC2;
-    private JButton btnC3;
-    private JButton btnC4;
-    private JButton btnC5;
-    private JButton btnC6;
-    private JButton btnC7;
+    private JButton btnC1, btnC2,btnC3,btnC4, btnC5, btnC6, btnC7;
     private JButton btnNext;
     private JLabel ico1, ico2, ico3, ico4;
     private ImageIcon gold;
 
     private JLabel fieldNumJoueur = null;
-
-    private  ImageIcon pizza;
 
     public JFrameButtonCards(CardController controller, SousListe ssListeJoueur, int idj, Joueur j) {
         super(controller);
@@ -63,23 +55,6 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
         frame.setPreferredSize(tailleEcran); //plein ecran
         frame.setResizable(false);
 
-
-        ico1 = new JLabel();
-        ico2 = new JLabel();
-        ico3 = new JLabel();
-        ico4 = new JLabel();
-
-        Collection<JLabel> myGold = new ArrayList<JLabel>();
-        myGold.add(ico1);
-        myGold.add(ico2);
-        myGold.add(ico3);
-        myGold.add(ico4);
-
-        for (JLabel label : myGold) {
-            label.setVerticalAlignment(SwingConstants.TOP);
-            label.setHorizontalAlignment(SwingConstants.RIGHT);
-            label.setIcon(gold);
-        }
 
         //content pane
         contentPaneCarteHigh = new JPanel();
@@ -105,6 +80,24 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
 
         btnNext = new JButton("next player");
         btnNext.setEnabled(false);
+
+
+        ico1 = new JLabel();
+        ico2 = new JLabel();
+        ico3 = new JLabel();
+        ico4 = new JLabel();
+
+        Collection<JLabel> myGold = new ArrayList<JLabel>();
+        myGold.add(ico1);
+        myGold.add(ico2);
+        myGold.add(ico3);
+        myGold.add(ico4);
+
+        for (JLabel label : myGold) {
+            label.setVerticalAlignment(SwingConstants.TOP);
+            label.setHorizontalAlignment(SwingConstants.RIGHT);
+            label.setIcon(gold);
+        }
 
         //---- btn carte -----------------------
         allButtonCards = new ArrayList<JButton>();
@@ -308,3 +301,4 @@ public class JFrameButtonCards extends AbstractViewCard implements ActionListene
     }
 
 }
+
