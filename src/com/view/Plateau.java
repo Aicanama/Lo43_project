@@ -38,7 +38,7 @@ public class Plateau extends JPanel {
     protected SousListe cardsToPrint;
 
 
-    //constructeur @model?
+    //constructeur @leo
     protected char image;
     protected int ressource;
     protected String imageRessource;
@@ -90,7 +90,6 @@ public class Plateau extends JPanel {
             iconePu = new ImageIcon(ImageIO.read(urlIcoPu));
             iconeOr = new ImageIcon(ImageIO.read(urlIcoOr));
             iconeGl = new ImageIcon(ImageIO.read(urlIcoGl));
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -98,7 +97,7 @@ public class Plateau extends JPanel {
 
         ///Definition Espace Labels
         esp1 = new JLabel("Ico1");
-        esp2 = new JLabel();
+        esp2 = new JLabel(); // pour btn next
         esp3 = new JLabel("Ico2");
         esp4 = new JLabel();
         esp5 = new JLabel();
@@ -121,16 +120,12 @@ public class Plateau extends JPanel {
         Collection<JLabel> myLabelsGold = new ArrayList<JLabel>();
         //ordre important !!
         myLabelsGold.add(esp1);
-        //myLabelsGold.add(esp2);
         myLabelsGold.add(esp3);
-        //myLabelsGold.add(esp4);
         myLabelsGold.add(esp5);
         myLabelsGold.add(esp6);
         myLabelsGold.add(ico1);
-        //myLabelsGold.add(esp8); plus besoin vu que définit dans la fenetre
         myLabelsGold.add(ico2);
         myLabelsGold.add(ico3);
-        //myLabelsGold.add(esp11);
         myLabelsGold.add(ico4);
         myLabelsGold.add(esp13);
         myLabelsGold.add(esp14);
@@ -152,8 +147,7 @@ public class Plateau extends JPanel {
 
             if (name.startsWith("Ico1") || name.startsWith("Ico2") || name.startsWith("Ico3") || name.startsWith("Ico4")) {
                 label.setIcon(gold);
-                label.setVerticalAlignment(SwingConstants.TOP);
-                label.setHorizontalAlignment(SwingConstants.RIGHT);
+                label.setHorizontalAlignment(SwingConstants.TRAILING);
             } else {
                 label.setText("E");
                 label.setFont(new Font("Serif", Font.ITALIC, 1));
@@ -177,8 +171,7 @@ public class Plateau extends JPanel {
 
         //position canvas
         //plateau 1
-        //esp1.setVerticalAlignment(SwingConstants.TOP);
-        //esp1.setHorizontalAlignment(SwingConstants.CENTER);
+
         esp4.setVerticalAlignment(SwingConstants.TOP);
         esp4.setHorizontalAlignment(SwingConstants.CENTER);
         //esp carte haut
@@ -189,8 +182,6 @@ public class Plateau extends JPanel {
         esp8.setVerticalAlignment(SwingConstants.CENTER);
         esp8.setHorizontalAlignment(SwingConstants.LEFT);
         //plateau 2
-        //esp3.setVerticalAlignment(SwingConstants.CENTER);
-        //esp3.setHorizontalAlignment(SwingConstants.LEFT);
         esp6.setVerticalAlignment(SwingConstants.CENTER);
         esp6.setHorizontalAlignment(SwingConstants.LEFT);
         //Icone Plat1
@@ -213,13 +204,10 @@ public class Plateau extends JPanel {
         esp17.setVerticalAlignment(SwingConstants.CENTER);
         esp17.setHorizontalAlignment(SwingConstants.LEFT);
         //Plateau 3
-        // esp13.setVerticalAlignment(SwingConstants.CENTER);
-        //esp13.setHorizontalAlignment(SwingConstants.LEFT);
+
         esp16.setVerticalAlignment(SwingConstants.CENTER);
         esp16.setHorizontalAlignment(SwingConstants.LEFT);
         //Plateau 4
-        //esp15.setVerticalAlignment(SwingConstants.CENTER);
-        //esp15.setHorizontalAlignment(SwingConstants.LEFT);
         esp18.setVerticalAlignment(SwingConstants.CENTER);
         esp18.setHorizontalAlignment(SwingConstants.LEFT);
 
@@ -308,6 +296,7 @@ public class Plateau extends JPanel {
 
         ///mise en place Plateau
         for (JLabel label : myLabelsGold) {
+            label.setBorder(new EmptyBorder(10, 10, 10, 10)); // border INVISIBLE (pas besoin si on met label en invisible)
             this.add(label);
         }
     }
@@ -319,8 +308,6 @@ public class Plateau extends JPanel {
 
         int largeurCarte = largeurPlat / 5;
         int longueurCarte = longueurPlat / 2;
-
-        //super.paintComponent(g);
 
         //JOUEURS
         //joueur 1 - coin haut gauche
@@ -338,26 +325,3 @@ public class Plateau extends JPanel {
 
 
 }
-
-/** Leo
- public class Plateau {
-
- protected char image;
- protected int ressource;
- protected String imageRessource;
- protected ArrayList<CarteRessource> listeRessource;
-
- public Plateau(char n_image, int n_ressource, String n_imageRessource) {
- this.image=n_image;
- this.imageRessource=n_imageRessource;
- this.ressource=n_ressource;
- this.listeRessource = new ArrayList<CarteRessource>();
- }
-
- public void afficherCarte(int type) {
- }
-
- public void updateListe(CarteRessource carteR) {
- this.listeRessource.add(carteR);
- }
- */
